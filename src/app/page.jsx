@@ -9,6 +9,7 @@ import { Footer } from '@/components/layout/footer';
 import React, { useState, useEffect } from 'react';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel"
 import Autoplay from "embla-carousel-autoplay"
+import Link from 'next/link';
 
 /**
  * Komponen EventCard
@@ -346,31 +347,26 @@ export default function Home() {
           <div className="container mx-auto">
             <h2 className="text-4xl font-headline font-bold text-center mb-2">OUR SPEAKERS</h2>
             <p className="text-center text-primary text-lg mb-12">Meet Our Professional Speakers</p>
-            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className="grid sm:grid-cols-1 lg:grid-cols-2 gap-8 max-w-4xl mx-auto">
               <SpeakerCard 
                 image="https://placehold.co/400x600.png" 
-                name="Dr. Aris Setiawan"
-                title="Pakar Kecerdasan Buatan"
-                hint="man scientist"
+                name="Shandy Luo"
+                title="Content Creator"
+                hint="man content creator"
               />
               <SpeakerCard 
                 image="https://placehold.co/400x600.png" 
-                name="Budi Hartono"
-                title="Analis Keamanan Siber"
-                hint="man engineer"
+                name="Nabila Carissa"
+                title="Content Creator & Social Media Influencer"
+                hint="woman influencer"
               />
-              <SpeakerCard 
-                image="https://placehold.co/400x600.png" 
-                name="Citra Lestari"
-                title="Pengembang Blockchain"
-                hint="woman developer"
-              />
-              <SpeakerCard 
-                image="https://placehold.co/400x600.png" 
-                name="Dewi Anggraini"
-                title="Desainer UI/UX"
-                hint="woman designer"
-              />
+            </div>
+            <div className="text-center mt-12">
+                <Link href="/seminar">
+                    <Button size="lg" className="font-bold text-lg px-10 py-6">
+                        Lihat Semua Pembicara
+                    </Button>
+                </Link>
             </div>
           </div>
         </section>
@@ -460,3 +456,5 @@ export default function Home() {
     </div>
   );
 }
+
+    
