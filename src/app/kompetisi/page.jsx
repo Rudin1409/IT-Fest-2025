@@ -10,6 +10,14 @@ import React from 'react';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
 
+/**
+ * Komponen CompetitionCard
+ * @param {object} props - Properti komponen
+ * @param {string} props.title - Judul kompetisi
+ * @param {string} props.image - URL gambar untuk kompetisi
+ * @param {string} props.hint - Petunjuk AI untuk gambar
+ * @returns {JSX.Element} Kartu yang menampilkan detail kompetisi.
+ */
 const CompetitionCard = ({ title, image, hint }) => (
   <Card className="bg-card/80 backdrop-blur-sm border-primary/10 hover:border-primary transition-all duration-300 transform hover:scale-105 hover:shadow-2xl hover:shadow-primary/20 overflow-hidden text-center">
     <div className="relative h-80 w-full">
@@ -27,6 +35,7 @@ const CompetitionCard = ({ title, image, hint }) => (
   </Card>
 );
 
+// Data untuk linimasa kompetisi
 const timelineData = [
     {
       title: 'Pembukaan Pendaftaran',
@@ -46,6 +55,10 @@ const timelineData = [
     },
   ];
 
+/**
+ * Komponen CompetitionTimeline
+ * @returns {JSX.Element} Bagian yang menampilkan linimasa kompetisi.
+ */
 const CompetitionTimeline = () => (
     <section className="py-20 px-4">
       <div className="container mx-auto text-center">
@@ -70,7 +83,12 @@ const CompetitionTimeline = () => (
     </section>
   );
 
+/**
+ * Halaman Kompetisi
+ * @returns {JSX.Element} Halaman utama untuk bagian kompetisi.
+ */
 export default function KompetisiPage() {
+  // Plugin untuk autoplay korsel
   const autoplayPlugin = React.useRef(
     Autoplay({ delay: 3000, stopOnInteraction: true })
   );
@@ -79,6 +97,8 @@ export default function KompetisiPage() {
     <div className="flex flex-col min-h-screen bg-background text-foreground">
       <Header />
       <main className="flex-grow pt-24">
+        
+        {/* Bagian Hero */}
         <section className="py-20 px-4 relative overflow-hidden">
           <div className="container mx-auto">
             <div className="grid md:grid-cols-2 gap-12 items-center">
@@ -98,8 +118,10 @@ export default function KompetisiPage() {
           </div>
         </section>
 
+        {/* Bagian Linimasa Kompetisi */}
         <CompetitionTimeline />
 
+        {/* Bagian Kategori Kompetisi */}
         <section className="py-20 px-4 bg-secondary/50">
           <div className="container mx-auto">
             <h2 className="text-4xl font-headline font-bold text-center mb-12">KATEGORI KOMPETISI</h2>

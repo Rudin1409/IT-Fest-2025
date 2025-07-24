@@ -3,13 +3,18 @@
 import Link from 'next/link';
 import { Mail, Phone, MapPin, Instagram } from 'lucide-react';
 
+/**
+ * Komponen Footer
+ * @returns {JSX.Element} Footer situs web dengan informasi kontak dan tautan cepat.
+ */
 export const Footer = () => (
     <footer className="w-full py-12 px-4 sm:px-6 lg:px-8 mt-24 bg-secondary/30 text-secondary-foreground border-t border-primary/20">
       <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 text-muted-foreground">
         
-        {/* About Section */}
+        {/* Bagian Tentang & Media Sosial */}
         <div className="lg:col-span-2">
           <div className="flex items-center gap-3 mb-4">
+             {/* Logo */}
              <div className="w-12 h-12 bg-gradient-to-br from-primary to-accent rounded-lg flex items-center justify-center">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M6 18L18 6M6 6L18 18" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
@@ -20,6 +25,7 @@ export const Footer = () => (
           <p className="max-w-md leading-relaxed">
           Festival teknologi terbesar tahun 2025 yang menghadirkan kompetisi, pelatihan, dan seminar untuk mengembangkan talenta digital masa depan.
           </p>
+          {/* Tautan Media Sosial */}
           <div className="flex space-x-4 mt-6">
             <Link href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-primary/80 hover:bg-primary transition-colors flex items-center justify-center text-white">
                 <Instagram size={20} />
@@ -38,7 +44,7 @@ export const Footer = () => (
           </div>
         </div>
 
-        {/* Quick Links */}
+        {/* Bagian Tautan Cepat */}
         <div>
           <h3 className="font-headline text-lg font-bold text-white mb-4">QUICK LINKS</h3>
           <ul className="space-y-3">
@@ -50,7 +56,7 @@ export const Footer = () => (
           </ul>
         </div>
 
-        {/* Contact */}
+        {/* Bagian Kontak */}
         <div>
           <h3 className="font-headline text-lg font-bold text-white mb-4">CONTACT</h3>
           <ul className="space-y-3">
@@ -70,7 +76,7 @@ export const Footer = () => (
         </div>
       </div>
       
-      {/* Bottom Bar */}
+      {/* Bagian Bawah Footer */}
       <div className="container mx-auto mt-12 pt-8 border-t border-primary/20 flex flex-col sm:flex-row justify-between items-center text-sm text-muted-foreground">
         <p>&copy; 2025 IT Festival 2025. All rights reserved.</p>
         <div className="flex space-x-6 mt-4 sm:mt-0">

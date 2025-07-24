@@ -7,6 +7,19 @@ import { Header } from '@/components/layout/header';
 import { Footer } from '@/components/layout/footer';
 import { User } from 'lucide-react';
 
+/**
+ * Komponen GuestSpeakerCard
+ * @param {object} props - Properti komponen
+ * @param {string} props.image - URL gambar pembicara
+ * @param {string} props.name - Nama pembicara
+ * @param {string} props.title - Jabatan atau gelar pembicara
+ * @param {string} props.topic - Topik yang akan dibawakan
+ * @param {string} props.date - Tanggal dan waktu seminar
+ * @param {string} props.hint - Petunjuk AI untuk gambar
+ * @param {string} [props.speakerLabel="Guest Star :"] - Label untuk pembicara
+ * @param {'left' | 'right'} [props.imagePosition='left'] - Posisi gambar (kiri atau kanan)
+ * @returns {JSX.Element} Kartu yang menampilkan detail pembicara dan seminar.
+ */
 const GuestSpeakerCard = ({ image, name, title, topic, date, hint, speakerLabel = "Guest Star :", imagePosition = 'left' }) => (
   <Card className="bg-card/80 backdrop-blur-sm border-primary/10 hover:border-primary transition-all duration-300 transform hover:scale-105 hover:shadow-2xl hover:shadow-primary/20 overflow-hidden w-full">
     <div className="grid md:grid-cols-3 items-center">
@@ -24,11 +37,17 @@ const GuestSpeakerCard = ({ image, name, title, topic, date, hint, speakerLabel 
   </Card>
 );
 
+/**
+ * Halaman Seminar
+ * @returns {JSX.Element} Halaman utama untuk bagian seminar.
+ */
 export default function SeminarPage() {
   return (
     <div className="flex flex-col min-h-screen bg-background text-foreground">
       <Header />
       <main className="flex-grow pt-24">
+        
+        {/* Bagian Hero */}
         <section className="py-20 px-4 relative overflow-hidden">
         <div className="container mx-auto">
             <div className="grid md:grid-cols-2 gap-12 items-center">
@@ -48,6 +67,7 @@ export default function SeminarPage() {
           </div>
         </section>
 
+        {/* Bagian Pembicara */}
         <section className="py-20 px-4">
           <div className="container mx-auto">
             <div className="grid lg:grid-cols-1 gap-12 max-w-5xl mx-auto">
@@ -74,6 +94,7 @@ export default function SeminarPage() {
           </div>
         </section>
 
+        {/* Tombol Pendaftaran */}
         <section className="py-10 px-4 text-center">
             <Button size="lg" className="font-bold text-lg px-10 py-6">
                 Daftar Seminar

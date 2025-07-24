@@ -10,6 +10,14 @@ import React, { useState, useEffect } from 'react';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel"
 import Autoplay from "embla-carousel-autoplay"
 
+/**
+ * Komponen EventCard
+ * @param {object} props - Properti komponen
+ * @param {React.ReactNode} props.icon - Ikon untuk acara
+ * @param {string} props.title - Judul acara
+ * @param {string} props.description - Deskripsi acara
+ * @returns {JSX.Element} Kartu yang menampilkan detail acara.
+ */
 const EventCard = ({ icon, title, description }) => (
   <Card className="bg-card/80 backdrop-blur-sm border-primary/10 hover:border-primary transition-all duration-300 transform hover:scale-105 hover:shadow-2xl hover:shadow-primary/20">
     <CardHeader className="flex flex-row items-center gap-4">
@@ -22,6 +30,15 @@ const EventCard = ({ icon, title, description }) => (
   </Card>
 );
 
+/**
+ * Komponen SpeakerCard
+ * @param {object} props - Properti komponen
+ * @param {string} props.image - URL gambar pembicara
+ * @param {string} props.name - Nama pembicara
+ * @param {string} props.title - Jabatan atau gelar pembicara
+ * @param {string} props.hint - Petunjuk AI untuk gambar
+ * @returns {JSX.Element} Kartu yang menampilkan profil pembicara.
+ */
 const SpeakerCard = ({ image, name, title, hint }) => (
   <Card className="text-center bg-card/80 backdrop-blur-sm border-primary/10 hover:border-primary transition-all duration-300 transform hover:scale-105 hover:shadow-2xl hover:shadow-primary/20 overflow-hidden">
     <div className="relative h-72 w-full">
@@ -34,6 +51,7 @@ const SpeakerCard = ({ image, name, title, hint }) => (
   </Card>
 );
 
+// Data untuk linimasa acara
 const timelineEvents = [
     {
       title: 'PEMBUKAAN PENDAFTARAN PERLOMBAAN, SEMINAR DAN PELATIHAN',
@@ -77,6 +95,13 @@ const timelineEvents = [
     },
   ];
 
+/**
+ * Komponen TimelineItem
+ * @param {object} props - Properti komponen
+ * @param {object} props.event - Objek acara yang berisi judul dan tanggal
+ * @param {number} props.index - Indeks item untuk menentukan posisi (kiri/kanan)
+ * @returns {JSX.Element} Item linimasa.
+ */
 const TimelineItem = ({ event, index }) => {
     const isLeft = index % 2 !== 0;
     return (
@@ -120,7 +145,12 @@ const TimelineItem = ({ event, index }) => {
     );
   };
 
+/**
+ * Komponen CountdownTimer
+ * @returns {JSX.Element} Tampilan hitung mundur menuju tanggal acara.
+ */
 const CountdownTimer = () => {
+  // Fungsi untuk menghitung sisa waktu
   const calculateTimeLeft = () => {
     const difference = +new Date('2025-10-20T00:00:00') - +new Date();
     let timeLeft = {};
@@ -142,6 +172,7 @@ const CountdownTimer = () => {
   const [timeLeft, setTimeLeft] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
   const [isClient, setIsClient] = useState(false);
 
+  // useEffect untuk memastikan kode hanya berjalan di sisi klien
   useEffect(() => {
     setIsClient(true);
     setTimeLeft(calculateTimeLeft());
@@ -172,6 +203,10 @@ const CountdownTimer = () => {
   );
 };
 
+/**
+ * Komponen FloatingSquares
+ * @returns {JSX.Element} Animasi kotak-kotak mengambang sebagai latar belakang.
+ */
 const FloatingSquares = () => (
   <div className="absolute inset-0 w-full h-full overflow-hidden z-0">
     <ul className="squares">
@@ -182,6 +217,12 @@ const FloatingSquares = () => (
   </div>
 );
 
+/**
+ * Komponen TypingAnimation
+ * @param {object} props - Properti komponen
+ * @param {string} props.text - Teks yang akan ditampilkan dengan animasi mengetik
+ * @returns {JSX.Element} Judul dengan efek animasi mengetik.
+ */
 const TypingAnimation = ({ text }) => {
   const [displayedText, setDisplayedText] = useState('');
   const [isDeleting, setIsDeleting] = useState(false);
@@ -198,7 +239,7 @@ const TypingAnimation = ({ text }) => {
       setDisplayedText(updatedText);
 
       if (!isDeleting && updatedText === fullText) {
-        // Pause at end
+        // Jeda di akhir
         setTimeout(() => setIsDeleting(true), 2000);
       } else if (isDeleting && updatedText === '') {
         setIsDeleting(false);
@@ -218,7 +259,12 @@ const TypingAnimation = ({ text }) => {
   );
 };
 
+/**
+ * Halaman Utama (Beranda)
+ * @returns {JSX.Element} Komponen halaman utama yang menampilkan semua bagian.
+ */
 export default function Home() {
+  // Plugin untuk autoplay korsel
   const autoplayPlugin = React.useRef(
     Autoplay({ delay: 2000, stopOnInteraction: true })
   );
@@ -227,6 +273,8 @@ export default function Home() {
     <div className="flex flex-col min-h-screen bg-background text-foreground">
       <Header />
       <main className="flex-grow pt-24">
+        
+        {/* Bagian Hero */}
         <section id="hero" className="text-center py-24 px-4 relative overflow-hidden">
           <FloatingSquares />
            <div className="container mx-auto relative">
@@ -247,6 +295,7 @@ export default function Home() {
           </div>
         </section>
 
+        {/* Bagian Tentang Kami */}
         <section id="about" className="py-20 px-4">
             <div className="container mx-auto grid md:grid-cols-2 gap-12 items-center">
                 <div>
@@ -262,6 +311,7 @@ export default function Home() {
             </div>
         </section>
 
+        {/* Bagian Acara Kami */}
         <section id="events" className="py-20 px-4 bg-secondary/50">
           <div className="container mx-auto">
             <h2 className="text-4xl font-headline font-bold text-center mb-2">OUR EVENTS</h2>
@@ -291,6 +341,7 @@ export default function Home() {
           </div>
         </section>
         
+        {/* Bagian Pembicara */}
         <section id="speakers" className="py-20 px-4">
           <div className="container mx-auto">
             <h2 className="text-4xl font-headline font-bold text-center mb-2">OUR SPEAKERS</h2>
@@ -324,6 +375,7 @@ export default function Home() {
           </div>
         </section>
 
+        {/* Bagian Linimasa */}
         <section id="timeline" className="py-20 px-4 bg-secondary/50">
             <div className="container mx-auto">
                 <h2 className="text-4xl font-headline font-bold text-center mb-12">TIMELINE</h2>
@@ -336,6 +388,7 @@ export default function Home() {
             </div>
         </section>
 
+        {/* Bagian Didukung Oleh */}
         <section id="supported-by" className="py-20 px-4">
             <div className="container mx-auto text-center">
                 <h2 className="text-4xl font-headline font-bold mb-12">SUPPORTED BY</h2>
@@ -344,6 +397,7 @@ export default function Home() {
             </div>
         </section>
 
+        {/* Bagian Sponsor */}
         <section id="sponsors" className="py-20 px-4 bg-secondary/50">
           <div className="container mx-auto text-center">
             <h2 className="text-4xl font-headline font-bold mb-12">SPONSORS</h2>
@@ -372,6 +426,7 @@ export default function Home() {
           </div>
         </section>
 
+        {/* Bagian Mitra Media */}
         <section id="media-partners" className="py-20 px-4">
           <div className="container mx-auto text-center">
             <h2 className="text-4xl font-headline font-bold mb-12">MEDIA PARTNERS</h2>

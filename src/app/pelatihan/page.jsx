@@ -10,6 +10,14 @@ import React from 'react';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
 
+/**
+ * Komponen TrainingCategoryCard
+ * @param {object} props - Properti komponen
+ * @param {string} props.title - Judul kategori pelatihan
+ * @param {string} props.image - URL gambar untuk kategori
+ * @param {string} props.hint - Petunjuk AI untuk gambar
+ * @returns {JSX.Element} Kartu yang menampilkan kategori pelatihan.
+ */
 const TrainingCategoryCard = ({ title, image, hint }) => (
     <Card className="bg-card/80 backdrop-blur-sm border-primary/10 hover:border-primary transition-all duration-300 transform hover:scale-105 hover:shadow-2xl hover:shadow-primary/20 overflow-hidden text-center">
       <div className="relative h-80 w-full">
@@ -27,6 +35,14 @@ const TrainingCategoryCard = ({ title, image, hint }) => (
     </Card>
   );
 
+/**
+ * Komponen ClassCard
+ * @param {object} props - Properti komponen
+ * @param {string} props.title - Judul kelas
+ * @param {string} props.image - URL gambar untuk kelas
+ * @param {string} props.hint - Petunjuk AI untuk gambar
+ * @returns {JSX.Element} Kartu yang menampilkan detail kelas dengan pilihan pendaftaran.
+ */
 const ClassCard = ({ title, image, hint }) => (
     <Card className="bg-card/80 backdrop-blur-sm border-primary/10 hover:border-primary transition-all duration-300 transform hover:scale-105 hover:shadow-2xl hover:shadow-primary/20 overflow-hidden text-center">
       <div className="relative h-80 w-full">
@@ -44,6 +60,7 @@ const ClassCard = ({ title, image, hint }) => (
     </Card>
   );
 
+// Data untuk linimasa pelatihan
 const timelineData = [
     {
       title: 'Pembukaan Pendaftaran',
@@ -63,6 +80,10 @@ const timelineData = [
     },
   ];
 
+/**
+ * Komponen TrainingTimeline
+ * @returns {JSX.Element} Bagian yang menampilkan linimasa pelatihan.
+ */
 const TrainingTimeline = () => (
     <section className="py-20 px-4">
       <div className="container mx-auto text-center">
@@ -88,7 +109,12 @@ const TrainingTimeline = () => (
   );
 
 
+/**
+ * Halaman Pelatihan
+ * @returns {JSX.Element} Halaman utama untuk bagian pelatihan.
+ */
 export default function PelatihanPage() {
+    // Plugin untuk autoplay korsel
     const autoplayPlugin = React.useRef(
         Autoplay({ delay: 3000, stopOnInteraction: true })
       );
@@ -97,6 +123,8 @@ export default function PelatihanPage() {
     <div className="flex flex-col min-h-screen bg-background text-foreground">
       <Header />
       <main className="flex-grow pt-24">
+        
+        {/* Bagian Hero */}
         <section className="py-20 px-4 relative overflow-hidden">
         <div className="container mx-auto">
             <div className="grid md:grid-cols-2 gap-12 items-center">
@@ -116,8 +144,10 @@ export default function PelatihanPage() {
           </div>
         </section>
 
+        {/* Bagian Linimasa Pelatihan */}
         <TrainingTimeline />
 
+        {/* Bagian Kategori Pelatihan */}
         <section className="py-20 px-4 bg-secondary/50">
           <div className="container mx-auto">
             <h2 className="text-4xl font-headline font-bold text-center mb-12">KATEGORI PELATIHAN</h2>
@@ -151,6 +181,7 @@ export default function PelatihanPage() {
           </div>
         </section>
 
+        {/* Bagian Daftar Kelas */}
         <section className="py-20 px-4">
             <div className="container mx-auto">
                 <h2 className="text-4xl font-headline font-bold text-center mb-12">DAFTAR KELAS</h2>
