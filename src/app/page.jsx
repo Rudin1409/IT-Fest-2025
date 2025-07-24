@@ -11,6 +11,7 @@ import { Form, FormField, FormItem, FormControl, FormMessage, FormLabel } from '
 import { useToast } from '@/hooks/use-toast';
 import { Header } from '@/components/layout/header';
 import { Footer } from '@/components/layout/footer';
+import React, { useState, useEffect } from 'react';
 
 const EventCard = ({ icon, title, description }) => (
   <Card className="bg-card/80 backdrop-blur-sm border-primary/10 hover:border-primary transition-all duration-300 transform hover:scale-105 hover:shadow-2xl hover:shadow-primary/20">
@@ -124,6 +125,58 @@ const ContactForm = () => {
     )
 }
 
+const CountdownTimer = () => {
+  const calculateTimeLeft = () => {
+    const difference = +new Date('2025-07-01T00:00:00') - +new Date();
+    let timeLeft = {};
+
+    if (difference > 0) {
+      timeLeft = {
+        days: Math.floor(difference / (1000 * 60 * 60 * 24)),
+        hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
+        minutes: Math.floor((difference / 1000 / 60) % 60),
+        seconds: Math.floor((difference / 1000) % 60),
+      };
+    } else {
+        timeLeft = { days: 0, hours: 0, minutes: 0, seconds: 0 };
+    }
+
+    return timeLeft;
+  };
+
+  const [timeLeft, setTimeLeft] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
+  const [isClient, setIsClient] = useState(false);
+
+  useEffect(() => {
+    setIsClient(true);
+    const timer = setInterval(() => {
+      setTimeLeft(calculateTimeLeft());
+    }, 1000);
+
+    return () => clearInterval(timer);
+  }, []);
+
+  const timerComponents = isClient ? (
+    Object.keys(timeLeft).map((interval) => (
+      <div key={interval} className="flex flex-col items-center">
+        <span className="text-4xl md:text-6xl font-black font-headline text-primary">
+          {String(timeLeft[interval]).padStart(2, '0')}
+        </span>
+        <span className="text-sm md:text-lg font-body uppercase tracking-widest text-muted-foreground">{interval}</span>
+      </div>
+    ))
+  ) : (
+    <div className="text-2xl text-muted-foreground">Loading...</div>
+  );
+
+  return (
+    <div className="flex justify-center gap-4 md:gap-8 my-8">
+      {timerComponents}
+    </div>
+  );
+};
+
+
 export default function Home() {
   return (
     <div className="flex flex-col min-h-screen bg-background text-foreground">
@@ -135,6 +188,7 @@ export default function Home() {
             <h2 className="text-4xl md:text-6xl font-black font-headline text-transparent bg-clip-text bg-gradient-to-b from-white to-accent mb-4">
               WELCOME TO IT-FEST 2025
             </h2>
+            <CountdownTimer />
              <p className="text-2xl md:text-4xl font-headline font-bold text-primary mb-8">THE BIGGEST IT FESTIVAL</p>
             <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto mb-10">
             IT-FEST 2025 adalah acara utama yang menyatukan mahasiswa, profesional, dan penggemar teknologi dari seluruh dunia. Misi kami adalah untuk mendorong inovasi, kolaborasi, dan pembelajaran di bidang teknologi informasi yang terus berkembang.
