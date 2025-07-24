@@ -5,7 +5,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
-import { Code, Gamepad2, Mic, Palette } from 'lucide-react';
+import { Code, Gamepad2, Mic, Palette, Calendar } from 'lucide-react';
 import { useForm } from 'react-hook-form';
 import { z } from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';
@@ -46,6 +46,20 @@ const SpeakerCard = ({ image, name, title, hint }: { image: string, name: string
     </CardContent>
   </Card>
 );
+
+const TimelineItem = ({ date, title }: { date: string, title: string }) => (
+    <div className="flex items-center w-full my-6">
+      <div className="flex-shrink-0">
+        <div className="flex items-center justify-center h-16 w-16 rounded-full bg-primary/20 border-2 border-primary text-primary">
+          <Calendar size={32} />
+        </div>
+      </div>
+      <div className="flex-grow md:ml-8 ml-4">
+        <h4 className="font-headline text-xl font-bold text-accent">{date}</h4>
+        <p className="text-lg text-muted-foreground">{title}</p>
+      </div>
+    </div>
+  );
 
 const ContactForm = () => {
     const { toast } = useToast();
@@ -225,6 +239,51 @@ export default function Home() {
           </div>
         </section>
 
+        <section id="timeline" className="py-20 px-4 bg-secondary/50">
+          <div className="container mx-auto">
+            <h2 className="text-4xl font-headline font-bold text-center mb-2">TIMELINE</h2>
+            <p className="text-center text-primary text-lg mb-12">IT-FEST 2025</p>
+            <div className="max-w-3xl mx-auto">
+                <TimelineItem date="1 - 14 JULI 2025" title="OPEN REGISTRATION" />
+                <TimelineItem date="20 JULI 2025" title="CLOSE REGISTRATION" />
+                <TimelineItem date="25 JULI 2025" title="WEBINAR" />
+                <TimelineItem date="26 JULI 2025" title="COMPETITION" />
+                <TimelineItem date="27 JULI 2025" title="AWARDING" />
+            </div>
+          </div>
+        </section>
+
+        <section id="supported-by" className="py-20 px-4">
+            <div className="container mx-auto text-center">
+                <h2 className="text-4xl font-headline font-bold mb-12">SUPPORTED BY</h2>
+                <Image src="https://placehold.co/300x150.png" alt="Universitas Teknologi Indonesia" width={300} height={150} className="mx-auto" data-ai-hint="university logo" />
+                 <p className="text-2xl font-headline font-bold text-primary mt-4">UNIVERSITAS TEKNOLOGI INDONESIA</p>
+            </div>
+        </section>
+
+        <section id="sponsors" className="py-20 px-4 bg-secondary/50">
+          <div className="container mx-auto text-center">
+            <h2 className="text-4xl font-headline font-bold mb-12">SPONSORS</h2>
+            <div className="flex justify-center items-center flex-wrap gap-12">
+              <Image src="https://placehold.co/200x100.png" alt="Sponsor 1" width={200} height={100} data-ai-hint="company logo" />
+              <Image src="https://placehold.co/200x100.png" alt="Sponsor 2" width={200} height={100} data-ai-hint="tech company" />
+              <Image src="https://placehold.co/200x100.png" alt="Sponsor 3" width={200} height={100} data-ai-hint="startup logo" />
+              <Image src="https://placehold.co/200x100.png" alt="Sponsor 4" width={200} height={100} data-ai-hint="software company" />
+            </div>
+          </div>
+        </section>
+
+        <section id="media-partners" className="py-20 px-4">
+          <div className="container mx-auto text-center">
+            <h2 className="text-4xl font-headline font-bold mb-12">MEDIA PARTNERS</h2>
+            <div className="flex justify-center items-center flex-wrap gap-12">
+              <Image src="https://placehold.co/200x100.png" alt="Media Partner 1" width={200} height={100} data-ai-hint="media logo" />
+              <Image src="https://placehold.co/200x100.png" alt="Media Partner 2" width={200} height={100} data-ai-hint="news channel" />
+              <Image src="https://placehold.co/200x100.png" alt="Media Partner 3" width={200} height={100} data-ai-hint="tech blog" />
+            </div>
+          </div>
+        </section>
+
         <section id="contact" className="py-20 px-4 bg-secondary/50">
             <div className="container mx-auto max-w-2xl">
                 <ContactForm />
@@ -236,5 +295,3 @@ export default function Home() {
     </div>
   );
 }
-
-    
