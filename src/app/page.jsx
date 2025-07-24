@@ -5,7 +5,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
-import { Code, Gamepad2, Mic, Palette, Calendar } from 'lucide-react';
+import { Code, Gamepad2, Mic, Palette } from 'lucide-react';
 import { useForm } from 'react-hook-form';
 import { Form, FormField, FormItem, FormControl, FormMessage, FormLabel } from '@/components/ui/form';
 import { useToast } from '@/hooks/use-toast';
@@ -37,19 +37,91 @@ const SpeakerCard = ({ image, name, title, hint }) => (
   </Card>
 );
 
-const TimelineItem = ({ date, title }) => (
-    <div className="flex items-center w-full my-6">
-      <div className="flex-shrink-0">
-        <div className="flex items-center justify-center h-16 w-16 rounded-full bg-primary/20 border-2 border-primary text-primary">
-          <Calendar size={32} />
-        </div>
+const timelineEvents = [
+    {
+      title: 'PEMBUKAAN PENDAFTARAN PERLOMBAAN, SEMINAR DAN PELATIHAN',
+      date: 'N/A',
+    },
+    {
+      title: 'PENUTUPAN PENDAFTARAN PESERTA SEMINAR DAN PELATIHAN',
+      date: '08 September 2025',
+    },
+    {
+      title: 'PEMBUKAAN ACARA IT FESTIVAL 2025 DAN SEMINAR',
+      date: '16 September 2025',
+    },
+    {
+      title: 'PELATIHAN ANDROID DAN WEB DEVELOPMENT',
+      date: '17 - 20 September 2025',
+    },
+    {
+      title: 'PENUTUPAN PENDAFTARAN LOMBA',
+      date: '25 September 2025',
+    },
+    {
+      title: 'TECHNICAL MEETING LOMBA (PHOTOGRAPHY, POSTER DESIGN, & WEB DESIGN)',
+      date: '27 September 2025',
+    },
+    {
+      title: 'TECHNICAL MEETING MOBILE LEGEND',
+      date: '28 September 2025',
+    },
+    {
+      title: 'LOMBA MOBILE LEGENDS',
+      date: '29 September 2025',
+    },
+    {
+      title: 'PENGUMPULAN KARYA LOMBA',
+      date: '30 September 2025',
+    },
+    {
+      title: 'PENJURIAN LOMBA (PHOTOGRAPHY & POSTER DESIGN)',
+      date: '5 Oktober 2025',
+    },
+  ];
+
+const TimelineItem = ({ event, index }) => {
+    const isLeft = index % 2 !== 0;
+    return (
+      <div className="flex items-center w-full my-4">
+        {isLeft ? (
+          <>
+            <div className="w-5/12 pr-8 text-right">
+              <div className="p-4 rounded-lg bg-card/80 border border-primary/20 shadow-primary/10 shadow-lg">
+                <h4 className="font-headline text-lg font-bold text-accent">{event.title}</h4>
+                <p className="text-sm text-muted-foreground mt-1">{event.date}</p>
+              </div>
+            </div>
+            <div className="w-2/12 flex-shrink-0 flex justify-center">
+              <div className="relative">
+                <div className="flex items-center justify-center h-10 w-10 rounded-full bg-primary font-bold text-primary-foreground z-10">
+                  {index + 1}
+                </div>
+              </div>
+            </div>
+            <div className="w-5/12"></div>
+          </>
+        ) : (
+          <>
+            <div className="w-5/12"></div>
+            <div className="w-2/12 flex-shrink-0 flex justify-center">
+              <div className="relative">
+                <div className="flex items-center justify-center h-10 w-10 rounded-full bg-primary font-bold text-primary-foreground z-10">
+                  {index + 1}
+                </div>
+              </div>
+            </div>
+            <div className="w-5/12 pl-8 text-left">
+              <div className="p-4 rounded-lg bg-card/80 border border-primary/20 shadow-primary/10 shadow-lg">
+                <h4 className="font-headline text-lg font-bold text-accent">{event.title}</h4>
+                <p className="text-sm text-muted-foreground mt-1">{event.date}</p>
+              </div>
+            </div>
+          </>
+        )}
       </div>
-      <div className="flex-grow md:ml-8 ml-4">
-        <h4 className="font-headline text-xl font-bold text-accent">{date}</h4>
-        <p className="text-lg text-muted-foreground">{title}</p>
-      </div>
-    </div>
-  );
+    );
+  };
 
 const ContactForm = () => {
     const { toast } = useToast();
@@ -282,17 +354,15 @@ export default function Home() {
         </section>
 
         <section id="timeline" className="py-20 px-4 bg-secondary/50">
-          <div className="container mx-auto">
-            <h2 className="text-4xl font-headline font-bold text-center mb-2">TIMELINE</h2>
-            <p className="text-center text-primary text-lg mb-12">IT-FEST 2025</p>
-            <div className="max-w-3xl mx-auto">
-                <TimelineItem date="1 - 14 JULI 2025" title="OPEN REGISTRATION" />
-                <TimelineItem date="20 JULI 2025" title="CLOSE REGISTRATION" />
-                <TimelineItem date="25 JULI 2025" title="WEBINAR" />
-                <TimelineItem date="26 JULI 2025" title="COMPETITION" />
-                <TimelineItem date="27 JULI 2025" title="AWARDING" />
+            <div className="container mx-auto">
+                <h2 className="text-4xl font-headline font-bold text-center mb-12">TIMELINE</h2>
+                <div className="relative max-w-4xl mx-auto">
+                <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-0.5 bg-primary/50"></div>
+                {timelineEvents.map((event, index) => (
+                    <TimelineItem key={index} event={event} index={index} />
+                ))}
+                </div>
             </div>
-          </div>
         </section>
 
         <section id="supported-by" className="py-20 px-4">
