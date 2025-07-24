@@ -3,8 +3,8 @@ import './globals.css';
 import { Toaster } from "@/components/ui/toaster";
 
 export const metadata = {
-  title: 'Valorant Tech Fest 2025',
-  description: 'The future of technology and gaming, inspired by Valorant.',
+  title: 'IT-Fest 2025',
+  description: 'Festival teknologi terbesar tahun 2025 yang menghadirkan kompetisi, pelatihan, dan seminar untuk mengembangkan talenta digital masa depan.',
 };
 
 export default function RootLayout({
