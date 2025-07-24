@@ -54,47 +54,59 @@ const SpeakerCard = ({ image, name, title, hint }) => (
 
 // Data untuk linimasa acara
 const timelineEvents = [
-    {
-      title: 'PEMBUKAAN PENDAFTARAN PERLOMBAAN, SEMINAR DAN PELATIHAN',
-      date: 'N/A',
-    },
-    {
-      title: 'PENUTUPAN PENDAFTARAN PESERTA SEMINAR DAN PELATIHAN',
-      date: '08 September 2025',
-    },
-    {
-      title: 'PEMBUKAAN ACARA IT FESTIVAL 2025 DAN SEMINAR',
-      date: '16 September 2025',
-    },
-    {
-      title: 'PELATIHAN ANDROID DAN WEB DEVELOPMENT',
-      date: '17 - 20 September 2025',
-    },
-    {
-      title: 'PENUTUPAN PENDAFTARAN LOMBA',
-      date: '25 September 2025',
-    },
-    {
-      title: 'TECHNICAL MEETING LOMBA (PHOTOGRAPHY, POSTER DESIGN, & WEB DESIGN)',
-      date: '27 September 2025',
-    },
-    {
-      title: 'TECHNICAL MEETING MOBILE LEGEND',
-      date: '28 September 2025',
-    },
-    {
-      title: 'LOMBA MOBILE LEGENDS',
-      date: '29 September 2025',
-    },
-    {
-      title: 'PENGUMPULAN KARYA LOMBA',
-      date: '30 September 2025',
-    },
-    {
-      title: 'PENJURIAN LOMBA (PHOTOGRAPHY & POSTER DESIGN)',
-      date: '5 Oktober 2025',
-    },
-  ];
+  {
+    title: 'Open Registration Seminar, Perlombaan dan Pelatihan (Android & Web)',
+    date: 'Selasa, 16 Agustus 2025',
+  },
+  {
+    title: 'Perlombaan (Pembuatan Karya)',
+    date: '16 Agustus – 13 Oktober 2025',
+  },
+  {
+    title: 'Close Registration Pelatihan dan Seminar',
+    date: 'Sabtu, 6 September 2025',
+  },
+  {
+    title: 'Opening Ceremony IT Festival 2025',
+    date: 'Selasa, 16 September 2025',
+  },
+  {
+    title: 'Pelaksanaan Seminar & Talkshow',
+    date: 'Selasa, 16 September 2025',
+  },
+  {
+    title: 'Pelatihan Android & Web',
+    date: 'Rabu – Sabtu, 17 – 20 September 2025',
+  },
+  {
+    title: 'Close Registration Lomba',
+    date: 'Selasa, 30 September 2025',
+  },
+  {
+    title: 'Pelaksanaan Technical Meeting Lomba Web Development, Poster Design, Mobile Legends, dan Animasi',
+    date: "Jum'at, 3 Oktober 2025",
+  },
+  {
+    title: 'Lomba Mobile Legends',
+    date: 'Sabtu, 4 Oktober 2025',
+  },
+  {
+    title: 'Batas Akhir Pengumpulan Karya Lomba',
+    date: 'Senin, 13 Oktober 2025',
+  },
+  {
+    title: 'Seleksi Karya Lomba Web Development',
+    date: 'Selasa - Rabu, 14 - 15 Oktober 2025',
+  },
+  {
+    title: 'Penjurian Lomba (Animasi, Poster Design, dan Web Development)',
+    date: 'Kamis, 16 Oktober 2025',
+  },
+  {
+    title: 'Closing Ceremony IT Festival 2025 & Pengumuman Pemenang',
+    date: 'Senin, 20 Oktober 2025',
+  },
+];
 
 /**
  * Komponen TimelineItem
