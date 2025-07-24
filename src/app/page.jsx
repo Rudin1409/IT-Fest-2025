@@ -405,8 +405,20 @@ export default function Home() {
         <section id="supported-by" className="py-20 px-4">
             <div className="container mx-auto text-center">
                 <h2 className="text-4xl font-headline font-bold mb-12">SUPPORTED BY</h2>
-                <Image src="https://placehold.co/300x150.png" alt="Universitas Teknologi Indonesia" width={300} height={150} className="mx-auto" data-ai-hint="university logo" />
-                 <p className="text-2xl font-headline font-bold text-primary mt-4">UNIVERSITAS TEKNOLOGI INDONESIA</p>
+                <div className="grid md:grid-cols-3 gap-12 items-start justify-center">
+                    <div className="flex flex-col items-center gap-4">
+                        <Image src="https://placehold.co/300x150.png" alt="Politeknik Negeri Sriwijaya" width={300} height={150} className="mx-auto" data-ai-hint="university logo" />
+                        <p className="text-xl font-headline font-bold text-primary mt-4">Politeknik Negeri Sriwijaya</p>
+                    </div>
+                    <div className="flex flex-col items-center gap-4">
+                        <Image src="https://placehold.co/300x150.png" alt="Jurusan Manajemen Informatika" width={300} height={150} className="mx-auto" data-ai-hint="university logo" />
+                        <p className="text-xl font-headline font-bold text-primary mt-4">Jurusan Manajemen Informatika</p>
+                    </div>
+                    <div className="flex flex-col items-center gap-4">
+                        <Image src="https://placehold.co/300x150.png" alt="Himpunan Mahasiswa Jurusan Manajemen Informatika" width={300} height={150} className="mx-auto" data-ai-hint="organization logo" />
+                        <p className="text-xl font-headline font-bold text-primary mt-4 text-center">Himpunan Mahasiswa Jurusan Manajemen Informatika</p>
+                    </div>
+                </div>
             </div>
         </section>
 
