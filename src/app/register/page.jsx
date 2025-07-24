@@ -99,8 +99,8 @@ export default function RegisterPage() {
         <Section title="Kompetisi" icon={<Award size={32} />}>
             <RegistrationCard title="Mobile Legends" description="Adu strategi dan kekompakan tim dalam turnamen e-sport paling bergengsi." icon={<Award size={24} />} />
             <RegistrationCard title="Poster Design" description="Tuangkan kreativitas tanpa batas dalam kompetisi desain poster yang inovatif." icon={<Award size={24} />} />
-            <RegistrationCard title="Web Design" description="Rancang dan bangun tampilan web yang fungsional dan memukau." icon={<Award size={24} />} />
-            <RegistrationCard title="UI/UX" description="Ciptakan pengalaman pengguna yang intuitif dan menarik dalam tantangan UI/UX." icon={<Award size={24} />} />
+            <RegistrationCard title="E-Goverment" description="Kompetisi membuat solusi inovatif untuk pemerintahan digital." icon={<Award size={24} />} />
+            <RegistrationCard title="Lomba Cipta Inovasi" description="Ciptakan dan presentasikan inovasi teknologi kreatifmu." icon={<Award size={24} />} />
         </Section>
         
         <div className="px-4">

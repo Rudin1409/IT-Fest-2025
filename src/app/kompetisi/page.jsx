@@ -155,16 +155,16 @@ export default function KompetisiPage() {
                 </CarouselItem>
                 <CarouselItem className="md:basis-1/2 lg:basis-1/3">
                   <CompetitionCard
-                    title="Web Design"
+                    title="E-Goverment"
                     image="https://placehold.co/400x400.png"
-                    hint="coding character"
+                    hint="government building"
                   />
                 </CarouselItem>
                  <CarouselItem className="md:basis-1/2 lg:basis-1/3">
                   <CompetitionCard
-                    title="UI/UX"
+                    title="Lomba Cipta Inovasi"
                     image="https://placehold.co/400x400.png"
-                    hint="design character"
+                    hint="innovation lightbulb"
                   />
                 </CarouselItem>
               </CarouselContent>
