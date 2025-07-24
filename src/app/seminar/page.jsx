@@ -7,10 +7,10 @@ import { Header } from '@/components/layout/header';
 import { Footer } from '@/components/layout/footer';
 import { User } from 'lucide-react';
 
-const GuestSpeakerCard = ({ image, name, title, topic, date, hint, speakerLabel = "Guest Star :" }) => (
+const GuestSpeakerCard = ({ image, name, title, topic, date, hint, speakerLabel = "Guest Star :", imagePosition = 'left' }) => (
   <Card className="bg-card/80 backdrop-blur-sm border-primary/10 hover:border-primary transition-all duration-300 transform hover:scale-105 hover:shadow-2xl hover:shadow-primary/20 overflow-hidden w-full">
     <div className="grid md:grid-cols-3 items-center">
-      <div className="relative h-96 md:h-full min-h-[300px]">
+      <div className={`relative h-96 md:h-full min-h-[300px] ${imagePosition === 'right' ? 'md:order-last' : ''}`}>
         <Image src={image} alt={name} fill className="object-cover" data-ai-hint={hint} />
       </div>
       <div className="md:col-span-2 p-8 text-left">
@@ -58,6 +58,7 @@ export default function SeminarPage() {
                 date="16 September 2025 | 14.45 WIB"
                 image="https://placehold.co/400x600.png"
                 hint="man content creator"
+                imagePosition="left"
               />
               <GuestSpeakerCard
                 name="Nabila Carissa"
@@ -67,6 +68,7 @@ export default function SeminarPage() {
                 date="16 September 2025 | 13.45 WIB"
                 image="https://placehold.co/400x600.png"
                 hint="woman influencer"
+                imagePosition="right"
               />
             </div>
           </div>
