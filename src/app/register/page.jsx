@@ -1,3 +1,4 @@
+
 'use client';
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
@@ -28,6 +29,22 @@ const Section = ({ title, children, icon }) => (
             </div>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                 {children}
+            </div>
+        </div>
+    </section>
+);
+
+const SeminarSection = ({ title, children, icon }) => (
+    <section className="py-12">
+        <div className="container mx-auto">
+            <div className="flex items-center justify-center gap-4 mb-12">
+                <div className="text-primary">{icon}</div>
+                <h2 className="text-4xl font-headline font-bold text-center">{title}</h2>
+            </div>
+            <div className="flex justify-center">
+                <div className="w-full md:w-2/3 lg:w-1/3">
+                 {children}
+                </div>
             </div>
         </div>
     </section>
@@ -69,9 +86,9 @@ export default function RegisterPage() {
             <div className="border-t border-primary/20 container mx-auto"></div>
         </div>
 
-        <Section title="Seminar" icon={<Mic size={32} />}>
+        <SeminarSection title="Seminar" icon={<Mic size={32} />}>
            <RegistrationCard title="Seminar Teknologi" description="Dapatkan wawasan terbaru dari para pembicara ahli di industri teknologi." icon={<Mic size={24} />} />
-        </Section>
+        </SeminarSection>
 
       </main>
       <Footer />
