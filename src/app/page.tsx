@@ -5,7 +5,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
-import { Code, Gamepad2, Mic, Palette, Users } from 'lucide-react';
+import { Code, Gamepad2, Mic, Palette } from 'lucide-react';
 import { useForm } from 'react-hook-form';
 import { z } from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';
@@ -135,7 +135,7 @@ export default function Home() {
             </h2>
              <p className="text-2xl md:text-4xl font-headline font-bold text-primary mb-8">THE BIGGEST IT FESTIVAL</p>
             <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto mb-10">
-              Join us for the most exciting IT festival of the year. Explore the latest trends in technology, compete in challenging competitions, and connect with industry experts.
+            IT-FEST 2025 adalah acara utama yang menyatukan mahasiswa, profesional, dan penggemar teknologi dari seluruh dunia. Misi kami adalah untuk mendorong inovasi, kolaborasi, dan pembelajaran di bidang teknologi informasi yang terus berkembang.
             </p>
             <div className="flex justify-center gap-4">
                 <Button size="lg" className="font-bold text-lg px-10 py-6">
@@ -154,7 +154,7 @@ export default function Home() {
                     <h2 className="text-4xl font-headline font-bold mb-4">ABOUT US</h2>
                     <h3 className="text-2xl font-bold text-primary mb-6">The Biggest IT Festival in 2025</h3>
                     <p className="text-muted-foreground text-lg leading-relaxed">
-                        IT-FEST 2025 is a premier event that brings together students, professionals, and technology enthusiasts from around the world. Our mission is to foster innovation, collaboration, and learning in the ever-evolving field of information technology. With a wide range of events, competitions, and talks, IT-FEST 2025 is the perfect platform to showcase your skills, learn from the best, and network with like-minded individuals.
+                    IT-FEST 2025 adalah acara utama yang menyatukan mahasiswa, profesional, dan penggemar teknologi dari seluruh dunia. Misi kami adalah untuk mendorong inovasi, kolaborasi, dan pembelajaran di bidang teknologi informasi yang terus berkembang. Dengan berbagai acara, kompetisi, dan seminar, IT-FEST 2025 adalah platform yang sempurna untuk menunjukkan keahlian Anda, belajar dari yang terbaik, dan berjejaring dengan individu yang berpikiran sama.
                     </p>
                 </div>
                 <div className="relative h-96 rounded-lg overflow-hidden shadow-2xl shadow-primary/20">
@@ -171,22 +171,22 @@ export default function Home() {
               <EventCard 
                 icon={<Mic size={24} />} 
                 title="Webinar" 
-                description="Gain insights from industry leaders and experts on the latest technology trends."
+                description="Dapatkan wawasan dari para pemimpin industri dan pakar tentang tren teknologi terkini."
               />
               <EventCard 
                 icon={<Code size={24} />} 
-                title="Coding Competition" 
-                description="Showcase your programming skills and solve real-world problems in our coding competition."
+                title="Kompetisi Coding" 
+                description="Tunjukkan keahlian pemrograman Anda dan selesaikan masalah dunia nyata dalam kompetisi coding kami."
               />
               <EventCard 
                 icon={<Palette size={24} />} 
-                title="UI/UX Competition" 
-                description="Design innovative and user-friendly interfaces in our UI/UX competition."
+                title="Kompetisi UI/UX" 
+                description="Rancang antarmuka yang inovatif dan ramah pengguna dalam kompetisi UI/UX kami."
               />
               <EventCard 
                 icon={<Gamepad2 size={24} />} 
-                title="E-Sport Competition" 
-                description="Compete with the best gamers and prove your skills in our e-sport tournament."
+                title="Kompetisi E-Sport" 
+                description="Bersaing dengan para gamer terbaik dan buktikan keahlian Anda di turnamen e-sport kami."
               />
             </div>
           </div>
@@ -199,27 +199,27 @@ export default function Home() {
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
               <SpeakerCard 
                 image="https://placehold.co/400x600.png" 
-                name="Dr. Evelyn Reed"
-                title="Lead AI Architect"
-                hint="woman scientist"
+                name="Dr. Aris Setiawan"
+                title="Pakar Kecerdasan Buatan"
+                hint="man scientist"
               />
               <SpeakerCard 
                 image="https://placehold.co/400x600.png" 
-                name="Jax 'Voltage' Miller"
-                title="Pro Overclocker"
+                name="Budi Hartono"
+                title="Analis Keamanan Siber"
                 hint="man engineer"
               />
               <SpeakerCard 
                 image="https://placehold.co/400x600.png" 
-                name="Kenji Tanaka"
-                title="Cybersecurity Futurist"
-                hint="man cyberpunk"
+                name="Citra Lestari"
+                title="Pengembang Blockchain"
+                hint="woman developer"
               />
               <SpeakerCard 
                 image="https://placehold.co/400x600.png" 
-                name="Anya Sharma"
-                title="Indie Game Developer"
-                hint="woman gamer"
+                name="Dewi Anggraini"
+                title="Desainer UI/UX"
+                hint="woman designer"
               />
             </div>
           </div>
@@ -236,3 +236,5 @@ export default function Home() {
     </div>
   );
 }
+
+    
