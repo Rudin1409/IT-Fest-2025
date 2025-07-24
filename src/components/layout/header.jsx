@@ -1,4 +1,3 @@
-
 'use client';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
@@ -39,7 +38,9 @@ export const Header = () => {
             {link.label}
           </Link>
         ))}
-        <Button className="font-bold shadow-lg shadow-primary/20 hover:shadow-primary/40 transition-shadow ml-4">Register</Button>
+        <Link href="/register">
+          <Button className="font-bold shadow-lg shadow-primary/20 hover:shadow-primary/40 transition-shadow ml-4">Register</Button>
+        </Link>
       </nav>
       <div className="md:hidden">
         <Sheet>
@@ -63,7 +64,9 @@ export const Header = () => {
                   {link.label}
                 </Link>
               ))}
-              <Button className="font-bold shadow-lg shadow-primary/20 hover:shadow-primary/40 transition-shadow">Register</Button>
+              <Link href="/register">
+                <Button className="font-bold shadow-lg shadow-primary/20 hover:shadow-primary/40 transition-shadow w-full">Register</Button>
+              </Link>
             </nav>
           </SheetContent>
         </Sheet>
