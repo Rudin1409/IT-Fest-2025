@@ -10,8 +10,21 @@ import React from 'react';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
 
-const TrainingCard = ({ title, image, hint }) => (
-  <Card className="bg-card/80 backdrop-blur-sm border-primary/10 hover:border-primary transition-all duration-300 transform hover:scale-105 hover:shadow-2xl hover:shadow-primary/20 overflow-hidden text-center">
+const TrainingCategoryCard = ({ title, image, hint }) => (
+    <Card className="bg-card/80 backdrop-blur-sm border-primary/10 hover:border-primary transition-all duration-300 transform hover:scale-105 hover:shadow-2xl hover:shadow-primary/20 overflow-hidden text-center">
+      <div className="relative h-80 w-full">
+        <Image src={image} alt={title} fill className="object-contain p-4" data-ai-hint={hint} />
+      </div>
+      <CardContent className="p-4 space-y-4">
+        <div className='border-t border-primary/50 pt-4'>
+          <h3 className="font-headline text-xl">{title}</h3>
+        </div>
+      </CardContent>
+    </Card>
+  );
+
+const ClassCard = ({ title, image, hint }) => (
+    <Card className="bg-card/80 backdrop-blur-sm border-primary/10 hover:border-primary transition-all duration-300 transform hover:scale-105 hover:shadow-2xl hover:shadow-primary/20 overflow-hidden text-center">
     <div className="relative h-80 w-full">
       <Image src={image} alt={title} fill className="object-contain p-4" data-ai-hint={hint} />
     </div>
@@ -25,7 +38,7 @@ const TrainingCard = ({ title, image, hint }) => (
       </div>
     </CardContent>
   </Card>
-);
+)
 
 const timelineData = [
     {
@@ -104,9 +117,6 @@ export default function PelatihanPage() {
         <section className="py-20 px-4 bg-secondary/50">
           <div className="container mx-auto">
             <h2 className="text-4xl font-headline font-bold text-center mb-12">KATEGORI PELATIHAN</h2>
-            <div className='flex items-center justify-center'>
-              <Button className='mb-8'>Daftar Pelatihan</Button>
-            </div>
             <Carousel
               opts={{
                 align: "start",
@@ -115,35 +125,21 @@ export default function PelatihanPage() {
               plugins={[autoplayPlugin.current]}
               onMouseEnter={() => autoplayPlugin.current.stop()}
               onMouseLeave={() => autoplayPlugin.current.play()}
-              className="w-full max-w-5xl mx-auto"
+              className="w-full max-w-2xl mx-auto"
             >
               <CarouselContent>
-                <CarouselItem className="md:basis-1/2 lg:basis-1/3">
-                  <TrainingCard
-                    title="Full-Stack Web"
-                    image="https://placehold.co/400x400.png"
-                    hint="web development"
-                  />
-                </CarouselItem>
-                <CarouselItem className="md:basis-1/2 lg:basis-1/3">
-                  <TrainingCard
-                    title="Data Science"
-                    image="https://placehold.co/400x400.png"
-                    hint="data analytics"
-                  />
-                </CarouselItem>
-                <CarouselItem className="md:basis-1/2 lg:basis-1/3">
-                  <TrainingCard
-                    title="Mobile Development"
+                <CarouselItem className="md:basis-1/2">
+                  <TrainingCategoryCard
+                    title="Android Development"
                     image="https://placehold.co/400x400.png"
                     hint="mobile app"
                   />
                 </CarouselItem>
-                 <CarouselItem className="md:basis-1/2 lg:basis-1/3">
-                  <TrainingCard
-                    title="Cyber Security"
+                <CarouselItem className="md:basis-1/2">
+                  <TrainingCategoryCard
+                    title="Full-Stack Web"
                     image="https://placehold.co/400x400.png"
-                    hint="cyber security"
+                    hint="web development"
                   />
                 </CarouselItem>
               </CarouselContent>
@@ -152,6 +148,48 @@ export default function PelatihanPage() {
             </Carousel>
           </div>
         </section>
+
+        <section className="py-20 px-4">
+            <div className="container mx-auto">
+              <h2 className="text-4xl font-headline font-bold text-center mb-12">DAFTAR KELAS</h2>
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                  <ClassCard
+                    title="Full-Stack Web"
+                    image="https://placehold.co/400x400.png"
+                    hint="web development"
+                  />
+                  <ClassCard
+                    title="Data Science"
+                    image="https://placehold.co/400x400.png"
+                    hint="data analytics"
+                  />
+                  <ClassCard
+                    title="Mobile Development"
+                    image="https://placehold.co/400x400.png"
+                    hint="mobile app"
+                  />
+                  <ClassCard
+                    title="Cyber Security"
+                    image="https://placehold.co/400x400.png"
+                    hint="cyber security"
+                  />
+                   <ClassCard
+                    title="UI/UX Design"
+                    image="https://placehold.co/400x400.png"
+                    hint="design interface"
+                  />
+                   <ClassCard
+                    title="Cloud Computing"
+                    image="https://placehold.co/400x400.png"
+                    hint="cloud infrastructure"
+                  />
+              </div>
+              <div className='flex items-center justify-center mt-12'>
+                <Button>Lihat Semua Kelas</Button>
+            </div>
+            </div>
+        </section>
+
       </main>
       <Footer />
     </div>
