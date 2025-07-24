@@ -5,12 +5,14 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
-import { Award, Code, Gamepad2, Mic, Palette, Users } from 'lucide-react';
+import { Code, Gamepad2, Mic, Palette, Users } from 'lucide-react';
 import { useForm } from 'react-hook-form';
 import { z } from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { Form, FormField, FormItem, FormControl, FormMessage, FormLabel } from '@/components/ui/form';
 import { useToast } from '@/hooks/use-toast';
+import { Header } from '@/components/layout/header';
+import { Footer } from '@/components/layout/footer';
 
 
 const contactSchema = z.object({
@@ -20,25 +22,6 @@ const contactSchema = z.object({
 });
 
 type ContactFormValues = z.infer<typeof contactSchema>;
-
-
-const Header = () => (
-  <header className="fixed top-0 left-0 right-0 z-50 flex justify-between items-center py-3 px-6 bg-background/50 backdrop-blur-lg border-b border-border/50">
-    <h1 className="text-xl font-headline font-bold text-primary tracking-widest">IT-FEST 2025</h1>
-    <nav>
-      <Button className="font-bold shadow-lg shadow-primary/20 hover:shadow-primary/40 transition-shadow">Register</Button>
-    </nav>
-  </header>
-);
-
-const Footer = () => (
-  <footer className="w-full p-8 mt-24 bg-secondary text-secondary-foreground border-t border-border">
-    <div className="container mx-auto text-center text-muted-foreground">
-      <p className="font-headline text-lg text-primary mb-2">IT-FEST 2025</p>
-      <p>&copy; 2025 IT-FEST. All rights reserved.</p>
-    </div>
-  </footer>
-);
 
 const EventCard = ({ icon, title, description }: { icon: React.ReactNode, title: string, description: string }) => (
   <Card className="bg-card/80 backdrop-blur-sm border-primary/10 hover:border-primary transition-all duration-300 transform hover:scale-105 hover:shadow-2xl hover:shadow-primary/20">
@@ -253,5 +236,3 @@ export default function Home() {
     </div>
   );
 }
-
-    
