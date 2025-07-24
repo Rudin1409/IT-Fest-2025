@@ -12,6 +12,8 @@ import { useToast } from '@/hooks/use-toast';
 import { Header } from '@/components/layout/header';
 import { Footer } from '@/components/layout/footer';
 import React, { useState, useEffect } from 'react';
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel"
+import Autoplay from "embla-carousel-autoplay"
 
 const EventCard = ({ icon, title, description }) => (
   <Card className="bg-card/80 backdrop-blur-sm border-primary/10 hover:border-primary transition-all duration-300 transform hover:scale-105 hover:shadow-2xl hover:shadow-primary/20">
@@ -250,6 +252,10 @@ const CountdownTimer = () => {
 
 
 export default function Home() {
+  const autoplayPlugin = React.useRef(
+    Autoplay({ delay: 2000, stopOnInteraction: true })
+  );
+
   return (
     <div className="flex flex-col min-h-screen bg-background text-foreground">
       <Header />
@@ -376,23 +382,56 @@ export default function Home() {
         <section id="sponsors" className="py-20 px-4 bg-secondary/50">
           <div className="container mx-auto text-center">
             <h2 className="text-4xl font-headline font-bold mb-12">SPONSORS</h2>
-            <div className="flex justify-center items-center flex-wrap gap-12">
-              <Image src="https://placehold.co/200x100.png" alt="Sponsor 1" width={200} height={100} data-ai-hint="company logo" />
-              <Image src="https://placehold.co/200x100.png" alt="Sponsor 2" width={200} height={100} data-ai-hint="tech company" />
-              <Image src="https://placehold.co/200x100.png" alt="Sponsor 3" width={200} height={100} data-ai-hint="startup logo" />
-              <Image src="https://placehold.co/200x100.png" alt="Sponsor 4" width={200} height={100} data-ai-hint="software company" />
-            </div>
+            <Carousel
+              opts={{
+                align: "start",
+                loop: true,
+              }}
+              plugins={[autoplayPlugin.current]}
+              onMouseEnter={() => autoplayPlugin.current.stop()}
+              onMouseLeave={() => autoplayPlugin.current.play()}
+              className="w-full max-w-4xl mx-auto"
+            >
+              <CarouselContent>
+                {Array.from({ length: 5 }).map((_, index) => (
+                  <CarouselItem key={index} className="basis-1/2 md:basis-1/3 lg:basis-1/4">
+                    <div className="p-1">
+                      <Image src="https://placehold.co/200x100.png" alt={`Sponsor ${index + 1}`} width={200} height={100} data-ai-hint="company logo" />
+                    </div>
+                  </CarouselItem>
+                ))}
+              </CarouselContent>
+              <CarouselPrevious />
+              <CarouselNext />
+            </Carousel>
           </div>
         </section>
 
         <section id="media-partners" className="py-20 px-4">
           <div className="container mx-auto text-center">
             <h2 className="text-4xl font-headline font-bold mb-12">MEDIA PARTNERS</h2>
-            <div className="flex justify-center items-center flex-wrap gap-12">
-              <Image src="https://placehold.co/200x100.png" alt="Media Partner 1" width={200} height={100} data-ai-hint="media logo" />
-              <Image src="https://placehold.co/200x100.png" alt="Media Partner 2" width={200} height={100} data-ai-hint="news channel" />
-              <Image src="https://placehold.co/200x100.png" alt="Media Partner 3" width={200} height={100} data-ai-hint="tech blog" />
-            </div>
+            <Carousel
+              opts={{
+                align: "start",
+                loop: true,
+              }}
+              plugins={[autoplayPlugin.current]}
+              onMouseEnter={() => autoplayPlugin.current.stop()}
+              onMouseLeave={() => autoplayPlugin.current.play()}
+              className="w-full max-w-4xl mx-auto"
+            >
+              <CarouselContent>
+                {Array.from({ length: 5 }).map((_, index) => (
+                  <CarouselItem key={index} className="basis-1/2 md:basis-1/3 lg:basis-1/4">
+                    <div className="p-1">
+                      <Image src="https://placehold.co/200x100.png" alt={`Media Partner ${index + 1}`} width={200} height={100} data-ai-hint="media logo" />
+                    </div>
+                  </CarouselItem>
+                ))}
+              </CarouselContent>
+              <CarouselPrevious />
+              <CarouselNext />
+            </Carousel>
           </div>
         </section>
 
