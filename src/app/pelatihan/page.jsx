@@ -147,8 +147,6 @@ export default function PelatihanPage() {
                   />
                 </CarouselItem>
               </CarouselContent>
-              <CarouselPrevious />
-              <CarouselNext />
             </Carousel>
           </div>
         </section>
