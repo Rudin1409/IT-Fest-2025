@@ -127,7 +127,7 @@ const ContactForm = () => {
 
 const CountdownTimer = () => {
   const calculateTimeLeft = () => {
-    const difference = +new Date('2025-07-01T00:00:00') - +new Date();
+    const difference = +new Date('2025-10-20T00:00:00') - +new Date();
     let timeLeft = {};
 
     if (difference > 0) {
