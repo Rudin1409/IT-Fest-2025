@@ -3,12 +3,7 @@
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Input } from '@/components/ui/input';
-import { Textarea } from '@/components/ui/textarea';
 import { Code, Gamepad2, Mic, Palette } from 'lucide-react';
-import { useForm } from 'react-hook-form';
-import { Form, FormField, FormItem, FormControl, FormMessage, FormLabel } from '@/components/ui/form';
-import { useToast } from '@/hooks/use-toast';
 import { Header } from '@/components/layout/header';
 import { Footer } from '@/components/layout/footer';
 import React, { useState, useEffect } from 'react';
@@ -124,80 +119,6 @@ const TimelineItem = ({ event, index }) => {
       </div>
     );
   };
-
-const ContactForm = () => {
-    const { toast } = useToast();
-    const form = useForm({
-        defaultValues: {
-            name: '',
-            email: '',
-            message: '',
-        },
-    });
-
-    const onSubmit = (data) => {
-        console.log(data);
-        toast({
-            title: "Message Sent!",
-            description: "Thank you for contacting us. We will get back to you shortly.",
-        });
-        form.reset();
-    };
-    
-    return (
-        <Card className="bg-card/80 backdrop-blur-sm p-8 border-primary/20">
-            <CardHeader>
-                <CardTitle className="text-3xl font-headline text-center">Contact Us</CardTitle>
-            </CardHeader>
-            <CardContent>
-                <Form {...form}>
-                    <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
-                        <FormField
-                            control={form.control}
-                            name="name"
-                            render={({ field }) => (
-                                <FormItem>
-                                    <FormLabel>Name</FormLabel>
-                                    <FormControl>
-                                        <Input placeholder="Your Name" {...field} />
-                                    </FormControl>
-                                    <FormMessage />
-                                </FormItem>
-                            )}
-                        />
-                        <FormField
-                            control={form.control}
-                            name="email"
-                            render={({ field }) => (
-                                <FormItem>
-                                    <FormLabel>Email</FormLabel>
-                                    <FormControl>
-                                        <Input placeholder="Your Email" {...field} />
-                                    </FormControl>
-                                    <FormMessage />
-                                </FormItem>
-                            )}
-                        />
-                        <FormField
-                            control={form.control}
-                            name="message"
-                            render={({ field }) => (
-                                <FormItem>
-                                    <FormLabel>Message</FormLabel>
-                                    <FormControl>
-                                        <Textarea placeholder="Your Message" {...field} />
-                                    </FormControl>
-                                    <FormMessage />
-                                </FormItem>
-                            )}
-                        />
-                        <Button type="submit" className="w-full font-bold">Send Message</Button>
-                    </form>
-                </Form>
-            </CardContent>
-        </Card>
-    )
-}
 
 const CountdownTimer = () => {
   const calculateTimeLeft = () => {
@@ -477,12 +398,6 @@ export default function Home() {
               <CarouselNext />
             </Carousel>
           </div>
-        </section>
-
-        <section id="contact" className="py-20 px-4 bg-secondary/50">
-            <div className="container mx-auto max-w-2xl">
-                <ContactForm />
-            </div>
         </section>
 
       </main>
