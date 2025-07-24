@@ -31,15 +31,22 @@ export default function SeminarPage() {
     <div className="flex flex-col min-h-screen bg-background text-foreground">
       <Header />
       <main className="flex-grow pt-24">
-        <section className="text-center py-20 px-4 relative overflow-hidden">
-          <div className="container mx-auto relative">
-            <h2 className="text-4xl md:text-6xl font-black font-headline text-transparent bg-clip-text bg-gradient-to-b from-white to-accent mb-4">
-              SEMINAR
-            </h2>
-            <p className="text-2xl md:text-4xl font-headline font-bold text-primary mb-8">IT-FEST 2025</p>
-            <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">
-              Ikuti seminar kami dan dapatkan wawasan berharga dari para ahli di bidang teknologi.
-            </p>
+        <section className="py-20 px-4 relative overflow-hidden">
+        <div className="container mx-auto">
+            <div className="grid md:grid-cols-2 gap-12 items-center">
+              <div className="text-center md:text-left">
+                <h2 className="text-4xl md:text-6xl font-black font-headline text-transparent bg-clip-text bg-gradient-to-b from-white to-accent mb-4">
+                  SEMINAR
+                </h2>
+                <p className="text-2xl md:text-4xl font-headline font-bold text-primary mb-8">IT-FEST 2025</p>
+                <p className="text-lg md:text-xl text-muted-foreground max-w-xl">
+                  Ikuti seminar kami dan dapatkan wawasan berharga dari para ahli di bidang teknologi.
+                </p>
+              </div>
+              <div className="relative h-80 w-full rounded-lg overflow-hidden shadow-2xl shadow-primary/20">
+                <Image src="https://placehold.co/600x400.png" alt="Seminar IT Fest" fill className="object-cover" data-ai-hint="conference presentation" />
+              </div>
+            </div>
           </div>
         </section>
 
