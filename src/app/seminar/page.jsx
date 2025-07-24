@@ -73,6 +73,13 @@ export default function SeminarPage() {
             </div>
           </div>
         </section>
+
+        <section className="py-10 px-4 text-center">
+            <Button size="lg" className="font-bold text-lg px-10 py-6">
+                Daftar Seminar
+            </Button>
+        </section>
+
       </main>
       <Footer />
     </div>
