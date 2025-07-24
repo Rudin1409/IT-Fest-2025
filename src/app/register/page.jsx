@@ -8,7 +8,7 @@ import { Footer } from '@/components/layout/footer';
 import { Award, Code, Mic, Users } from 'lucide-react';
 
 const RegistrationCard = ({ title, description, icon }) => (
-    <Card className="bg-card/80 backdrop-blur-sm border-primary/10 hover:border-primary transition-all duration-300 transform hover:scale-105 hover:shadow-2xl hover:shadow-primary/20 overflow-hidden text-left">
+    <Card className="bg-card/80 backdrop-blur-sm border-primary/10 hover:border-primary transition-all duration-300 transform hover:scale-105 hover:shadow-2xl hover:shadow-primary/20 overflow-hidden text-left w-full md:w-auto md:max-w-sm">
       <CardContent className="p-6 space-y-4">
         <div className="flex items-center gap-4">
             <div className="p-3 rounded-md bg-primary/20 text-primary">{icon}</div>
@@ -27,7 +27,7 @@ const Section = ({ title, children, icon }) => (
                 <div className="text-primary">{icon}</div>
                 <h2 className="text-4xl font-headline font-bold text-center">{title}</h2>
             </div>
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="flex flex-wrap justify-center gap-8">
                 {children}
             </div>
         </div>
