@@ -7,23 +7,12 @@ import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Code, Gamepad2, Mic, Palette, Calendar } from 'lucide-react';
 import { useForm } from 'react-hook-form';
-import { z } from 'zod';
-import { zodResolver } from '@hookform/resolvers/zod';
 import { Form, FormField, FormItem, FormControl, FormMessage, FormLabel } from '@/components/ui/form';
 import { useToast } from '@/hooks/use-toast';
 import { Header } from '@/components/layout/header';
 import { Footer } from '@/components/layout/footer';
 
-
-const contactSchema = z.object({
-  name: z.string().min(1, { message: 'Name is required' }),
-  email: z.string().email({ message: 'Invalid email address' }),
-  message: z.string().min(1, { message: 'Message is required' }),
-});
-
-type ContactFormValues = z.infer<typeof contactSchema>;
-
-const EventCard = ({ icon, title, description }: { icon: React.ReactNode, title: string, description: string }) => (
+const EventCard = ({ icon, title, description }) => (
   <Card className="bg-card/80 backdrop-blur-sm border-primary/10 hover:border-primary transition-all duration-300 transform hover:scale-105 hover:shadow-2xl hover:shadow-primary/20">
     <CardHeader className="flex flex-row items-center gap-4">
       <div className="p-3 rounded-md bg-primary/20 text-primary">{icon}</div>
@@ -35,7 +24,7 @@ const EventCard = ({ icon, title, description }: { icon: React.ReactNode, title:
   </Card>
 );
 
-const SpeakerCard = ({ image, name, title, hint }: { image: string, name: string, title: string, hint: string }) => (
+const SpeakerCard = ({ image, name, title, hint }) => (
   <Card className="text-center bg-card/80 backdrop-blur-sm border-primary/10 hover:border-primary transition-all duration-300 transform hover:scale-105 hover:shadow-2xl hover:shadow-primary/20 overflow-hidden">
     <div className="relative h-72 w-full">
       <Image src={image} alt={name} fill className="object-cover" data-ai-hint={hint} />
@@ -47,7 +36,7 @@ const SpeakerCard = ({ image, name, title, hint }: { image: string, name: string
   </Card>
 );
 
-const TimelineItem = ({ date, title }: { date: string, title: string }) => (
+const TimelineItem = ({ date, title }) => (
     <div className="flex items-center w-full my-6">
       <div className="flex-shrink-0">
         <div className="flex items-center justify-center h-16 w-16 rounded-full bg-primary/20 border-2 border-primary text-primary">
@@ -63,8 +52,7 @@ const TimelineItem = ({ date, title }: { date: string, title: string }) => (
 
 const ContactForm = () => {
     const { toast } = useToast();
-    const form = useForm<ContactFormValues>({
-        resolver: zodResolver(contactSchema),
+    const form = useForm({
         defaultValues: {
             name: '',
             email: '',
@@ -72,7 +60,7 @@ const ContactForm = () => {
         },
     });
 
-    const onSubmit = (data: ContactFormValues) => {
+    const onSubmit = (data) => {
         console.log(data);
         toast({
             title: "Message Sent!",

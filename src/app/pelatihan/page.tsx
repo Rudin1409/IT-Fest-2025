@@ -1,3 +1,4 @@
+
 'use client';
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
@@ -5,7 +6,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Header } from '@/components/layout/header';
 import { Footer } from '@/components/layout/footer';
 
-const TrainingCard = ({ title, description, image, hint }: { title: string, description: string, image: string, hint: string }) => (
+const TrainingCard = ({ title, description, image, hint }) => (
   <Card className="bg-card/80 backdrop-blur-sm border-primary/10 hover:border-primary transition-all duration-300 transform hover:scale-105 hover:shadow-2xl hover:shadow-primary/20 overflow-hidden">
     <div className="relative h-60 w-full">
       <Image src={image} alt={title} fill className="object-cover" data-ai-hint={hint} />

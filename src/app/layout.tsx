@@ -1,17 +1,15 @@
-import type {Metadata} from 'next';
+
 import './globals.css';
 import { Toaster } from "@/components/ui/toaster";
 
-export const metadata: Metadata = {
+export const metadata = {
   title: 'Valorant Tech Fest 2025',
   description: 'The future of technology and gaming, inspired by Valorant.',
 };
 
 export default function RootLayout({
   children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+}) {
   return (
     <html lang="en" className="dark">
       <head>
