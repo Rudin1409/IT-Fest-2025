@@ -29,20 +29,20 @@ const TrainingCategoryCard = ({ title, image, hint }) => (
 
 const ClassCard = ({ title, image, hint }) => (
     <Card className="bg-card/80 backdrop-blur-sm border-primary/10 hover:border-primary transition-all duration-300 transform hover:scale-105 hover:shadow-2xl hover:shadow-primary/20 overflow-hidden text-center">
-    <div className="relative h-80 w-full">
-      <Image src={image} alt={title} fill className="object-contain p-4" data-ai-hint={hint} />
-    </div>
-    <CardContent className="p-4 space-y-4">
-      <div className='border-t border-primary/50 pt-4'>
-        <h3 className="font-headline text-xl">{title}</h3>
+      <div className="relative h-80 w-full">
+        <Image src={image} alt={title} fill className="object-contain p-4" data-ai-hint={hint} />
       </div>
-      <div className="flex justify-around gap-2">
-        <Button variant="default" className="w-full">Daftar</Button>
-        <Button variant="outline" className="w-full">Silabus</Button>
-      </div>
-    </CardContent>
-  </Card>
-)
+      <CardContent className="p-4 space-y-4">
+        <div className='border-t border-primary/50 pt-4'>
+          <h3 className="font-headline text-xl">{title}</h3>
+        </div>
+        <div className="grid grid-cols-2 gap-2">
+          <Button variant="secondary">Kelas A</Button>
+          <Button variant="secondary">Kelas B</Button>
+        </div>
+      </CardContent>
+    </Card>
+  );
 
 const timelineData = [
     {
@@ -155,42 +155,19 @@ export default function PelatihanPage() {
 
         <section className="py-20 px-4">
             <div className="container mx-auto">
-              <h2 className="text-4xl font-headline font-bold text-center mb-12">DAFTAR KELAS</h2>
-              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <h2 className="text-4xl font-headline font-bold text-center mb-12">DAFTAR KELAS</h2>
+                <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8 max-w-4xl mx-auto">
                   <ClassCard
-                    title="Full-Stack Web"
+                    title="Kelas Android"
                     image="https://placehold.co/400x400.png"
-                    hint="web development"
-                  />
-                  <ClassCard
-                    title="Data Science"
-                    image="https://placehold.co/400x400.png"
-                    hint="data analytics"
+                    hint="android logo"
                   />
                   <ClassCard
-                    title="Mobile Development"
+                    title="Kelas Web Design"
                     image="https://placehold.co/400x400.png"
-                    hint="mobile app"
-                  />
-                  <ClassCard
-                    title="Cyber Security"
-                    image="https://placehold.co/400x400.png"
-                    hint="cyber security"
-                  />
-                   <ClassCard
-                    title="UI/UX Design"
-                    image="https://placehold.co/400x400.png"
-                    hint="design interface"
-                  />
-                   <ClassCard
-                    title="Cloud Computing"
-                    image="https://placehold.co/400x400.png"
-                    hint="cloud infrastructure"
+                    hint="vscode logo"
                   />
               </div>
-              <div className='flex items-center justify-center mt-12'>
-                <Button>Lihat Semua Kelas</Button>
-            </div>
             </div>
         </section>
 
