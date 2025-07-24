@@ -37,8 +37,8 @@ const ClassCard = ({ title, image, hint }) => (
           <h3 className="font-headline text-xl">{title}</h3>
         </div>
         <div className="grid grid-cols-2 gap-2">
-          <Button variant="secondary">Kelas A</Button>
-          <Button variant="secondary">Kelas B</Button>
+          <Button variant="default">Kelas A</Button>
+          <Button variant="default">Kelas B</Button>
         </div>
       </CardContent>
     </Card>
