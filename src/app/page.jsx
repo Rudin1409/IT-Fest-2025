@@ -223,6 +223,7 @@ const CountdownTimer = () => {
 
   useEffect(() => {
     setIsClient(true);
+    setTimeLeft(calculateTimeLeft());
     const timer = setInterval(() => {
       setTimeLeft(calculateTimeLeft());
     }, 1000);
@@ -250,6 +251,16 @@ const CountdownTimer = () => {
   );
 };
 
+const FloatingSquares = () => (
+  <div className="absolute inset-0 w-full h-full overflow-hidden z-0">
+    <ul className="squares">
+      {Array.from({ length: 10 }).map((_, i) => (
+        <li key={i}></li>
+      ))}
+    </ul>
+  </div>
+);
+
 
 export default function Home() {
   const autoplayPlugin = React.useRef(
@@ -261,7 +272,7 @@ export default function Home() {
       <Header />
       <main className="flex-grow pt-24">
         <section id="hero" className="text-center py-24 px-4 relative overflow-hidden">
-          <div className="absolute inset-0 bg-grid-slate-900/[0.04] bg-[bottom_1px_center] dark:bg-grid-slate-400/[0.05] dark:bg-bottom_1px_center"></div>
+          <FloatingSquares />
            <div className="container mx-auto relative">
             <h2 className="text-4xl md:text-6xl font-black font-headline text-transparent bg-clip-text bg-gradient-to-b from-white to-accent mb-4">
               WELCOME TO IT-FEST 2025
