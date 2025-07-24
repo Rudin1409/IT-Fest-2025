@@ -5,6 +5,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Header } from '@/components/layout/header';
 import { Footer } from '@/components/layout/footer';
+import { CalendarDays } from 'lucide-react';
 
 const CompetitionCard = ({ title, description, image, hint }) => (
   <Card className="bg-card/80 backdrop-blur-sm border-primary/10 hover:border-primary transition-all duration-300 transform hover:scale-105 hover:shadow-2xl hover:shadow-primary/20 overflow-hidden">
@@ -20,6 +21,49 @@ const CompetitionCard = ({ title, description, image, hint }) => (
     </CardContent>
   </Card>
 );
+
+const timelineData = [
+    {
+      title: 'Pembukaan Pendaftaran',
+      date: '15 Agustus - 29 September 2025',
+    },
+    {
+      title: 'Technical Meeting',
+      date: '27 - 28 September 2025',
+    },
+    {
+      title: 'Turnamen dan Penjurian',
+      date: '29 September - 6 Oktober 2025',
+    },
+    {
+      title: 'Pengumuman Pemenang',
+      date: '10 Oktober 2025',
+    },
+  ];
+
+const CompetitionTimeline = () => (
+    <section className="py-20 px-4">
+      <div className="container mx-auto text-center">
+        <h2 className="inline-block font-headline text-2xl font-bold border border-primary/50 rounded-lg px-6 py-3 mb-16">
+          Timeline Kompetisi
+        </h2>
+        <div className="relative">
+          <div className="hidden md:block absolute top-1/2 left-0 w-full h-0.5 bg-primary/30 -translate-y-1/2"></div>
+          <div className="grid md:grid-cols-4 gap-8">
+            {timelineData.map((item, index) => (
+              <div key={index} className="flex flex-col items-center text-center relative">
+                 <div className="relative z-10 flex items-center justify-center w-12 h-12 bg-card border-2 border-primary rounded-full mb-4">
+                    <CalendarDays className="w-6 h-6 text-primary" />
+                 </div>
+                 <h3 className="font-headline font-bold text-lg mb-1">{item.title}</h3>
+                 <p className="text-muted-foreground text-sm">{item.date}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
 
 export default function KompetisiPage() {
   return (
@@ -44,6 +88,8 @@ export default function KompetisiPage() {
             </div>
           </div>
         </section>
+
+        <CompetitionTimeline />
 
         <section className="py-20 px-4 bg-secondary/50">
           <div className="container mx-auto">
