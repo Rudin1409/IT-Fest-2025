@@ -317,11 +317,16 @@ export default function Home() {
           <div className="container mx-auto">
             <h2 className="text-4xl font-headline font-bold text-center mb-2">OUR EVENTS</h2>
             <p className="text-center text-primary text-lg mb-12">Check Our Best Events</p>
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 justify-center">
               <EventCard 
                 icon={<Mic size={24} />} 
                 title="Webinar" 
                 description="Dapatkan wawasan dari para pemimpin industri dan pakar tentang tren teknologi terkini."
+              />
+              <EventCard 
+                icon={<Code size={24} />} 
+                title="Pelatihan Web & Android" 
+                description="Tingkatkan keahlian teknis Anda dalam pengembangan web dan Android."
               />
               <EventCard 
                 icon={<Code size={24} />} 
@@ -330,8 +335,8 @@ export default function Home() {
               />
               <EventCard 
                 icon={<Palette size={24} />} 
-                title="Kompetisi UI/UX" 
-                description="Rancang antarmuka yang inovatif dan ramah pengguna dalam kompetisi UI/UX kami."
+                title="Kompetisi Desain" 
+                description="Rancang antarmuka yang inovatif dan ramah pengguna dalam kompetisi desain kami."
               />
               <EventCard 
                 icon={<Gamepad2 size={24} />} 
@@ -456,5 +461,3 @@ export default function Home() {
     </div>
   );
 }
-
-    
