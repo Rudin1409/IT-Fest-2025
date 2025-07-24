@@ -2,22 +2,27 @@
 'use client';
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Card, CardContent } from '@/components/ui/card';
 import { Header } from '@/components/layout/header';
 import { Footer } from '@/components/layout/footer';
 import { CalendarDays } from 'lucide-react';
+import React from 'react';
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
+import Autoplay from "embla-carousel-autoplay";
 
-const CompetitionCard = ({ title, description, image, hint }) => (
-  <Card className="bg-card/80 backdrop-blur-sm border-primary/10 hover:border-primary transition-all duration-300 transform hover:scale-105 hover:shadow-2xl hover:shadow-primary/20 overflow-hidden">
-    <div className="relative h-60 w-full">
-      <Image src={image} alt={title} fill className="object-cover" data-ai-hint={hint} />
+const CompetitionCard = ({ title, image, hint }) => (
+  <Card className="bg-card/80 backdrop-blur-sm border-primary/10 hover:border-primary transition-all duration-300 transform hover:scale-105 hover:shadow-2xl hover:shadow-primary/20 overflow-hidden text-center">
+    <div className="relative h-80 w-full">
+      <Image src={image} alt={title} fill className="object-contain p-4" data-ai-hint={hint} />
     </div>
-    <CardHeader>
-      <CardTitle className="font-headline text-2xl">{title}</CardTitle>
-    </CardHeader>
-    <CardContent>
-      <p className="text-muted-foreground mb-4">{description}</p>
-      <Button variant="outline">Learn More</Button>
+    <CardContent className="p-4 space-y-4">
+      <div className='border-t border-primary/50 pt-4'>
+        <h3 className="font-headline text-xl">{title}</h3>
+      </div>
+      <div className="flex justify-around gap-2">
+        <Button variant="default" className="w-full">Daftar</Button>
+        <Button variant="outline" className="w-full">Guide Book</Button>
+      </div>
     </CardContent>
   </Card>
 );
@@ -66,6 +71,10 @@ const CompetitionTimeline = () => (
   );
 
 export default function KompetisiPage() {
+  const autoplayPlugin = React.useRef(
+    Autoplay({ delay: 3000, stopOnInteraction: true })
+  );
+
   return (
     <div className="flex flex-col min-h-screen bg-background text-foreground">
       <Header />
@@ -94,32 +103,52 @@ export default function KompetisiPage() {
         <section className="py-20 px-4 bg-secondary/50">
           <div className="container mx-auto">
             <h2 className="text-4xl font-headline font-bold text-center mb-12">KATEGORI KOMPETISI</h2>
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-              <CompetitionCard
-                title="Webinar"
-                description="Dapatkan wawasan dari para pemimpin industri dan pakar tentang tren teknologi terkini."
-                image="https://placehold.co/600x400.png"
-                hint="online webinar"
-              />
-              <CompetitionCard
-                title="Kompetisi Coding"
-                description="Tunjukkan keahlian pemrograman Anda dan selesaikan masalah dunia nyata dalam kompetisi coding kami."
-                image="https://placehold.co/600x400.png"
-                hint="coding hackathon"
-              />
-              <CompetitionCard
-                title="Kompetisi UI/UX"
-                description="Rancang antarmuka yang inovatif dan ramah pengguna dalam kompetisi UI/UX kami."
-                image="https://placehold.co/600x400.png"
-                hint="design workshop"
-              />
-              <CompetitionCard
-                title="Kompetisi E-Sport"
-                description="Bersaing dengan para gamer terbaik dan buktikan keahlian Anda di turnamen e-sport kami."
-                image="https://placehold.co/600x400.png"
-                hint="esports tournament"
-              />
+            <div className='flex items-center justify-center'>
+              <Button className='mb-8'>Daftar Kompetisi</Button>
             </div>
+            <Carousel
+              opts={{
+                align: "start",
+                loop: true,
+              }}
+              plugins={[autoplayPlugin.current]}
+              onMouseEnter={() => autoplayPlugin.current.stop()}
+              onMouseLeave={() => autoplayPlugin.current.play()}
+              className="w-full max-w-5xl mx-auto"
+            >
+              <CarouselContent>
+                <CarouselItem className="md:basis-1/2 lg:basis-1/3">
+                  <CompetitionCard
+                    title="Mobile Legends"
+                    image="https://placehold.co/400x400.png"
+                    hint="gaming character"
+                  />
+                </CarouselItem>
+                <CarouselItem className="md:basis-1/2 lg:basis-1/3">
+                  <CompetitionCard
+                    title="Poster Design"
+                    image="https://placehold.co/400x400.png"
+                    hint="design character"
+                  />
+                </CarouselItem>
+                <CarouselItem className="md:basis-1/2 lg:basis-1/3">
+                  <CompetitionCard
+                    title="Web Design"
+                    image="https://placehold.co/400x400.png"
+                    hint="coding character"
+                  />
+                </CarouselItem>
+                 <CarouselItem className="md:basis-1/2 lg:basis-1/3">
+                  <CompetitionCard
+                    title="UI/UX"
+                    image="https://placehold.co/400x400.png"
+                    hint="design character"
+                  />
+                </CarouselItem>
+              </CarouselContent>
+              <CarouselPrevious />
+              <CarouselNext />
+            </Carousel>
           </div>
         </section>
       </main>
