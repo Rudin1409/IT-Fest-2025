@@ -19,6 +19,10 @@ const TrainingCategoryCard = ({ title, image, hint }) => (
         <div className='border-t border-primary/50 pt-4'>
           <h3 className="font-headline text-xl">{title}</h3>
         </div>
+        <div className="flex justify-around gap-2">
+            <Button variant="default" className="w-full">Daftar</Button>
+            <Button variant="outline" className="w-full">Guide Book</Button>
+        </div>
       </CardContent>
     </Card>
   );
@@ -125,7 +129,7 @@ export default function PelatihanPage() {
               plugins={[autoplayPlugin.current]}
               onMouseEnter={() => autoplayPlugin.current.stop()}
               onMouseLeave={() => autoplayPlugin.current.play()}
-              className="w-full max-w-2xl mx-auto"
+              className="w-full max-w-5xl mx-auto"
             >
               <CarouselContent>
                 <CarouselItem className="md:basis-1/2">
