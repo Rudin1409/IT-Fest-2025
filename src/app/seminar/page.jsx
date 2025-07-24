@@ -7,14 +7,14 @@ import { Header } from '@/components/layout/header';
 import { Footer } from '@/components/layout/footer';
 import { User } from 'lucide-react';
 
-const GuestSpeakerCard = ({ image, name, title, topic, date, hint }) => (
+const GuestSpeakerCard = ({ image, name, title, topic, date, hint, speakerLabel = "Guest Star :" }) => (
   <Card className="bg-card/80 backdrop-blur-sm border-primary/10 hover:border-primary transition-all duration-300 transform hover:scale-105 hover:shadow-2xl hover:shadow-primary/20 overflow-hidden w-full">
     <div className="grid md:grid-cols-3 items-center">
       <div className="relative h-96 md:h-full min-h-[300px]">
         <Image src={image} alt={name} fill className="object-cover" data-ai-hint={hint} />
       </div>
       <div className="md:col-span-2 p-8 text-left">
-        <p className="text-muted-foreground mb-2 text-lg">Guest Star :</p>
+        <p className="text-muted-foreground mb-2 text-lg">{speakerLabel}</p>
         <h3 className="text-4xl font-headline font-black mb-2 text-white uppercase">{name}</h3>
         <p className="text-xl font-semibold text-primary mb-4">{title}</p>
         <p className="text-2xl text-accent mb-6 italic">"{topic}"</p>
@@ -60,12 +60,13 @@ export default function SeminarPage() {
                 hint="man content creator"
               />
               <GuestSpeakerCard
-                name="Dr. Aris Setiawan"
-                title="Pakar Kecerdasan Buatan"
-                topic="Masa Depan Kecerdasan Buatan"
-                date="17 September 2025 | 10.00 WIB"
+                name="Nabila Carissa"
+                speakerLabel="Speaker :"
+                title="Content Creator & Social Media Influencer"
+                topic="Self-Confident Importance for Struggling In Digital Era"
+                date="16 September 2025 | 13.45 WIB"
                 image="https://placehold.co/400x600.png"
-                hint="man scientist"
+                hint="woman influencer"
               />
             </div>
           </div>
