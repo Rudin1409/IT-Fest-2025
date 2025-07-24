@@ -261,6 +261,41 @@ const FloatingSquares = () => (
   </div>
 );
 
+const TypingAnimation = ({ text }) => {
+  const [displayedText, setDisplayedText] = useState('');
+  const [isDeleting, setIsDeleting] = useState(false);
+  const [loopNum, setLoopNum] = useState(0);
+  const [typingSpeed, setTypingSpeed] = useState(150);
+
+  useEffect(() => {
+    const handleTyping = () => {
+      const fullText = text;
+      const updatedText = isDeleting
+        ? fullText.substring(0, displayedText.length - 1)
+        : fullText.substring(0, displayedText.length + 1);
+
+      setDisplayedText(updatedText);
+
+      if (!isDeleting && updatedText === fullText) {
+        // Pause at end
+        setTimeout(() => setIsDeleting(true), 2000);
+      } else if (isDeleting && updatedText === '') {
+        setIsDeleting(false);
+        setLoopNum(loopNum + 1);
+      }
+    };
+
+    const typingTimeout = setTimeout(handleTyping, typingSpeed);
+    return () => clearTimeout(typingTimeout);
+  }, [displayedText, isDeleting, text, loopNum, typingSpeed]);
+
+  return (
+    <h2 className="text-4xl md:text-6xl font-black font-headline text-transparent bg-clip-text bg-gradient-to-b from-white to-accent mb-4 h-20 md:h-24">
+      <span className="typing-text">{displayedText}</span>
+      <span className="typing-cursor"></span>
+    </h2>
+  );
+};
 
 export default function Home() {
   const autoplayPlugin = React.useRef(
@@ -274,9 +309,7 @@ export default function Home() {
         <section id="hero" className="text-center py-24 px-4 relative overflow-hidden">
           <FloatingSquares />
            <div className="container mx-auto relative">
-            <h2 className="text-4xl md:text-6xl font-black font-headline text-transparent bg-clip-text bg-gradient-to-b from-white to-accent mb-4">
-              WELCOME TO IT-FEST 2025
-            </h2>
+            <TypingAnimation text="WELCOME TO IT-FEST 2025" />
             <CountdownTimer />
              <p className="text-2xl md:text-4xl font-headline font-bold text-primary mb-8">THE BIGGEST IT FESTIVAL</p>
             <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto mb-10">

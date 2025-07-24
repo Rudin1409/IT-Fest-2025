@@ -188,3 +188,25 @@
     border-radius: 50%;
   }
 }
+
+.typing-cursor {
+  display: inline-block;
+  width: 8px;
+  height: 1em;
+  background-color: hsl(var(--accent));
+  animation: blink 0.7s infinite;
+  margin-left: 4px;
+  vertical-align: middle;
+}
+
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
