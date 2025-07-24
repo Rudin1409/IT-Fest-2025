@@ -96,7 +96,7 @@
   list-style: none;
   width: 20px;
   height: 20px;
-  background: hsl(var(--primary) / 0.15);
+  background: hsl(var(--primary) / 0.25);
   animation: float 25s linear infinite;
   bottom: -150px;
 }
