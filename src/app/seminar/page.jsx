@@ -7,22 +7,20 @@ import { Header } from '@/components/layout/header';
 import { Footer } from '@/components/layout/footer';
 import { User } from 'lucide-react';
 
-const SeminarCard = ({ title, description, speaker, image, hint }) => (
-  <Card className="bg-card/80 backdrop-blur-sm border-primary/10 hover:border-primary transition-all duration-300 transform hover:scale-105 hover:shadow-2xl hover:shadow-primary/20 overflow-hidden">
-    <div className="relative h-60 w-full">
-      <Image src={image} alt={title} fill className="object-cover" data-ai-hint={hint} />
-    </div>
-    <CardHeader>
-      <CardTitle className="font-headline text-2xl">{title}</CardTitle>
-    </CardHeader>
-    <CardContent>
-      <p className="text-muted-foreground mb-4">{description}</p>
-      <div className="flex items-center gap-2 text-sm text-accent mb-4">
-        <User size={16} />
-        <span>{speaker}</span>
+const GuestSpeakerCard = ({ image, name, title, topic, date, hint }) => (
+  <Card className="bg-card/80 backdrop-blur-sm border-primary/10 hover:border-primary transition-all duration-300 transform hover:scale-105 hover:shadow-2xl hover:shadow-primary/20 overflow-hidden w-full">
+    <div className="grid md:grid-cols-3 items-center">
+      <div className="relative h-96 md:h-full min-h-[300px]">
+        <Image src={image} alt={name} fill className="object-cover" data-ai-hint={hint} />
       </div>
-      <Button variant="outline">Learn More</Button>
-    </CardContent>
+      <div className="md:col-span-2 p-8 text-left">
+        <p className="text-muted-foreground mb-2 text-lg">Guest Star :</p>
+        <h3 className="text-4xl font-headline font-black mb-2 text-white uppercase">{name}</h3>
+        <p className="text-xl font-semibold text-primary mb-4">{title}</p>
+        <p className="text-2xl text-accent mb-6 italic">"{topic}"</p>
+        <p className="text-muted-foreground text-lg">{date}</p>
+      </div>
+    </div>
   </Card>
 );
 
@@ -52,27 +50,22 @@ export default function SeminarPage() {
 
         <section className="py-20 px-4">
           <div className="container mx-auto">
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-              <SeminarCard
-                title="Masa Depan Kecerdasan Buatan"
-                description="Jelajahi kemajuan terbaru dalam AI dan dampaknya terhadap berbagai industri."
-                speaker="Dr. Aris Setiawan"
-                image="https://placehold.co/600x400.png"
-                hint="artificial intelligence"
+            <div className="grid lg:grid-cols-1 gap-12 max-w-5xl mx-auto">
+              <GuestSpeakerCard
+                name="Shandy Luo"
+                title="Content Creator"
+                topic="Optimizing Digital Content for Effective Learning"
+                date="16 September 2025 | 14.45 WIB"
+                image="https://placehold.co/400x600.png"
+                hint="man content creator"
               />
-              <SeminarCard
-                title="Keamanan Siber di Era Digital"
-                description="Pelajari cara melindungi diri Anda dan organisasi Anda dari ancaman siber yang terus berkembang."
-                speaker="Budi Hartono"
-                image="https://placehold.co/600x400.png"
-                hint="cyber security"
-              />
-              <SeminarCard
-                title="Revolusi Blockchain"
-                description="Pahami potensi teknologi blockchain dan aplikasinya di luar cryptocurrency."
-                speaker="Citra Lestari"
-                image="https://placehold.co/600x400.png"
-                hint="blockchain technology"
+              <GuestSpeakerCard
+                name="Dr. Aris Setiawan"
+                title="Pakar Kecerdasan Buatan"
+                topic="Masa Depan Kecerdasan Buatan"
+                date="17 September 2025 | 10.00 WIB"
+                image="https://placehold.co/400x600.png"
+                hint="man scientist"
               />
             </div>
           </div>
