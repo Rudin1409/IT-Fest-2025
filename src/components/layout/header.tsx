@@ -14,6 +14,7 @@ const navLinks = [
   { href: '/', label: 'Home' },
   { href: '/kompetisi', label: 'Kompetisi' },
   { href: '/pelatihan', label: 'Pelatihan' },
+  { href: '/seminar', label: 'Seminar' },
 ];
 
 export const Header = () => {
