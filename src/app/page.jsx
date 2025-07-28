@@ -334,7 +334,7 @@ export default function Home() {
             <TypingAnimation text="WELCOME TO IT-FESTIVAL 2025" />
             <p className="text-2xl md:text-4xl font-headline font-bold text-primary mb-4">Berakhir Dalam</p>
             <CountdownTimer />
-             <p className="text-2xl md:text-4xl font-headline font-bold text-primary mb-8">THE BIGGEST IT-FESTIVAL</p>
+             <p className="text-2xl md:text-4xl font-headline font-bold text-transparent bg-clip-text bg-gradient-to-b from-white to-accent mb-8">THE BIGGEST IT-FESTIVAL</p>
           </div>
           <a href="#about" onClick={handleScroll} className="absolute bottom-10 left-1/2 -translate-x-1/2 cursor-pointer">
               <div className="w-12 h-12 text-primary flex items-center justify-center animate-pulse-arrow">
@@ -484,3 +484,5 @@ export default function Home() {
     </div>
   );
 }
+
+    
