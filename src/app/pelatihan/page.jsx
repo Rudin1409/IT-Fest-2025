@@ -188,12 +188,12 @@ export default function PelatihanPage() {
                 <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
                   <ClassCard
                     title="Kelas Android"
-                    image="https://placehold.co/400x400.png"
+                    image="/pelatihan/android.png"
                     hint="android logo"
                   />
                   <ClassCard
                     title="Kelas Web Design"
-                    image="https://placehold.co/400x400.png"
+                    image="/pelatihan/web.png"
                     hint="vscode logo"
                   />
               </div>
