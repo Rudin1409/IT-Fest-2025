@@ -89,7 +89,7 @@ export default function RegisterPage() {
             <h1 className="text-5xl md:text-7xl font-black font-headline text-transparent bg-clip-text bg-gradient-to-b from-white to-accent mb-4">
                 PENDAFTARAN
             </h1>
-            <p className="text-2xl font-headline font-bold text-primary">IT-FEST 2025</p>
+            <p className="text-2xl font-headline font-bold text-primary">IT-Festival 2025</p>
             <p className="mt-4 max-w-2xl mx-auto text-muted-foreground">
                 Pilih kategori acara yang ingin Anda ikuti. Amankan tempat Anda sekarang dan jadilah bagian dari festival teknologi terbesar tahun ini!
             </p>

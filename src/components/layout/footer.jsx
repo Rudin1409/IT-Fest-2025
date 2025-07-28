@@ -20,7 +20,7 @@ export const Footer = () => (
                     <path d="M6 18L18 6M6 6L18 18" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
              </div>
-             <span className="font-headline text-2xl font-bold text-white">IT FESTIVAL 2025</span>
+             <span className="font-headline text-2xl font-bold text-white">IT-FESTIVAL 2025</span>
           </div>
           <p className="max-w-md leading-relaxed">
           Festival teknologi terbesar tahun 2025 yang menghadirkan kompetisi, pelatihan, dan seminar untuk mengembangkan talenta digital masa depan.

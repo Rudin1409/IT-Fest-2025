@@ -30,7 +30,7 @@ export const Header = () => {
     <header className="fixed top-0 left-0 right-0 z-50 flex justify-between items-center py-3 px-6 bg-background/50 backdrop-blur-lg border-b border-border/50">
       {/* Logo Situs */}
       <Link href="/" className="text-xl font-headline font-bold text-primary tracking-widest">
-        IT-FEST 2025
+        IT-FESTIVAL 2025
       </Link>
       
       {/* Navigasi untuk Desktop */}

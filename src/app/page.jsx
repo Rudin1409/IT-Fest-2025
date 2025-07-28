@@ -67,7 +67,7 @@ const timelineEvents = [
     date: 'Sabtu, 6 September 2025',
   },
   {
-    title: 'Opening Ceremony IT Festival 2025',
+    title: 'Opening Ceremony IT-Festival 2025',
     date: 'Selasa, 16 September 2025',
   },
   {
@@ -103,7 +103,7 @@ const timelineEvents = [
     date: 'Kamis, 16 Oktober 2025',
   },
   {
-    title: 'Closing Ceremony IT Festival 2025 & Pengumuman Pemenang',
+    title: 'Closing Ceremony IT-Festival 2025 & Pengumuman Pemenang',
     date: 'Senin, 20 Oktober 2025',
   },
 ];
@@ -324,7 +324,7 @@ export default function Home() {
                     </p>
                 </div>
                 <div className="relative h-96 rounded-lg overflow-hidden shadow-2xl shadow-primary/20">
-                     <Image src="https://placehold.co/600x400.png" alt="About IT Fest" fill className="object-cover" data-ai-hint="technology conference" />
+                     <Image src="https://placehold.co/600x400.png" alt="About IT Festival" fill className="object-cover" data-ai-hint="technology conference" />
                 </div>
             </div>
         </section>

@@ -106,13 +106,13 @@ export default function KompetisiPage() {
                 <h2 className="text-4xl md:text-6xl font-black font-headline text-transparent bg-clip-text bg-gradient-to-b from-white to-accent mb-4">
                   KOMPETISI
                 </h2>
-                <p className="text-2xl md:text-4xl font-headline font-bold text-primary mb-8">IT-FEST 2025</p>
+                <p className="text-2xl md:text-4xl font-headline font-bold text-primary mb-8">IT-Festival 2025</p>
                 <p className="text-lg md:text-xl text-muted-foreground max-w-xl">
                   Uji keterampilan Anda dan bersainglah dengan para penggemar teknologi terbaik dalam berbagai kompetisi kami yang menantang.
                 </p>
               </div>
               <div className="relative h-80 w-full rounded-lg overflow-hidden shadow-2xl shadow-primary/20">
-                <Image src="https://placehold.co/600x400.png" alt="Kompetisi IT Fest" fill className="object-cover" data-ai-hint="programming competition" />
+                <Image src="https://placehold.co/600x400.png" alt="Kompetisi IT Festival" fill className="object-cover" data-ai-hint="programming competition" />
               </div>
             </div>
           </div>

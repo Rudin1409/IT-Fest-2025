@@ -132,13 +132,13 @@ export default function PelatihanPage() {
                 <h2 className="text-4xl md:text-6xl font-black font-headline text-transparent bg-clip-text bg-gradient-to-b from-white to-accent mb-4">
                   PELATIHAN
                 </h2>
-                <p className="text-2xl md:text-4xl font-headline font-bold text-primary mb-8">IT-FEST 2025</p>
+                <p className="text-2xl md:text-4xl font-headline font-bold text-primary mb-8">IT-Festival 2025</p>
                 <p className="text-lg md:text-xl text-muted-foreground max-w-xl">
                     Tingkatkan keahlian Anda dengan sesi pelatihan praktis kami yang dipimpin oleh para ahli industri.
                 </p>
               </div>
               <div className="relative h-80 w-full rounded-lg overflow-hidden shadow-2xl shadow-primary/20">
-                <Image src="https://placehold.co/600x400.png" alt="Pelatihan IT Fest" fill className="object-cover" data-ai-hint="training workshop" />
+                <Image src="https://placehold.co/600x400.png" alt="Pelatihan IT Festival" fill className="object-cover" data-ai-hint="training workshop" />
               </div>
             </div>
           </div>
