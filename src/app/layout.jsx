@@ -1,10 +1,11 @@
-
 import './globals.css';
 import { Toaster } from "@/components/ui/toaster";
+import logo from '@/../public/logo.png';
 
 export const metadata = {
   title: 'IT-Festival 2025',
   description: 'Festival teknologi terbesar tahun 2025 yang menghadirkan kompetisi, pelatihan, dan seminar untuk mengembangkan talenta digital masa depan.',
+  icons: [{ rel: 'icon', url: logo.src }],
 };
 
 export default function RootLayout({
@@ -13,7 +14,6 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark scroll-smooth">
       <head>
-        <link rel="icon" href="/logo.png" type="image/png" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@400;500;700&display=swap" rel="stylesheet" />

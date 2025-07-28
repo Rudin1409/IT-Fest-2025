@@ -328,7 +328,7 @@ export default function Home() {
       <main className="flex-grow pt-24">
         
         {/* Bagian Hero */}
-        <section id="hero" className="text-center px-4 relative overflow-hidden h-[80vh] flex flex-col justify-center">
+        <section id="hero" className="text-center px-4 relative overflow-hidden h-[90vh] flex flex-col justify-center">
           <FloatingSquares />
            <div className="container mx-auto relative">
             <TypingAnimation text="WELCOME TO IT-FESTIVAL 2025" />
@@ -484,5 +484,3 @@ export default function Home() {
     </div>
   );
 }
-
-    
