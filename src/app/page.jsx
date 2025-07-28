@@ -448,7 +448,7 @@ export default function Home() {
                 <h2 className="text-4xl font-headline font-bold mb-12 text-transparent bg-clip-text bg-gradient-to-b from-white to-accent">SUPPORTED BY</h2>
                 <div className="grid md:grid-cols-3 gap-12 items-start justify-center">
                     <div className="flex flex-col items-center gap-4">
-                        <Image src="https://placehold.co/300x150.png" alt="Politeknik Negeri Sriwijaya" width={300} height={150} className="mx-auto object-contain" data-ai-hint="university logo" />
+                        <Image src="/logopolsri.png" alt="Politeknik Negeri Sriwijaya" width={300} height={150} className="mx-auto object-contain" data-ai-hint="university logo" />
                         <p className="text-xl font-headline font-bold text-primary mt-4">Politeknik Negeri Sriwijaya</p>
                     </div>
                     <div className="flex flex-col items-center gap-4">
