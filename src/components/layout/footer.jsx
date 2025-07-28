@@ -84,7 +84,7 @@ export const Footer = () => (
             <Image src="/logo.png" alt="IT-Festival Logo" width={48} height={48} />
             <Image src="/logokabinet.png" alt="Logo Kabinet" width={48} height={48} className="object-contain" data-ai-hint="organization logo" />
             <Image src="/logohmj.png" alt="Logo HMJ" width={48} height={48} className="object-contain" data-ai-hint="organization logo" />
-            <Image src="https://placehold.co/100x40.png" alt="Logo 4" width={48} height={48} className="object-contain" data-ai-hint="company logo" />
+            <Image src="/logopolsri.png" alt="Logo Polsri" width={48} height={48} className="object-contain" data-ai-hint="university logo" />
         </div>
       </div>
     </footer>
