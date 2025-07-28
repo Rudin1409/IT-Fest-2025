@@ -2,6 +2,7 @@
 'use client';
 import Link from 'next/link';
 import { Mail, Phone, MapPin, Instagram } from 'lucide-react';
+import Image from 'next/image';
 
 /**
  * Komponen Footer
@@ -81,10 +82,12 @@ export const Footer = () => (
       
       {/* Bagian Bawah Footer */}
       <div className="container mx-auto mt-12 pt-8 border-t border-primary/20 flex flex-col sm:flex-row justify-between items-center text-sm text-muted-foreground">
-        <p>&copy; 2025 IT Festival 2025. All rights reserved.</p>
-        <div className="flex space-x-6 mt-4 sm:mt-0">
-            <Link href="#" className="hover:text-primary transition-colors">PRIVACY POLICY</Link>
-            <Link href="#" className="hover:text-primary transition-colors">TERMS OF SERVICE</Link>
+        <p>&copy; 2025 IT-Festival 2025. All rights reserved.</p>
+        <div className="flex space-x-4 mt-4 sm:mt-0">
+            <Image src="https://placehold.co/100x40.png" alt="Logo 1" width={100} height={40} className="object-contain" data-ai-hint="company logo" />
+            <Image src="https://placehold.co/100x40.png" alt="Logo 2" width={100} height={40} className="object-contain" data-ai-hint="company logo" />
+            <Image src="https://placehold.co/100x40.png" alt="Logo 3" width={100} height={40} className="object-contain" data-ai-hint="company logo" />
+            <Image src="https://placehold.co/100x40.png" alt="Logo 4" width={100} height={40} className="object-contain" data-ai-hint="company logo" />
         </div>
       </div>
     </footer>
