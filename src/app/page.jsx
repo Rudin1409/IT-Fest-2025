@@ -291,15 +291,19 @@ const TypingAnimation = ({ text }) => {
 };
 
 // Komponen untuk logo yang bergulir
-const ScrollingLogos = ({ items, hint, duration = '40s' }) => (
-    <div className="scroller" style={{ '--duration': duration }}>
-        <div className="scroller-inner">
-            {items.map((item, index) => (
-                <Image key={index} src={item.src} alt={item.alt} width={200} height={100} className="object-contain h-24" data-ai-hint={hint} />
-            ))}
-        </div>
-    </div>
-);
+const ScrollingLogos = ({ items, hint, duration = '40s' }) => {
+    const duplicatedItems = [...items, ...items];
+  
+    return (
+      <div className="scroller" data-animated="true" style={{ '--duration': duration }}>
+          <div className="scroller-inner">
+              {duplicatedItems.map((item, index) => (
+                  <Image key={index} src={item.src} alt={item.alt} width={200} height={100} className="object-contain h-24" data-ai-hint={hint} />
+              ))}
+          </div>
+      </div>
+    );
+  };
 
 
 /**
@@ -330,10 +334,10 @@ export default function Home() {
             <TypingAnimation text="WELCOME TO IT-FESTIVAL 2025" />
             <p className="text-2xl md:text-4xl font-headline font-bold text-primary mb-4">Berakhir Dalam</p>
             <CountdownTimer />
-             <p className="text-2xl md:text-4xl font-headline font-bold text-primary mb-8">THE BIGGEST IT FESTIVAL</p>
+             <p className="text-2xl md:text-4xl font-headline font-bold text-primary mb-8">THE BIGGEST IT-FESTIVAL</p>
           </div>
           <a href="#about" onClick={handleScroll} className="absolute bottom-10 left-1/2 -translate-x-1/2 cursor-pointer">
-              <div className="w-12 h-12 text-white flex items-center justify-center animate-pulse-arrow">
+              <div className="w-12 h-12 text-primary flex items-center justify-center animate-pulse-arrow">
                 <ArrowDown size={48} />
               </div>
             </a>
@@ -344,7 +348,7 @@ export default function Home() {
             <div className="container mx-auto grid md:grid-cols-2 gap-12 items-center">
                 <div>
                     <h2 className="text-4xl font-headline font-bold mb-4 text-transparent bg-clip-text bg-gradient-to-b from-white to-accent">ABOUT US</h2>
-                    <h3 className="text-2xl font-bold text-primary mb-6">The Biggest IT Festival in 2025</h3>
+                    <h3 className="text-2xl font-bold text-primary mb-6">The Biggest IT-Festival in 2025</h3>
                     <p className="text-muted-foreground text-lg leading-relaxed">
                     IT-FESTIVAL 2025 adalah acara utama yang menyatukan mahasiswa, profesional, dan penggemar teknologi dari seluruh dunia. Misi kami adalah untuk mendorong inovasi, kolaborasi, dan pembelajaran di bidang teknologi informasi yang terus berkembang. Dengan berbagai acara, kompetisi, dan seminar, IT-FESTIVAL 2025 adalah platform yang sempurna untuk menunjukkan keahlian Anda, belajar dari yang terbaik, dan berjejaring dengan individu yang berpikiran sama.
                     </p>

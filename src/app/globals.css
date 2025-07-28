@@ -212,18 +212,20 @@
 }
 
 @keyframes pulse-arrow {
-    0%, 100% {
-        transform: translateY(0);
-        opacity: 1;
-    }
-    50% {
-        transform: translateY(10px);
-        opacity: 0.7;
-    }
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(20px);
+    opacity: 0;
+  }
 }
 
 .animate-pulse-arrow {
-    animation: pulse-arrow 2s ease-in-out infinite;
+    animation: pulse-arrow 2s ease-out infinite;
 }
 
 /* Continuous scrolling animation */
@@ -258,4 +260,5 @@
     flex-wrap: nowrap;
     animation: scroll var(--duration, 40s) linear infinite;
   }
+
 
