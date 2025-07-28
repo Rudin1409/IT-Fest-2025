@@ -27,10 +27,6 @@ const TrainingCategoryCard = ({ title, image, hint }) => (
         <div className='border-t border-primary/50 pt-4'>
           <h3 className="font-headline text-xl">{title}</h3>
         </div>
-        <div className="flex flex-col sm:flex-row justify-around gap-2">
-            <Button variant="default" className="w-full">Daftar</Button>
-            <Button variant="outline" className="w-full">Guide Book</Button>
-        </div>
       </CardContent>
     </Card>
   );
