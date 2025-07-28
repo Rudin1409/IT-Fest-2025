@@ -1,3 +1,4 @@
+
 'use client';
 import Link from 'next/link';
 import { Mail, Phone, MapPin, Instagram } from 'lucide-react';
@@ -81,9 +82,9 @@ export const Footer = () => (
         <p>&copy; 2025 IT-Festival 2025. All rights reserved.</p>
         <div className="flex space-x-4 mt-4 sm:mt-0">
             <Image src="/logo.png" alt="IT-Festival Logo" width={48} height={48} />
-            <Image src="https://placehold.co/100x40.png" alt="Logo 2" width={100} height={40} className="object-contain" data-ai-hint="company logo" />
-            <Image src="https://placehold.co/100x40.png" alt="Logo 3" width={100} height={40} className="object-contain" data-ai-hint="company logo" />
-            <Image src="https://placehold.co/100x40.png" alt="Logo 4" width={100} height={40} className="object-contain" data-ai-hint="company logo" />
+            <Image src="/logokabinet.png" alt="Logo Kabinet" width={48} height={48} className="object-contain" data-ai-hint="organization logo" />
+            <Image src="https://placehold.co/100x40.png" alt="Logo 3" width={48} height={48} className="object-contain" data-ai-hint="company logo" />
+            <Image src="https://placehold.co/100x40.png" alt="Logo 4" width={48} height={48} className="object-contain" data-ai-hint="company logo" />
         </div>
       </div>
     </footer>
