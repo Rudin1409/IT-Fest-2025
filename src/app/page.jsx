@@ -452,7 +452,7 @@ export default function Home() {
                         <p className="text-xl font-headline font-bold text-primary mt-4">Politeknik Negeri Sriwijaya</p>
                     </div>
                     <div className="flex flex-col items-center gap-4">
-                        <Image src="https://placehold.co/300x150.png" alt="Jurusan Manajemen Informatika" width={300} height={150} className="mx-auto object-contain" data-ai-hint="university logo" />
+                        <Image src="/logomi.webp" alt="Jurusan Manajemen Informatika" width={300} height={150} className="mx-auto object-contain" data-ai-hint="university logo" />
                         <p className="text-xl font-headline font-bold text-primary mt-4">Jurusan Manajemen Informatika</p>
                     </div>
                     <div className="flex flex-col items-center gap-4">
@@ -484,3 +484,5 @@ export default function Home() {
     </div>
   );
 }
+
+    
