@@ -3,7 +3,7 @@
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Code, Gamepad2, Mic, Palette } from 'lucide-react';
+import { Code, Gamepad2, Mic, Palette, ArrowDown } from 'lucide-react';
 import { Header } from '@/components/layout/header';
 import { Footer } from '@/components/layout/footer';
 import React, { useState, useEffect } from 'react';
@@ -282,13 +282,21 @@ export default function Home() {
     Autoplay({ delay: 2000, stopOnInteraction: true })
   );
 
+  const handleScroll = (e) => {
+    e.preventDefault();
+    const aboutSection = document.getElementById('about');
+    if (aboutSection) {
+      aboutSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <div className="flex flex-col min-h-screen bg-background text-foreground">
       <Header />
       <main className="flex-grow pt-24">
         
         {/* Bagian Hero */}
-        <section id="hero" className="text-center py-24 px-4 relative overflow-hidden">
+        <section id="hero" className="text-center py-24 px-4 relative overflow-hidden h-screen flex flex-col justify-center">
           <FloatingSquares />
            <div className="container mx-auto relative">
             <TypingAnimation text="WELCOME TO IT-FESTIVAL 2025" />
@@ -297,15 +305,12 @@ export default function Home() {
             <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto mb-10">
             IT-FESTIVAL 2025 adalah acara utama yang menyatukan mahasiswa, profesional, dan penggemar teknologi dari seluruh dunia. Misi kami adalah untuk mendorong inovasi, kolaborasi, dan pembelajaran di bidang teknologi informasi yang terus berkembang.
             </p>
-            <div className="flex justify-center gap-4">
-                <Button size="lg" className="font-bold text-lg px-10 py-6">
-                Get Started
-                </Button>
-                <Button size="lg" variant="outline" className="font-bold text-lg px-10 py-6">
-                Learn More
-                </Button>
-            </div>
           </div>
+          <a href="#about" onClick={handleScroll} className="absolute bottom-10 left-1/2 -translate-x-1/2 cursor-pointer">
+              <div className="w-12 h-12 text-white flex items-center justify-center animate-pulse-arrow">
+                <ArrowDown size={48} />
+              </div>
+            </a>
         </section>
 
         {/* Bagian Tentang Kami */}
