@@ -16,7 +16,7 @@ import { Award, Code, Mic, Users } from 'lucide-react';
  * @returns {JSX.Element} Kartu untuk pendaftaran satu acara.
  */
 const RegistrationCard = ({ title, description, icon }) => (
-    <Card className="bg-card/80 backdrop-blur-sm border-primary/10 hover:border-primary transition-all duration-300 transform hover:scale-105 hover:shadow-2xl hover:shadow-primary/20 overflow-hidden text-left w-full md:w-auto md:max-w-sm">
+    <Card className="bg-card/80 backdrop-blur-sm border-primary/10 hover:border-primary transition-all duration-300 transform hover:scale-105 hover:shadow-2xl hover:shadow-primary/20 overflow-hidden text-left w-full md:max-w-sm">
       <CardContent className="p-6 space-y-4">
         <div className="flex items-center gap-4">
             <div className="p-3 rounded-md bg-primary/20 text-primary">{icon}</div>
@@ -43,7 +43,7 @@ const Section = ({ title, children, icon }) => (
                 <div className="text-primary">{icon}</div>
                 <h2 className="text-4xl font-headline font-bold text-center">{title}</h2>
             </div>
-            <div className="flex flex-wrap justify-center items-center gap-8">
+            <div className="flex flex-wrap justify-center items-stretch gap-8">
                 {children}
             </div>
         </div>
@@ -89,7 +89,7 @@ export default function RegisterPage() {
             <h1 className="text-5xl md:text-7xl font-black font-headline text-transparent bg-clip-text bg-gradient-to-b from-white to-accent mb-4">
                 PENDAFTARAN
             </h1>
-            <p className="text-2xl font-headline font-bold text-primary">IT-Festival 2025</p>
+            <p className="text-2xl font-headline font-bold text-primary">IT-FESTIVAL 2025</p>
             <p className="mt-4 max-w-2xl mx-auto text-muted-foreground">
                 Pilih kategori acara yang ingin Anda ikuti. Amankan tempat Anda sekarang dan jadilah bagian dari festival teknologi terbesar tahun ini!
             </p>

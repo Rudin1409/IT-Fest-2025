@@ -27,7 +27,7 @@ const TrainingCategoryCard = ({ title, image, hint }) => (
         <div className='border-t border-primary/50 pt-4'>
           <h3 className="font-headline text-xl">{title}</h3>
         </div>
-        <div className="flex justify-around gap-2">
+        <div className="flex flex-col sm:flex-row justify-around gap-2">
             <Button variant="default" className="w-full">Daftar</Button>
             <Button variant="outline" className="w-full">Guide Book</Button>
         </div>
@@ -52,7 +52,7 @@ const ClassCard = ({ title, image, hint }) => (
         <div className='border-t border-primary/50 pt-4'>
           <h3 className="font-headline text-xl">{title}</h3>
         </div>
-        <div className="grid grid-cols-2 gap-2">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
           <Button variant="default">Kelas A</Button>
           <Button variant="default">Kelas B</Button>
         </div>
@@ -92,7 +92,7 @@ const TrainingTimeline = () => (
         </h2>
         <div className="relative">
           <div className="hidden md:block absolute top-1/2 left-0 w-full h-0.5 bg-primary/30 -translate-y-1/2"></div>
-          <div className="grid md:grid-cols-4 gap-8">
+          <div className="grid md:grid-cols-4 gap-y-12 md:gap-8">
             {timelineData.map((item, index) => (
               <div key={index} className="flex flex-col items-center text-center relative">
                  <div className="relative z-10 flex items-center justify-center w-12 h-12 bg-card border-2 border-primary rounded-full mb-4">
@@ -132,7 +132,7 @@ export default function PelatihanPage() {
                 <h2 className="text-4xl md:text-6xl font-black font-headline text-transparent bg-clip-text bg-gradient-to-b from-white to-accent mb-4">
                   PELATIHAN
                 </h2>
-                <p className="text-2xl md:text-4xl font-headline font-bold text-primary mb-8">IT-Festival 2025</p>
+                <p className="text-2xl md:text-4xl font-headline font-bold text-primary mb-8">IT-FESTIVAL 2025</p>
                 <p className="text-lg md:text-xl text-muted-foreground max-w-xl">
                     Tingkatkan keahlian Anda dengan sesi pelatihan praktis kami yang dipimpin oleh para ahli industri.
                 </p>
@@ -159,17 +159,17 @@ export default function PelatihanPage() {
               plugins={[autoplayPlugin.current]}
               onMouseEnter={() => autoplayPlugin.current.stop()}
               onMouseLeave={() => autoplayPlugin.current.play()}
-              className="w-full max-w-5xl mx-auto"
+              className="w-full max-w-sm md:max-w-xl lg:max-w-5xl mx-auto"
             >
               <CarouselContent>
-                <CarouselItem className="md:basis-1/2">
+                <CarouselItem className="sm:basis-1/2">
                   <TrainingCategoryCard
                     title="Android Development"
                     image="https://placehold.co/400x400.png"
                     hint="mobile app"
                   />
                 </CarouselItem>
-                <CarouselItem className="md:basis-1/2">
+                <CarouselItem className="sm:basis-1/2">
                   <TrainingCategoryCard
                     title="Full-Stack Web"
                     image="https://placehold.co/400x400.png"
@@ -177,6 +177,8 @@ export default function PelatihanPage() {
                   />
                 </CarouselItem>
               </CarouselContent>
+              <CarouselPrevious className="hidden sm:flex" />
+              <CarouselNext className="hidden sm:flex" />
             </Carousel>
           </div>
         </section>
@@ -185,7 +187,7 @@ export default function PelatihanPage() {
         <section className="py-20 px-4">
             <div className="container mx-auto">
                 <h2 className="text-4xl font-headline font-bold text-center mb-12">DAFTAR KELAS</h2>
-                <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
                   <ClassCard
                     title="Kelas Android"
                     image="https://placehold.co/400x400.png"

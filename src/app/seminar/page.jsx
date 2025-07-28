@@ -23,15 +23,15 @@ import { User } from 'lucide-react';
 const GuestSpeakerCard = ({ image, name, title, topic, date, hint, speakerLabel = "Guest Star :", imagePosition = 'left' }) => (
   <Card className="bg-card/80 backdrop-blur-sm border-primary/10 hover:border-primary transition-all duration-300 transform hover:scale-105 hover:shadow-2xl hover:shadow-primary/20 overflow-hidden w-full">
     <div className="grid md:grid-cols-3 items-center">
-      <div className={`relative h-96 md:h-full min-h-[300px] ${imagePosition === 'right' ? 'md:order-last' : ''}`}>
+      <div className={`relative h-80 md:h-full min-h-[300px] ${imagePosition === 'right' ? 'md:order-last' : ''}`}>
         <Image src={image} alt={name} fill className="object-cover" data-ai-hint={hint} />
       </div>
-      <div className="md:col-span-2 p-8 text-left">
+      <div className="md:col-span-2 p-6 md:p-8 text-left">
         <p className="text-muted-foreground mb-2 text-lg">{speakerLabel}</p>
-        <h3 className="text-4xl font-headline font-black mb-2 text-white uppercase">{name}</h3>
-        <p className="text-xl font-semibold text-primary mb-4">{title}</p>
-        <p className="text-2xl text-accent mb-6 italic">"{topic}"</p>
-        <p className="text-muted-foreground text-lg">{date}</p>
+        <h3 className="text-3xl md:text-4xl font-headline font-black mb-2 text-white uppercase">{name}</h3>
+        <p className="text-lg md:text-xl font-semibold text-primary mb-4">{title}</p>
+        <p className="text-xl md:text-2xl text-accent mb-6 italic">"{topic}"</p>
+        <p className="text-muted-foreground text-md md:text-lg">{date}</p>
       </div>
     </div>
   </Card>
@@ -55,7 +55,7 @@ export default function SeminarPage() {
                 <h2 className="text-4xl md:text-6xl font-black font-headline text-transparent bg-clip-text bg-gradient-to-b from-white to-accent mb-4">
                   SEMINAR
                 </h2>
-                <p className="text-2xl md:text-4xl font-headline font-bold text-primary mb-8">IT-Festival 2025</p>
+                <p className="text-2xl md:text-4xl font-headline font-bold text-primary mb-8">IT-FESTIVAL 2025</p>
                 <p className="text-lg md:text-xl text-muted-foreground max-w-xl">
                   Ikuti seminar kami dan dapatkan wawasan berharga dari para ahli di bidang teknologi.
                 </p>

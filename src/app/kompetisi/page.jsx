@@ -27,7 +27,7 @@ const CompetitionCard = ({ title, image, hint }) => (
       <div className='border-t border-primary/50 pt-4'>
         <h3 className="font-headline text-xl">{title}</h3>
       </div>
-      <div className="flex justify-around gap-2">
+      <div className="flex flex-col sm:flex-row justify-around gap-2">
         <Button variant="default" className="w-full">Daftar</Button>
         <Button variant="outline" className="w-full">Guide Book</Button>
       </div>
@@ -67,7 +67,7 @@ const CompetitionTimeline = () => (
         </h2>
         <div className="relative">
           <div className="hidden md:block absolute top-1/2 left-0 w-full h-0.5 bg-primary/30 -translate-y-1/2"></div>
-          <div className="grid md:grid-cols-4 gap-8">
+          <div className="grid md:grid-cols-4 gap-y-12 md:gap-8">
             {timelineData.map((item, index) => (
               <div key={index} className="flex flex-col items-center text-center relative">
                  <div className="relative z-10 flex items-center justify-center w-12 h-12 bg-card border-2 border-primary rounded-full mb-4">
@@ -106,7 +106,7 @@ export default function KompetisiPage() {
                 <h2 className="text-4xl md:text-6xl font-black font-headline text-transparent bg-clip-text bg-gradient-to-b from-white to-accent mb-4">
                   KOMPETISI
                 </h2>
-                <p className="text-2xl md:text-4xl font-headline font-bold text-primary mb-8">IT-Festival 2025</p>
+                <p className="text-2xl md:text-4xl font-headline font-bold text-primary mb-8">IT-FESTIVAL 2025</p>
                 <p className="text-lg md:text-xl text-muted-foreground max-w-xl">
                   Uji keterampilan Anda dan bersainglah dengan para penggemar teknologi terbaik dalam berbagai kompetisi kami yang menantang.
                 </p>
@@ -136,31 +136,31 @@ export default function KompetisiPage() {
               plugins={[autoplayPlugin.current]}
               onMouseEnter={() => autoplayPlugin.current.stop()}
               onMouseLeave={() => autoplayPlugin.current.play()}
-              className="w-full max-w-5xl mx-auto"
+              className="w-full max-w-sm md:max-w-xl lg:max-w-5xl mx-auto"
             >
               <CarouselContent>
-                <CarouselItem className="md:basis-1/2 lg:basis-1/3">
+                <CarouselItem className="sm:basis-1/2 lg:basis-1/3">
                   <CompetitionCard
                     title="Mobile Legends"
                     image="https://placehold.co/400x400.png"
                     hint="gaming character"
                   />
                 </CarouselItem>
-                <CarouselItem className="md:basis-1/2 lg:basis-1/3">
+                <CarouselItem className="sm:basis-1/2 lg:basis-1/3">
                   <CompetitionCard
                     title="Poster Design"
                     image="https://placehold.co/400x400.png"
                     hint="design character"
                   />
                 </CarouselItem>
-                <CarouselItem className="md:basis-1/2 lg:basis-1/3">
+                <CarouselItem className="sm:basis-1/2 lg:basis-1/3">
                   <CompetitionCard
                     title="E-Goverment"
                     image="https://placehold.co/400x400.png"
                     hint="government building"
                   />
                 </CarouselItem>
-                 <CarouselItem className="md:basis-1/2 lg:basis-1/3">
+                 <CarouselItem className="sm:basis-1/2 lg:basis-1/3">
                   <CompetitionCard
                     title="Lomba Cipta Inovasi"
                     image="https://placehold.co/400x400.png"
@@ -168,8 +168,8 @@ export default function KompetisiPage() {
                   />
                 </CarouselItem>
               </CarouselContent>
-              <CarouselPrevious />
-              <CarouselNext />
+              <CarouselPrevious className="hidden sm:flex" />
+              <CarouselNext className="hidden sm:flex" />
             </Carousel>
           </div>
         </section>

@@ -117,43 +117,63 @@ const timelineEvents = [
  */
 const TimelineItem = ({ event, index }) => {
     const isLeft = index % 2 !== 0;
+    // On mobile, every item will be on the "right" side of the timeline line
     return (
-      <div className="flex items-center w-full my-4">
-        {isLeft ? (
-          <>
-            <div className="w-5/12 pr-8 text-right">
-              <div className="p-4 rounded-lg bg-card/80 border border-primary/20 shadow-primary/10 shadow-lg">
-                <h4 className="font-headline text-lg font-bold text-accent">{event.title}</h4>
-                <p className="text-sm text-muted-foreground mt-1">{event.date}</p>
-              </div>
-            </div>
-            <div className="w-2/12 flex-shrink-0 flex justify-center">
-              <div className="relative">
-                <div className="flex items-center justify-center h-10 w-10 rounded-full bg-primary font-bold text-primary-foreground z-10">
-                  {index + 1}
+      <div className="flex md:items-center w-full my-4">
+        {/* Desktop view */}
+        <div className="hidden md:flex w-full items-center">
+            {isLeft ? (
+            <>
+                <div className="w-5/12 pr-8 text-right">
+                <div className="p-4 rounded-lg bg-card/80 border border-primary/20 shadow-primary/10 shadow-lg">
+                    <h4 className="font-headline text-lg font-bold text-accent">{event.title}</h4>
+                    <p className="text-sm text-muted-foreground mt-1">{event.date}</p>
                 </div>
-              </div>
-            </div>
-            <div className="w-5/12"></div>
-          </>
-        ) : (
-          <>
-            <div className="w-5/12"></div>
-            <div className="w-2/12 flex-shrink-0 flex justify-center">
-              <div className="relative">
-                <div className="flex items-center justify-center h-10 w-10 rounded-full bg-primary font-bold text-primary-foreground z-10">
-                  {index + 1}
                 </div>
-              </div>
+                <div className="w-2/12 flex-shrink-0 flex justify-center">
+                    <div className="relative">
+                        <div className="flex items-center justify-center h-10 w-10 rounded-full bg-primary font-bold text-primary-foreground z-10">
+                        {index + 1}
+                        </div>
+                    </div>
+                </div>
+                <div className="w-5/12"></div>
+            </>
+            ) : (
+            <>
+                <div className="w-5/12"></div>
+                <div className="w-2/12 flex-shrink-0 flex justify-center">
+                <div className="relative">
+                    <div className="flex items-center justify-center h-10 w-10 rounded-full bg-primary font-bold text-primary-foreground z-10">
+                    {index + 1}
+                    </div>
+                </div>
+                </div>
+                <div className="w-5/12 pl-8 text-left">
+                <div className="p-4 rounded-lg bg-card/80 border border-primary/20 shadow-primary/10 shadow-lg">
+                    <h4 className="font-headline text-lg font-bold text-accent">{event.title}</h4>
+                    <p className="text-sm text-muted-foreground mt-1">{event.date}</p>
+                </div>
+                </div>
+            </>
+            )}
+        </div>
+        {/* Mobile view */}
+        <div className="flex md:hidden w-full items-start">
+            <div className="w-2/12 flex-shrink-0 flex justify-center">
+                <div className="relative">
+                    <div className="flex items-center justify-center h-10 w-10 rounded-full bg-primary font-bold text-primary-foreground z-10">
+                    {index + 1}
+                    </div>
+                </div>
             </div>
-            <div className="w-5/12 pl-8 text-left">
-              <div className="p-4 rounded-lg bg-card/80 border border-primary/20 shadow-primary/10 shadow-lg">
-                <h4 className="font-headline text-lg font-bold text-accent">{event.title}</h4>
-                <p className="text-sm text-muted-foreground mt-1">{event.date}</p>
-              </div>
+            <div className="w-10/12 pl-4 text-left">
+                <div className="p-4 rounded-lg bg-card/80 border border-primary/20 shadow-primary/10 shadow-lg">
+                    <h4 className="font-headline text-md font-bold text-accent">{event.title}</h4>
+                    <p className="text-xs text-muted-foreground mt-1">{event.date}</p>
+                </div>
             </div>
-          </>
-        )}
+        </div>
       </div>
     );
   };
@@ -366,7 +386,7 @@ export default function Home() {
           <div className="container mx-auto">
             <h2 className="text-4xl font-headline font-bold text-center mb-2 text-transparent bg-clip-text bg-gradient-to-b from-white to-accent">OUR SPEAKERS</h2>
             <p className="text-center text-primary text-lg mb-12">Meet Our Professional Speakers</p>
-            <div className="grid sm:grid-cols-1 lg:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            <div className="grid sm:grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
               <SpeakerCard 
                 image="https://placehold.co/400x600.png" 
                 name="Shandy Luo"
@@ -395,7 +415,8 @@ export default function Home() {
             <div className="container mx-auto">
                 <h2 className="text-4xl font-headline font-bold text-center mb-12 text-transparent bg-clip-text bg-gradient-to-b from-white to-accent">TIMELINE</h2>
                 <div className="relative max-w-4xl mx-auto">
-                <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-0.5 bg-primary/50"></div>
+                <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-0.5 bg-primary/50 hidden md:block"></div>
+                <div className="absolute left-[2.3rem] h-full w-0.5 bg-primary/50 md:hidden"></div>
                 {timelineEvents.map((event, index) => (
                     <TimelineItem key={index} event={event} index={index} />
                 ))}
@@ -409,15 +430,15 @@ export default function Home() {
                 <h2 className="text-4xl font-headline font-bold mb-12 text-transparent bg-clip-text bg-gradient-to-b from-white to-accent">SUPPORTED BY</h2>
                 <div className="grid md:grid-cols-3 gap-12 items-start justify-center">
                     <div className="flex flex-col items-center gap-4">
-                        <Image src="https://placehold.co/300x150.png" alt="Politeknik Negeri Sriwijaya" width={300} height={150} className="mx-auto" data-ai-hint="university logo" />
+                        <Image src="https://placehold.co/300x150.png" alt="Politeknik Negeri Sriwijaya" width={300} height={150} className="mx-auto object-contain" data-ai-hint="university logo" />
                         <p className="text-xl font-headline font-bold text-primary mt-4">Politeknik Negeri Sriwijaya</p>
                     </div>
                     <div className="flex flex-col items-center gap-4">
-                        <Image src="https://placehold.co/300x150.png" alt="Jurusan Manajemen Informatika" width={300} height={150} className="mx-auto" data-ai-hint="university logo" />
+                        <Image src="https://placehold.co/300x150.png" alt="Jurusan Manajemen Informatika" width={300} height={150} className="mx-auto object-contain" data-ai-hint="university logo" />
                         <p className="text-xl font-headline font-bold text-primary mt-4">Jurusan Manajemen Informatika</p>
                     </div>
                     <div className="flex flex-col items-center gap-4">
-                        <Image src="https://placehold.co/300x150.png" alt="Himpunan Mahasiswa Jurusan Manajemen Informatika" width={300} height={150} className="mx-auto" data-ai-hint="organization logo" />
+                        <Image src="https://placehold.co/300x150.png" alt="Himpunan Mahasiswa Jurusan Manajemen Informatika" width={300} height={150} className="mx-auto object-contain" data-ai-hint="organization logo" />
                         <p className="text-xl font-headline font-bold text-primary mt-4 text-center">Himpunan Mahasiswa Jurusan Manajemen Informatika</p>
                     </div>
                 </div>
@@ -442,7 +463,7 @@ export default function Home() {
                 {Array.from({ length: 5 }).map((_, index) => (
                   <CarouselItem key={index} className="basis-1/2 md:basis-1/3 lg:basis-1/4">
                     <div className="p-1">
-                      <Image src="https://placehold.co/200x100.png" alt={`Sponsor ${index + 1}`} width={200} height={100} data-ai-hint="company logo" />
+                      <Image src="https://placehold.co/200x100.png" alt={`Sponsor ${index + 1}`} width={200} height={100} className="object-contain" data-ai-hint="company logo" />
                     </div>
                   </CarouselItem>
                 ))}
@@ -471,7 +492,7 @@ export default function Home() {
                 {Array.from({ length: 5 }).map((_, index) => (
                   <CarouselItem key={index} className="basis-1/2 md:basis-1/3 lg:basis-1/4">
                     <div className="p-1">
-                      <Image src="https://placehold.co/200x100.png" alt={`Media Partner ${index + 1}`} width={200} height={100} data-ai-hint="media logo" />
+                      <Image src="https://placehold.co/200x100.png" alt={`Media Partner ${index + 1}`} width={200} height={100} className="object-contain" data-ai-hint="media logo" />
                     </div>
                   </CarouselItem>
                 ))}
