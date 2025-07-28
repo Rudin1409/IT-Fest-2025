@@ -7,8 +7,6 @@ import { Code, Gamepad2, Mic, Palette, ArrowDown } from 'lucide-react';
 import { Header } from '@/components/layout/header';
 import { Footer } from '@/components/layout/footer';
 import React, { useState, useEffect } from 'react';
-import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel"
-import Autoplay from "embla-carousel-autoplay"
 import Link from 'next/link';
 
 /**
@@ -119,7 +117,7 @@ const TimelineItem = ({ event, index }) => {
     const isLeft = index % 2 !== 0;
     // On mobile, every item will be on the "right" side of the timeline line
     return (
-      <div className="flex md:items-center w-full my-4">
+      <div className="flex w-full my-4 md:items-center">
         {/* Desktop view */}
         <div className="hidden md:flex w-full items-center">
             {isLeft ? (
@@ -292,16 +290,23 @@ const TypingAnimation = ({ text }) => {
   );
 };
 
+// Komponen untuk logo yang bergulir
+const ScrollingLogos = ({ items, hint, duration = '40s' }) => (
+    <div className="scroller" style={{ '--duration': duration }}>
+        <div className="scroller-inner">
+            {items.map((item, index) => (
+                <Image key={index} src={item.src} alt={item.alt} width={200} height={100} className="object-contain h-24" data-ai-hint={hint} />
+            ))}
+        </div>
+    </div>
+);
+
+
 /**
  * Halaman Utama (Beranda)
  * @returns {JSX.Element} Komponen halaman utama yang menampilkan semua bagian.
  */
 export default function Home() {
-  // Plugin untuk autoplay korsel
-  const autoplayPlugin = React.useRef(
-    Autoplay({ delay: 2000, stopOnInteraction: true })
-  );
-
   const handleScroll = (e) => {
     e.preventDefault();
     const aboutSection = document.getElementById('about');
@@ -309,6 +314,9 @@ export default function Home() {
       aboutSection.scrollIntoView({ behavior: 'smooth' });
     }
   };
+
+  const sponsorLogos = Array.from({ length: 10 }, (_, i) => ({ src: `https://placehold.co/200x100.png`, alt: `Sponsor ${i + 1}` }));
+  const mediaPartnerLogos = Array.from({ length: 10 }, (_, i) => ({ src: `https://placehold.co/200x100.png`, alt: `Media Partner ${i + 1}` }));
 
   return (
     <div className="flex flex-col min-h-screen bg-background text-foreground">
@@ -450,28 +458,7 @@ export default function Home() {
         <section id="sponsors" className="py-20 px-4 bg-secondary/50">
           <div className="container mx-auto text-center">
             <h2 className="text-4xl font-headline font-bold mb-12 text-transparent bg-clip-text bg-gradient-to-b from-white to-accent">SPONSORS</h2>
-            <Carousel
-              opts={{
-                align: "start",
-                loop: true,
-              }}
-              plugins={[autoplayPlugin.current]}
-              onMouseEnter={() => autoplayPlugin.current.stop()}
-              onMouseLeave={() => autoplayPlugin.current.play()}
-              className="w-full max-w-4xl mx-auto"
-            >
-              <CarouselContent>
-                {Array.from({ length: 5 }).map((_, index) => (
-                  <CarouselItem key={index} className="basis-1/2 md:basis-1/3 lg:basis-1/4">
-                    <div className="p-1">
-                      <Image src="https://placehold.co/200x100.png" alt={`Sponsor ${index + 1}`} width={200} height={100} className="object-contain" data-ai-hint="company logo" />
-                    </div>
-                  </CarouselItem>
-                ))}
-              </CarouselContent>
-              <CarouselPrevious />
-              <CarouselNext />
-            </Carousel>
+             <ScrollingLogos items={sponsorLogos} hint="company logo" duration="60s" />
           </div>
         </section>
 
@@ -479,28 +466,7 @@ export default function Home() {
         <section id="media-partners" className="py-20 px-4">
           <div className="container mx-auto text-center">
             <h2 className="text-4xl font-headline font-bold mb-12 text-transparent bg-clip-text bg-gradient-to-b from-white to-accent">MEDIA PARTNERS</h2>
-            <Carousel
-              opts={{
-                align: "start",
-                loop: true,
-              }}
-              plugins={[autoplayPlugin.current]}
-              onMouseEnter={() => autoplayPlugin.current.stop()}
-              onMouseLeave={() => autoplayPlugin.current.play()}
-              className="w-full max-w-4xl mx-auto"
-            >
-              <CarouselContent>
-                {Array.from({ length: 5 }).map((_, index) => (
-                  <CarouselItem key={index} className="basis-1/2 md:basis-1/3 lg:basis-1/4">
-                    <div className="p-1">
-                      <Image src="https://placehold.co/200x100.png" alt={`Media Partner ${index + 1}`} width={200} height={100} className="object-contain" data-ai-hint="media logo" />
-                    </div>
-                  </CarouselItem>
-                ))}
-              </CarouselContent>
-              <CarouselPrevious />
-              <CarouselNext />
-            </Carousel>
+            <ScrollingLogos items={mediaPartnerLogos} hint="media logo" duration="60s" />
           </div>
         </section>
 

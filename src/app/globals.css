@@ -225,3 +225,37 @@
 .animate-pulse-arrow {
     animation: pulse-arrow 2s ease-in-out infinite;
 }
+
+/* Continuous scrolling animation */
+.scroller {
+    max-width: 90%;
+    margin: auto;
+    overflow: hidden;
+    -webkit-mask: linear-gradient(90deg, transparent, white 20%, white 80%, transparent);
+    mask: linear-gradient(90deg, transparent, white 20%, white 80%, transparent);
+  }
+  
+  .scroller-inner {
+    display: flex;
+    gap: 2rem;
+    width: max-content;
+    animation: scroll var(--duration, 40s) linear infinite;
+  }
+  
+  .scroller:hover .scroller-inner {
+    animation-play-state: paused;
+  }
+  
+  @keyframes scroll {
+    to {
+      transform: translate(calc(-50% - 1rem));
+    }
+  }
+
+  /* Duplicate items for seamless scroll */
+  .scroller[data-animated="true"] .scroller-inner {
+    width: max-content;
+    flex-wrap: nowrap;
+    animation: scroll var(--duration, 40s) linear infinite;
+  }
+
