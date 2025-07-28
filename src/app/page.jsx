@@ -320,6 +320,7 @@ export default function Home() {
           <FloatingSquares />
            <div className="container mx-auto relative">
             <TypingAnimation text="WELCOME TO IT-FESTIVAL 2025" />
+            <p className="text-2xl md:text-4xl font-headline font-bold text-primary mb-4">Berakhir Dalam</p>
             <CountdownTimer />
              <p className="text-2xl md:text-4xl font-headline font-bold text-primary mb-8">THE BIGGEST IT FESTIVAL</p>
           </div>
