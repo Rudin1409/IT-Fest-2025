@@ -314,7 +314,7 @@ export default function Home() {
         <section id="about" className="py-20 px-4">
             <div className="container mx-auto grid md:grid-cols-2 gap-12 items-center">
                 <div>
-                    <h2 className="text-4xl font-headline font-bold mb-4">ABOUT US</h2>
+                    <h2 className="text-4xl font-headline font-bold mb-4 text-transparent bg-clip-text bg-gradient-to-b from-white to-accent">ABOUT US</h2>
                     <h3 className="text-2xl font-bold text-primary mb-6">The Biggest IT Festival in 2025</h3>
                     <p className="text-muted-foreground text-lg leading-relaxed">
                     IT-FESTIVAL 2025 adalah acara utama yang menyatukan mahasiswa, profesional, dan penggemar teknologi dari seluruh dunia. Misi kami adalah untuk mendorong inovasi, kolaborasi, dan pembelajaran di bidang teknologi informasi yang terus berkembang. Dengan berbagai acara, kompetisi, dan seminar, IT-FESTIVAL 2025 adalah platform yang sempurna untuk menunjukkan keahlian Anda, belajar dari yang terbaik, dan berjejaring dengan individu yang berpikiran sama.
@@ -329,7 +329,7 @@ export default function Home() {
         {/* Bagian Acara Kami */}
         <section id="events" className="py-20 px-4 bg-secondary/50">
           <div className="container mx-auto">
-            <h2 className="text-4xl font-headline font-bold text-center mb-2">OUR EVENTS</h2>
+            <h2 className="text-4xl font-headline font-bold text-center mb-2 text-transparent bg-clip-text bg-gradient-to-b from-white to-accent">OUR EVENTS</h2>
             <p className="text-center text-primary text-lg mb-12">Check Our Best Events</p>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 justify-center">
               <EventCard 
@@ -364,7 +364,7 @@ export default function Home() {
         {/* Bagian Pembicara */}
         <section id="speakers" className="py-20 px-4">
           <div className="container mx-auto">
-            <h2 className="text-4xl font-headline font-bold text-center mb-2">OUR SPEAKERS</h2>
+            <h2 className="text-4xl font-headline font-bold text-center mb-2 text-transparent bg-clip-text bg-gradient-to-b from-white to-accent">OUR SPEAKERS</h2>
             <p className="text-center text-primary text-lg mb-12">Meet Our Professional Speakers</p>
             <div className="grid sm:grid-cols-1 lg:grid-cols-2 gap-8 max-w-4xl mx-auto">
               <SpeakerCard 
@@ -393,7 +393,7 @@ export default function Home() {
         {/* Bagian Linimasa */}
         <section id="timeline" className="py-20 px-4 bg-secondary/50">
             <div className="container mx-auto">
-                <h2 className="text-4xl font-headline font-bold text-center mb-12">TIMELINE</h2>
+                <h2 className="text-4xl font-headline font-bold text-center mb-12 text-transparent bg-clip-text bg-gradient-to-b from-white to-accent">TIMELINE</h2>
                 <div className="relative max-w-4xl mx-auto">
                 <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-0.5 bg-primary/50"></div>
                 {timelineEvents.map((event, index) => (
@@ -406,7 +406,7 @@ export default function Home() {
         {/* Bagian Didukung Oleh */}
         <section id="supported-by" className="py-20 px-4">
             <div className="container mx-auto text-center">
-                <h2 className="text-4xl font-headline font-bold mb-12">SUPPORTED BY</h2>
+                <h2 className="text-4xl font-headline font-bold mb-12 text-transparent bg-clip-text bg-gradient-to-b from-white to-accent">SUPPORTED BY</h2>
                 <div className="grid md:grid-cols-3 gap-12 items-start justify-center">
                     <div className="flex flex-col items-center gap-4">
                         <Image src="https://placehold.co/300x150.png" alt="Politeknik Negeri Sriwijaya" width={300} height={150} className="mx-auto" data-ai-hint="university logo" />
@@ -427,7 +427,7 @@ export default function Home() {
         {/* Bagian Sponsor */}
         <section id="sponsors" className="py-20 px-4 bg-secondary/50">
           <div className="container mx-auto text-center">
-            <h2 className="text-4xl font-headline font-bold mb-12">SPONSORS</h2>
+            <h2 className="text-4xl font-headline font-bold mb-12 text-transparent bg-clip-text bg-gradient-to-b from-white to-accent">SPONSORS</h2>
             <Carousel
               opts={{
                 align: "start",
@@ -456,7 +456,7 @@ export default function Home() {
         {/* Bagian Mitra Media */}
         <section id="media-partners" className="py-20 px-4">
           <div className="container mx-auto text-center">
-            <h2 className="text-4xl font-headline font-bold mb-12">MEDIA PARTNERS</h2>
+            <h2 className="text-4xl font-headline font-bold mb-12 text-transparent bg-clip-text bg-gradient-to-b from-white to-accent">MEDIA PARTNERS</h2>
             <Carousel
               opts={{
                 align: "start",
