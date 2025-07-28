@@ -291,11 +291,11 @@ export default function Home() {
         <section id="hero" className="text-center py-24 px-4 relative overflow-hidden">
           <FloatingSquares />
            <div className="container mx-auto relative">
-            <TypingAnimation text="WELCOME TO IT-FEST 2025" />
+            <TypingAnimation text="WELCOME TO IT-FESTIVAL 2025" />
             <CountdownTimer />
              <p className="text-2xl md:text-4xl font-headline font-bold text-primary mb-8">THE BIGGEST IT FESTIVAL</p>
             <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto mb-10">
-            IT-FEST 2025 adalah acara utama yang menyatukan mahasiswa, profesional, dan penggemar teknologi dari seluruh dunia. Misi kami adalah untuk mendorong inovasi, kolaborasi, dan pembelajaran di bidang teknologi informasi yang terus berkembang.
+            IT-FESTIVAL 2025 adalah acara utama yang menyatukan mahasiswa, profesional, dan penggemar teknologi dari seluruh dunia. Misi kami adalah untuk mendorong inovasi, kolaborasi, dan pembelajaran di bidang teknologi informasi yang terus berkembang.
             </p>
             <div className="flex justify-center gap-4">
                 <Button size="lg" className="font-bold text-lg px-10 py-6">
@@ -315,7 +315,7 @@ export default function Home() {
                     <h2 className="text-4xl font-headline font-bold mb-4">ABOUT US</h2>
                     <h3 className="text-2xl font-bold text-primary mb-6">The Biggest IT Festival in 2025</h3>
                     <p className="text-muted-foreground text-lg leading-relaxed">
-                    IT-FEST 2025 adalah acara utama yang menyatukan mahasiswa, profesional, dan penggemar teknologi dari seluruh dunia. Misi kami adalah untuk mendorong inovasi, kolaborasi, dan pembelajaran di bidang teknologi informasi yang terus berkembang. Dengan berbagai acara, kompetisi, dan seminar, IT-FEST 2025 adalah platform yang sempurna untuk menunjukkan keahlian Anda, belajar dari yang terbaik, dan berjejaring dengan individu yang berpikiran sama.
+                    IT-FESTIVAL 2025 adalah acara utama yang menyatukan mahasiswa, profesional, dan penggemar teknologi dari seluruh dunia. Misi kami adalah untuk mendorong inovasi, kolaborasi, dan pembelajaran di bidang teknologi informasi yang terus berkembang. Dengan berbagai acara, kompetisi, dan seminar, IT-FESTIVAL 2025 adalah platform yang sempurna untuk menunjukkan keahlian Anda, belajar dari yang terbaik, dan berjejaring dengan individu yang berpikiran sama.
                     </p>
                 </div>
                 <div className="relative h-96 rounded-lg overflow-hidden shadow-2xl shadow-primary/20">
