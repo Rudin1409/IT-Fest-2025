@@ -3,7 +3,7 @@
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Code, Gamepad2, Mic, Palette, ArrowDown } from 'lucide-react';
+import { Code, Gamepad2, Mic, Palette, ArrowDown, Award } from 'lucide-react';
 import { Header } from '@/components/layout/header';
 import { Footer } from '@/components/layout/footer';
 import React, { useState, useEffect } from 'react';
@@ -389,6 +389,11 @@ export default function Home() {
                 icon={<Gamepad2 size={24} />} 
                 title="Kompetisi E-Sport" 
                 description="Bersaing dengan para gamer terbaik dan buktikan keahlian Anda di turnamen e-sport kami."
+              />
+              <EventCard 
+                icon={<Award size={24} />} 
+                title="Pameran Karya" 
+                description="Lihat karya-karya inovatif dan kreatif dari para mahasiswa berbakat di bidang teknologi."
               />
             </div>
           </div>
