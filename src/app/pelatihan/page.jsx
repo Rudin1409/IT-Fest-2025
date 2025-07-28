@@ -173,8 +173,6 @@ export default function PelatihanPage() {
                   />
                 </CarouselItem>
               </CarouselContent>
-              <CarouselPrevious className="hidden sm:flex" />
-              <CarouselNext className="hidden sm:flex" />
             </Carousel>
           </div>
         </section>
