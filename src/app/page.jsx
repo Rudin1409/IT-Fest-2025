@@ -1,4 +1,3 @@
-
 'use client';
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
@@ -302,9 +301,6 @@ export default function Home() {
             <TypingAnimation text="WELCOME TO IT-FESTIVAL 2025" />
             <CountdownTimer />
              <p className="text-2xl md:text-4xl font-headline font-bold text-primary mb-8">THE BIGGEST IT FESTIVAL</p>
-            <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto mb-10">
-            IT-FESTIVAL 2025 adalah acara utama yang menyatukan mahasiswa, profesional, dan penggemar teknologi dari seluruh dunia. Misi kami adalah untuk mendorong inovasi, kolaborasi, dan pembelajaran di bidang teknologi informasi yang terus berkembang.
-            </p>
           </div>
           <a href="#about" onClick={handleScroll} className="absolute bottom-10 left-1/2 -translate-x-1/2 cursor-pointer">
               <div className="w-12 h-12 text-white flex items-center justify-center animate-pulse-arrow">
