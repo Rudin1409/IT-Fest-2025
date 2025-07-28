@@ -456,7 +456,7 @@ export default function Home() {
                         <p className="text-xl font-headline font-bold text-primary mt-4">Jurusan Manajemen Informatika</p>
                     </div>
                     <div className="flex flex-col items-center gap-4">
-                        <Image src="https://placehold.co/300x150.png" alt="Himpunan Mahasiswa Jurusan Manajemen Informatika" width={300} height={150} className="mx-auto object-contain" data-ai-hint="organization logo" />
+                        <Image src="/logohmj.png" alt="Himpunan Mahasiswa Jurusan Manajemen Informatika" width={300} height={150} className="mx-auto object-contain" data-ai-hint="organization logo" />
                         <p className="text-xl font-headline font-bold text-primary mt-4 text-center">Himpunan Mahasiswa Jurusan Manajemen Informatika</p>
                     </div>
                 </div>
