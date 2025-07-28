@@ -40,9 +40,8 @@ export const Header = () => {
             key={link.href}
             href={link.href}
             className={cn(
-              'font-semibold transition-colors hover:text-primary',
-              // Menyorot tautan aktif
-              pathname === link.href ? 'text-primary' : 'text-foreground/80'
+              'relative font-semibold text-foreground/80 transition-colors hover:text-primary nav-link-underline',
+              pathname === link.href ? 'text-primary' : ''
             )}
           >
             {link.label}
