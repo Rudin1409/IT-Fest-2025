@@ -1,3 +1,4 @@
+
 'use client';
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
@@ -295,7 +296,7 @@ export default function Home() {
       <main className="flex-grow pt-24">
         
         {/* Bagian Hero */}
-        <section id="hero" className="text-center py-24 px-4 relative overflow-hidden h-screen flex flex-col justify-center">
+        <section id="hero" className="text-center px-4 relative overflow-hidden h-[80vh] flex flex-col justify-center">
           <FloatingSquares />
            <div className="container mx-auto relative">
             <TypingAnimation text="WELCOME TO IT-FESTIVAL 2025" />
