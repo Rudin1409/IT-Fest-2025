@@ -11,7 +11,7 @@ import {
 } from "@/components/ui/sheet";
 import { Menu } from 'lucide-react';
 import Image from 'next/image';
-import logo from '@/../public/logo.png';
+
 
 // Daftar tautan navigasi
 const navLinks = [
@@ -32,7 +32,7 @@ export const Header = () => {
     <header className="fixed top-0 left-0 right-0 z-50 flex justify-between items-center py-3 px-6 bg-background/50 backdrop-blur-lg border-b border-border/50">
       {/* Logo Situs */}
       <Link href="/" className="flex items-center gap-2 text-xl font-headline font-bold text-primary tracking-widest">
-        <Image src={logo} alt="IT-Festival Logo" width={32} height={32} />
+        <Image src="/logo.png" alt="IT-Festival Logo" width={32} height={32} />
         IT-FESTIVAL 2025
       </Link>
       
