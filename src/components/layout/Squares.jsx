@@ -102,11 +102,8 @@ const Squares = ({
       const mouseX = event.clientX - rect.left;
       const mouseY = event.clientY - rect.top;
 
-      const startX = Math.floor(gridOffset.current.x / squareSize) * squareSize;
-      const startY = Math.floor(gridOffset.current.y / squareSize) * squareSize;
-
-      const hoveredSquareX = Math.floor((mouseX + gridOffset.current.x % squareSize) / squareSize);
-      const hoveredSquareY = Math.floor((mouseY + gridOffset.current.y % squareSize) / squareSize);
+      const hoveredSquareX = Math.floor((mouseX + (gridOffset.current.x % squareSize)) / squareSize);
+      const hoveredSquareY = Math.floor((mouseY + (gridOffset.current.y % squareSize)) / squareSize);
 
 
       if (
