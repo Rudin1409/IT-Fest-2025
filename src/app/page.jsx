@@ -1,3 +1,4 @@
+
 'use client';
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
@@ -7,6 +8,7 @@ import { Header } from '@/components/layout/header';
 import { Footer } from '@/components/layout/footer';
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
+import Squares from '@/components/layout/Squares';
 
 /**
  * Komponen EventCard
@@ -278,10 +280,18 @@ export default function Home() {
   return (
     <div className="flex flex-col min-h-screen bg-background text-foreground">
       <Header />
-      <main className="flex-grow pt-24">
+      <main className="flex-grow">
         
         {/* Bagian Hero */}
-        <section id="hero" className="text-center px-4 relative overflow-hidden h-[90vh] flex flex-col justify-center">
+        <section id="hero" className="text-center px-4 relative overflow-hidden h-screen flex flex-col justify-center pt-24">
+          <Squares 
+            speed={0.1} 
+            squareSize={40}
+            direction='diagonal'
+            borderColor='hsl(var(--primary) / 0.1)'
+            hoverFillColor='hsl(var(--primary) / 0.2)'
+            className="opacity-50"
+          />
            <div className="container mx-auto relative">
             <TypingAnimation text="WELCOME TO IT-FESTIVAL 2025" />
             <p className="text-2xl md:text-4xl font-headline font-bold text-primary mb-4">Berakhir Dalam</p>
