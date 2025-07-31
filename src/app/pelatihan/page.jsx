@@ -150,39 +150,41 @@ export default function PelatihanPage() {
         <section className="py-20 px-4 bg-secondary/50">
           <div className="container mx-auto">
             <h2 className="text-4xl font-headline font-bold text-center mb-12">KATEGORI PELATIHAN</h2>
-            <Carousel
-               opts={{
-                align: "start",
-                loop: true,
-              }}
-              plugins={[autoplayPlugin.current]}
-              onMouseEnter={() => autoplayPlugin.current.stop()}
-              onMouseLeave={() => autoplayPlugin.current.play()}
-              className="w-full max-w-sm md:max-w-xl lg:max-w-5xl mx-auto"
-            >
-              <CarouselContent>
-                <CarouselItem className="basis-full sm:basis-1/2 p-2 flex">
-                  <TrainingCategoryCard
-                    title="Android Development"
-                    image="https://placehold.co/400x400.png"
-                    hint="mobile app"
-                  />
-                </CarouselItem>
-                <CarouselItem className="basis-full sm:basis-1/2 p-2 flex">
-                  <TrainingCategoryCard
-                    title="Full-Stack Web"
-                    image="https://placehold.co/400x400.png"
-                    hint="web development"
-                  />
-                </CarouselItem>
-              </CarouselContent>
-              <CarouselPrevious className="sm:flex hidden -left-12" />
-              <CarouselNext className="sm:flex hidden -right-12" />
-              <div className="sm:hidden flex justify-center gap-4 mt-4">
+            <div className="relative w-full max-w-xs sm:max-w-xl lg:max-w-5xl mx-auto">
+              <Carousel
+                opts={{
+                  align: "start",
+                  loop: true,
+                }}
+                plugins={[autoplayPlugin.current]}
+                onMouseEnter={() => autoplayPlugin.current.stop()}
+                onMouseLeave={() => autoplayPlugin.current.play()}
+                className="w-full"
+              >
+                <CarouselContent className="gap-4">
+                  <CarouselItem className="basis-full sm:basis-1/2 lg:basis-1/2 pl-4">
+                    <TrainingCategoryCard
+                      title="Android Development"
+                      image="https://placehold.co/400x400.png"
+                      hint="mobile app"
+                    />
+                  </CarouselItem>
+                  <CarouselItem className="basis-full sm:basis-1/2 lg:basis-1/2 pl-4">
+                    <TrainingCategoryCard
+                      title="Full-Stack Web"
+                      image="https://placehold.co/400x400.png"
+                      hint="web development"
+                    />
+                  </CarouselItem>
+                </CarouselContent>
+                <CarouselPrevious className="sm:flex hidden -left-12" />
+                <CarouselNext className="sm:flex hidden -right-12" />
+                <div className="sm:hidden flex justify-center gap-4 mt-8">
                   <CarouselPrevious className="static translate-y-0" />
                   <CarouselNext className="static translate-y-0" />
                 </div>
-            </Carousel>
+              </Carousel>
+            </div>
           </div>
         </section>
 
