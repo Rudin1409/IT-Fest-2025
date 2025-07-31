@@ -33,7 +33,7 @@ export const Header = () => {
       {/* Logo Situs */}
       <Link href="/" className="flex items-center gap-2 text-xl font-headline font-bold text-primary tracking-widest">
         <Image src="/logo.png" alt="IT-Festival Logo" width={32} height={32} />
-        IT-FESTIVAL 2025
+        IT-FESTIVAL
       </Link>
       
       {/* Navigasi untuk Desktop */}

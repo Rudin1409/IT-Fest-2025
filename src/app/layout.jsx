@@ -4,7 +4,7 @@ import { Toaster } from "@/components/ui/toaster";
 
 
 export const metadata = {
-  title: 'IT-Festival 2025',
+  title: 'IT-Festival',
   description: 'Festival teknologi terbesar tahun 2025 yang menghadirkan kompetisi, pelatihan, dan seminar untuk mengembangkan talenta digital masa depan.',
   icons: [{ rel: 'icon', url: '/logo.png' }],
 };

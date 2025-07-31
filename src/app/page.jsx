@@ -85,7 +85,7 @@ const TimelineItem = ({ event, index }) => {
     const isLeft = index % 2 !== 0;
     // On mobile, every item will be on the "right" side of the timeline line
     return (
-      <div className="flex w-full my-4 md:items-center">
+      <div className="flex w-full my-4 md:my-8">
         {/* Desktop view */}
         <div className="hidden md:flex w-full items-center">
             {isLeft ? (
@@ -402,7 +402,7 @@ export default function Home() {
                 <h2 className="text-4xl font-headline font-bold text-center mb-12 text-transparent bg-clip-text bg-gradient-to-b from-white to-accent">TIMELINE</h2>
                 <div className="relative max-w-5xl mx-auto">
                 <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-0.5 bg-primary/50 hidden md:block"></div>
-                <div className="absolute left-[2.3rem] h-full w-0.5 bg-primary/50 md:hidden"></div>
+                <div className="absolute left-[calc(1.25rem-1px)] md:left-1/2 h-full w-0.5 bg-primary/50"></div>
                 {timelineEvents.map((event, index) => (
                     <TimelineItem key={index} event={event} index={index} />
                 ))}

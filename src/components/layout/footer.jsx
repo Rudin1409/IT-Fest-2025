@@ -17,8 +17,8 @@ export const Footer = () => (
         <div className="lg:col-span-2">
           <div className="flex items-center gap-3 mb-4">
              {/* Logo */}
-             <Image src="/logo.png" alt="IT-Festival 2025 Logo" width={48} height={48} />
-             <span className="font-headline text-2xl font-bold text-white">IT-FESTIVAL 2025</span>
+             <Image src="/logo.png" alt="IT-Festival Logo" width={48} height={48} />
+             <span className="font-headline text-2xl font-bold text-white">IT-FESTIVAL</span>
           </div>
           <p className="max-w-md leading-relaxed">
           Festival teknologi terbesar tahun 2025 yang menghadirkan kompetisi, pelatihan, dan seminar untuk mengembangkan talenta digital masa depan.
@@ -79,7 +79,7 @@ export const Footer = () => (
       
       {/* Bagian Bawah Footer */}
       <div className="container mx-auto mt-12 pt-8 border-t border-primary/20 flex flex-col sm:flex-row justify-between items-center text-sm text-muted-foreground">
-        <p>&copy; 2025 IT-Festival 2025. All rights reserved.</p>
+        <p>&copy; 2025 IT-Festival. All rights reserved.</p>
         <div className="flex space-x-4 mt-4 sm:mt-0">
             <Image src="/logo.png" alt="IT-Festival Logo" width={48} height={48} />
             <Image src="/logokabinet.png" alt="Logo Kabinet" width={48} height={48} className="object-contain" data-ai-hint="organization logo" />
