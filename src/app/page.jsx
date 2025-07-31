@@ -52,43 +52,27 @@ const SpeakerCard = ({ image, name, title, hint }) => (
 
 // Data untuk linimasa acara
 const timelineEvents = [
-  {
-    title: 'Pendaftaran Seminar & Pelatihan Dibuka',
-    date: '16 Agustus 2025',
-  },
-  {
-    title: 'Penutupan Pendaftaran Pelatihan & Seminar',
-    date: '6 September 2025',
-  },
-  {
-    title: 'Opening Ceremony, Seminar & Talkshow',
-    date: '16 September 2025',
-  },
-  {
-    title: 'Pelaksanaan Pelatihan',
-    date: '17 – 20 September 2025',
-  },
-  {
-    title: 'Penutupan Pendaftaran Lomba',
-    date: '30 September 2025',
-  },
-  {
-    title: 'Technical Meeting Lomba',
-    date: "3 Oktober 2025",
-  },
-  {
-    title: 'Pelaksanaan Lomba',
-    date: '4 - 16 Oktober 2025',
-  },
-  {
-    title: 'Batas Akhir Pengumpulan Karya',
-    date: '13 Oktober 2025',
-  },
-  {
-    title: 'Closing Ceremony & Pengumuman Pemenang',
-    date: '20 Oktober 2025',
-  },
-];
+    {
+      title: 'Pendaftaran Lomba',
+      date: '16 Agustus - 30 September 2025',
+    },
+    {
+      title: 'Pembuatan Karya',
+      date: '16 Agustus - 13 Oktober 2025',
+    },
+    {
+      title: 'Technical Meeting',
+      date: '3 Oktober 2025',
+    },
+    {
+      title: 'Turnamen dan Penjurian',
+      date: '4 - 16 Oktober 2025',
+    },
+    {
+      title: 'Pengumuman Pemenang',
+      date: '20 Oktober 2025',
+    },
+  ];
 
 /**
  * Komponen TimelineItem
@@ -389,14 +373,14 @@ export default function Home() {
             <h2 className="text-4xl font-headline font-bold text-center mb-2 text-transparent bg-clip-text bg-gradient-to-b from-white to-accent">OUR SPEAKERS</h2>
             <p className="text-center text-primary text-lg mb-12">Meet Our Professional Speakers</p>
             <div className="grid sm:grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-              <SpeakerCard 
-                image="https://placehold.co/400x600.png" 
+            <SpeakerCard
+                image="https://placehold.co/400x600.png"
                 name="Theresa Tandrawinata"
                 title="Creator, Web3 & Business"
                 hint="woman creator"
               />
-              <SpeakerCard 
-                image="https://placehold.co/400x600.png" 
+              <SpeakerCard
+                image="https://placehold.co/400x600.png"
                 name="Nabila Carissa"
                 title="Content Creator & Social Media Influencer"
                 hint="woman influencer"
@@ -416,7 +400,7 @@ export default function Home() {
         <section id="timeline" className="py-20 px-4 bg-secondary/50">
             <div className="container mx-auto">
                 <h2 className="text-4xl font-headline font-bold text-center mb-12 text-transparent bg-clip-text bg-gradient-to-b from-white to-accent">TIMELINE</h2>
-                <div className="relative max-w-4xl mx-auto">
+                <div className="relative max-w-5xl mx-auto">
                 <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-0.5 bg-primary/50 hidden md:block"></div>
                 <div className="absolute left-[2.3rem] h-full w-0.5 bg-primary/50 md:hidden"></div>
                 {timelineEvents.map((event, index) => (
