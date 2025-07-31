@@ -19,21 +19,21 @@ import Autoplay from "embla-carousel-autoplay";
  * @returns {JSX.Element} Kartu yang menampilkan detail kompetisi.
  */
 const CompetitionCard = ({ title, image, hint }) => (
-  <Card className="bg-card/80 backdrop-blur-sm border-primary/10 hover:border-primary transition-all duration-300 transform hover:scale-105 hover:shadow-2xl hover:shadow-primary/20 overflow-hidden text-center flex flex-col h-full">
-    <div className="relative h-48 w-full">
-      <Image src={image} alt={title} fill className="object-contain p-4" data-ai-hint={hint} />
-    </div>
-    <CardContent className="p-4 flex flex-col flex-grow">
-      <div className='border-t border-primary/50 pt-4 flex-grow flex flex-col justify-center'>
-        <h3 className="font-headline text-xl min-h-[3.5rem] flex items-center justify-center">{title}</h3>
+    <Card className="bg-card/80 backdrop-blur-sm border-primary/10 hover:border-primary transition-all duration-300 transform hover:scale-105 hover:shadow-2xl hover:shadow-primary/20 overflow-hidden text-center flex flex-col h-full">
+      <div className="relative h-48 w-full">
+        <Image src={image} alt={title} fill className="object-contain p-4" data-ai-hint={hint} />
       </div>
-      <div className="flex flex-col sm:flex-row justify-around gap-2 mt-4">
-        <Button variant="default" className="w-full">Daftar</Button>
-        <Button variant="outline" className="w-full">Guide Book</Button>
-      </div>
-    </CardContent>
-  </Card>
-);
+      <CardContent className="p-4 flex flex-col flex-grow">
+        <div className='border-t border-primary/50 pt-4 flex-grow flex flex-col justify-center'>
+          <h3 className="font-headline text-xl min-h-[3.5rem] flex items-center justify-center">{title}</h3>
+        </div>
+        <div className="flex flex-col sm:flex-row justify-around gap-2 mt-auto">
+          <Button variant="default" className="w-full">Daftar</Button>
+          <Button variant="outline" className="w-full">Guide Book</Button>
+        </div>
+      </CardContent>
+    </Card>
+  );
 
 // Data untuk linimasa kompetisi
 const timelineData = [
@@ -174,11 +174,11 @@ export default function KompetisiPage() {
                 </CarouselContent>
                 <CarouselPrevious className="sm:flex hidden -left-12" />
                 <CarouselNext className="sm:flex hidden -right-12" />
-              </Carousel>
-              <div className="sm:hidden flex justify-center gap-4 mt-4">
+                 <div className="sm:hidden flex justify-center gap-4 mt-4">
                   <CarouselPrevious className="static translate-y-0" />
                   <CarouselNext className="static translate-y-0" />
-              </div>
+                </div>
+              </Carousel>
             </div>
           </div>
         </section>
