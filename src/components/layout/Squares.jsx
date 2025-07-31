@@ -23,7 +23,6 @@ const Squares = ({
     if (!canvas) return;
     const ctx = canvas.getContext('2d');
 
-    // Get the computed background color from CSS variables
     const computedStyle = getComputedStyle(document.body);
     backgroundRgb.current = computedStyle.getPropertyValue('--background-rgb').trim();
     const primaryHsl = computedStyle.getPropertyValue('--primary').trim();
@@ -64,7 +63,6 @@ const Squares = ({
         }
       }
 
-      // This creates a vignette effect
       const gradient = ctx.createRadialGradient(
         canvas.width / 2,
         canvas.height / 2,
