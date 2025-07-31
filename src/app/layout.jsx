@@ -1,7 +1,6 @@
 
 import './globals.css';
 import { Toaster } from "@/components/ui/toaster";
-import './globals.css';
 import Squares from '@/components/layout/Squares';
 
 
@@ -23,7 +22,7 @@ export default function RootLayout({
       </head>
       <body className="font-body antialiased">
         <Squares 
-          speed={0.1} 
+          speed={0.2} 
           squareSize={40}
           direction='diagonal'
           hoverFillColor='hsl(var(--primary) / 0.2)'
