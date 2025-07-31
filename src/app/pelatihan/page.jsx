@@ -6,7 +6,7 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Header } from '@/components/layout/header';
 import { Footer } from '@/components/layout/footer';
 import { CalendarDays } from 'lucide-react';
-import React, { useEffect, useRef } from 'react';
+import React from 'react';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
 
@@ -114,12 +114,9 @@ const TrainingTimeline = () => (
  * @returns {JSX.Element} Halaman utama untuk bagian pelatihan.
  */
 export default function PelatihanPage() {
-    const autoplayPlugin = useRef(null);
-
-    useEffect(() => {
-        autoplayPlugin.current = Autoplay({ delay: 3000, stopOnInteraction: true });
-    }, []);
-
+    const autoplayPlugin = React.useRef(
+        Autoplay({ delay: 3000, stopOnInteraction: true })
+      );
 
   return (
     <div className="flex flex-col min-h-screen bg-background text-foreground">
@@ -158,20 +155,20 @@ export default function PelatihanPage() {
                 align: "start",
                 loop: true,
               }}
-              plugins={autoplayPlugin.current ? [autoplayPlugin.current] : []}
-              onMouseEnter={() => autoplayPlugin.current?.stop()}
-              onMouseLeave={() => autoplayPlugin.current?.play()}
+              plugins={[autoplayPlugin.current]}
+              onMouseEnter={autoplayPlugin.current.stop}
+              onMouseLeave={autoplayPlugin.current.reset}
               className="w-full max-w-sm md:max-w-xl lg:max-w-5xl mx-auto"
             >
               <CarouselContent>
-                <CarouselItem className="sm:basis-1/2 flex flex-col">
+                <CarouselItem className="sm:basis-1/2 lg:basis-1/2 flex flex-col">
                   <TrainingCategoryCard
                     title="Android Development"
                     image="https://placehold.co/400x400.png"
                     hint="mobile app"
                   />
                 </CarouselItem>
-                <CarouselItem className="sm:basis-1/2 flex flex-col">
+                <CarouselItem className="sm:basis-1/2 lg:basis-1/2 flex flex-col">
                   <TrainingCategoryCard
                     title="Full-Stack Web"
                     image="https://placehold.co/400x400.png"
