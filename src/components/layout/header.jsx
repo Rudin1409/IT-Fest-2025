@@ -37,13 +37,13 @@ export const Header = () => {
       </Link>
       
       {/* Navigasi untuk Desktop */}
-      <nav className="hidden md:flex items-center space-x-4">
+      <nav className="hidden md:flex items-center space-x-6">
         {navLinks.map((link) => (
           <Link
             key={link.href}
             href={link.href}
             className={cn(
-              'relative font-semibold text-foreground/80 transition-colors hover:text-primary nav-link-underline',
+              'relative font-headline text-md text-foreground/80 transition-colors hover:text-primary nav-link-underline',
               pathname === link.href ? 'text-primary active' : ''
             )}
           >
@@ -52,7 +52,7 @@ export const Header = () => {
         ))}
         {/* Tombol Register */}
         <Link href="/register">
-          <Button className="font-bold shadow-lg shadow-primary/20 hover:shadow-primary/40 transition-shadow ml-4">Register</Button>
+          <Button className="font-bold shadow-lg shadow-primary/20 hover:shadow-primary/40 transition-shadow ml-4 font-headline">Register</Button>
         </Link>
       </nav>
       
@@ -66,13 +66,13 @@ export const Header = () => {
             </Button>
           </SheetTrigger>
           <SheetContent side="right">
-            <nav className="flex flex-col space-y-4 mt-8">
+            <nav className="flex flex-col space-y-6 mt-8">
               {navLinks.map((link) => (
                 <Link
                   key={link.href}
                   href={link.href}
                   className={cn(
-                    'font-semibold text-lg transition-colors hover:text-primary',
+                    'font-headline text-2xl transition-colors hover:text-primary',
                     pathname === link.href ? 'text-primary' : 'text-foreground/80'
                   )}
                 >
@@ -80,7 +80,7 @@ export const Header = () => {
                 </Link>
               ))}
               <Link href="/register">
-                <Button className="font-bold shadow-lg shadow-primary/20 hover:shadow-primary/40 transition-shadow w-full">Register</Button>
+                <Button className="font-bold shadow-lg shadow-primary/20 hover:shadow-primary/40 transition-shadow w-full font-headline text-lg">Register</Button>
               </Link>
             </nav>
           </SheetContent>
