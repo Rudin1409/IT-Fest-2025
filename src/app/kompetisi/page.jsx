@@ -20,14 +20,14 @@ import Autoplay from "embla-carousel-autoplay";
  */
 const CompetitionCard = ({ title, image, hint }) => (
   <Card className="bg-card/80 backdrop-blur-sm border-primary/10 hover:border-primary transition-all duration-300 transform hover:scale-105 hover:shadow-2xl hover:shadow-primary/20 overflow-hidden text-center flex flex-col h-full">
-    <div className="relative h-80 w-full">
+    <div className="relative h-60 w-full">
       <Image src={image} alt={title} fill className="object-contain p-4" data-ai-hint={hint} />
     </div>
-    <CardContent className="p-4 space-y-4 flex flex-col flex-grow">
-      <div className='border-t border-primary/50 pt-4 flex-grow'>
-        <h3 className="font-headline text-xl h-14 flex items-center justify-center">{title}</h3>
+    <CardContent className="p-4 flex flex-col flex-grow">
+      <div className='border-t border-primary/50 pt-4 flex-grow flex flex-col justify-center'>
+        <h3 className="font-headline text-xl min-h-[3.5rem] flex items-center justify-center">{title}</h3>
       </div>
-      <div className="flex flex-col sm:flex-row justify-around gap-2 mt-auto">
+      <div className="flex flex-col sm:flex-row justify-around gap-2 mt-4">
         <Button variant="default" className="w-full">Daftar</Button>
         <Button variant="outline" className="w-full">Guide Book</Button>
       </div>
