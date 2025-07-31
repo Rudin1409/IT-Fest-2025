@@ -26,7 +26,6 @@ export default function RootLayout({
           squareSize={40}
           direction='diagonal'
           hoverFillColor='hsl(var(--primary) / 0.2)'
-          className="opacity-50"
         />
         <div className="relative z-10">
           {children}
