@@ -53,55 +53,39 @@ const SpeakerCard = ({ image, name, title, hint }) => (
 // Data untuk linimasa acara
 const timelineEvents = [
   {
-    title: 'Open Registration Seminar, Perlombaan dan Pelatihan (Android & Web)',
+    title: 'Pendaftaran Seminar, Lomba & Pelatihan Dibuka',
     date: 'Selasa, 16 Agustus 2025',
   },
   {
-    title: 'Perlombaan (Pembuatan Karya)',
-    date: '16 Agustus – 13 Oktober 2025',
-  },
-  {
-    title: 'Close Registration Pelatihan dan Seminar',
+    title: 'Penutupan Pendaftaran Pelatihan & Seminar',
     date: 'Sabtu, 6 September 2025',
   },
   {
-    title: 'Opening Ceremony IT-Festival 2025',
+    title: 'Opening Ceremony, Seminar & Talkshow',
     date: 'Selasa, 16 September 2025',
   },
   {
-    title: 'Pelaksanaan Seminar & Talkshow',
-    date: 'Selasa, 16 September 2025',
-  },
-  {
-    title: 'Pelatihan Android & Web',
+    title: 'Pelaksanaan Pelatihan Android & Web',
     date: 'Rabu – Sabtu, 17 – 20 September 2025',
   },
   {
-    title: 'Close Registration Lomba',
+    title: 'Penutupan Pendaftaran Lomba',
     date: 'Selasa, 30 September 2025',
   },
   {
-    title: 'Pelaksanaan Technical Meeting Lomba Web Development, Poster Design, Mobile Legends, dan Animasi',
+    title: 'Technical Meeting Lomba',
     date: "Jum'at, 3 Oktober 2025",
   },
   {
-    title: 'Lomba Mobile Legends',
-    date: 'Sabtu, 4 Oktober 2025',
+    title: 'Turnamen dan Penjurian Lomba',
+    date: '4 - 16 Oktober 2025',
   },
   {
     title: 'Batas Akhir Pengumpulan Karya Lomba',
     date: 'Senin, 13 Oktober 2025',
   },
   {
-    title: 'Seleksi Karya Lomba Web Development',
-    date: 'Selasa - Rabu, 14 - 15 Oktober 2025',
-  },
-  {
-    title: 'Penjurian Lomba (Animasi, Poster Design, dan Web Development)',
-    date: 'Kamis, 16 Oktober 2025',
-  },
-  {
-    title: 'Closing Ceremony IT-Festival 2025 & Pengumuman Pemenang',
+    title: 'Closing Ceremony & Pengumuman Pemenang',
     date: 'Senin, 20 Oktober 2025',
   },
 ];

@@ -38,20 +38,20 @@ const CompetitionCard = ({ title, image, hint }) => (
 // Data untuk linimasa kompetisi
 const timelineData = [
     {
-      title: 'Pembukaan Pendaftaran',
-      date: '15 Agustus - 29 September 2025',
+      title: 'Pendaftaran & Pembuatan Karya',
+      date: '16 Agustus - 13 Oktober 2025',
     },
     {
       title: 'Technical Meeting',
-      date: '27 - 28 September 2025',
+      date: '3 Oktober 2025',
     },
     {
       title: 'Turnamen dan Penjurian',
-      date: '29 September - 6 Oktober 2025',
+      date: '4 - 16 Oktober 2025',
     },
     {
       title: 'Pengumuman Pemenang',
-      date: '10 Oktober 2025',
+      date: '20 Oktober 2025',
     },
   ];
 
