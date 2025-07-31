@@ -64,7 +64,7 @@ const ClassCard = ({ title, image, hint }) => (
 const timelineData = [
     {
       title: 'Pembukaan Pendaftaran',
-      date: '15 Agustus - 8 September 2025',
+      date: '16 Agustus - 6 September 2025',
     },
     {
       title: 'Pelaksanaan Pelatihan',
@@ -72,11 +72,11 @@ const timelineData = [
     },
     {
       title: 'Pengumpulan Proyek',
-      date: '21 - 28 September 2025',
+      date: '20 September 2025',
     },
     {
       title: 'Pengumuman Lulusan',
-      date: '5 Oktober 2025',
+      date: '20 September 2025',
     },
   ];
 
@@ -114,7 +114,9 @@ const TrainingTimeline = () => (
  * @returns {JSX.Element} Halaman utama untuk bagian pelatihan.
  */
 export default function PelatihanPage() {
-    const autoplayPlugin = Autoplay({ delay: 3000, stopOnInteraction: true });
+    const autoplayPlugin = React.useRef(
+        Autoplay({ delay: 3000, stopOnInteraction: true })
+    );
 
   return (
     <div className="flex flex-col min-h-screen bg-background text-foreground">
@@ -153,9 +155,9 @@ export default function PelatihanPage() {
                 align: "start",
                 loop: true,
               }}
-              plugins={[autoplayPlugin]}
-              onMouseEnter={autoplayPlugin.stop}
-              onMouseLeave={autoplayPlugin.play}
+              plugins={[autoplayPlugin.current]}
+              onMouseEnter={() => autoplayPlugin.current.stop()}
+              onMouseLeave={() => autoplayPlugin.current.play()}
               className="w-full max-w-sm md:max-w-xl lg:max-w-5xl mx-auto"
             >
               <CarouselContent>
