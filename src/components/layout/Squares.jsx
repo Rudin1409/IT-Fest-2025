@@ -16,11 +16,15 @@ const Squares = ({
   const hoveredSquare = useRef(null);
   const mouseX = useRef(-1);
   const mouseY = useRef(-1);
+  const backgroundRgb = useRef('');
 
   useEffect(() => {
     const canvas = canvasRef.current;
     if (!canvas) return;
     const ctx = canvas.getContext('2d');
+
+    // Get the computed background color from CSS variables
+    backgroundRgb.current = getComputedStyle(document.body).getPropertyValue('--background-rgb').trim();
 
     const resizeCanvas = () => {
       canvas.width = canvas.offsetWidth;
@@ -63,8 +67,11 @@ const Squares = ({
         canvas.height / 2,
         Math.max(canvas.width, canvas.height) / 1.5
       );
-      gradient.addColorStop(0, 'rgba(var(--background-rgb), 0)');
-      gradient.addColorStop(1, 'rgba(var(--background-rgb), 1)');
+      if (backgroundRgb.current) {
+        gradient.addColorStop(0, `rgba(${backgroundRgb.current}, 0)`);
+        gradient.addColorStop(1, `rgba(${backgroundRgb.current}, 1)`);
+      }
+
 
       ctx.fillStyle = gradient;
       ctx.fillRect(0, 0, canvas.width, canvas.height);
