@@ -14,6 +14,8 @@ const Squares = ({
   const animationFrameId = useRef(null);
   const gridOffset = useRef({ x: 0, y: 0 });
   const hoveredSquare = useRef(null);
+  const mouseX = useRef(-1);
+  const mouseY = useRef(-1);
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -32,37 +34,37 @@ const Squares = ({
       if (!ctx) return;
       ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-      const startX = Math.floor(gridOffset.current.x / squareSize) * squareSize;
-      const startY = Math.floor(gridOffset.current.y / squareSize) * squareSize;
+      const offsetX = gridOffset.current.x % squareSize;
+      const offsetY = gridOffset.current.y % squareSize;
 
-      for (let x = startX; x < canvas.width + squareSize; x += squareSize) {
-        for (let y = startY; y < canvas.height + squareSize; y += squareSize) {
-          const squareX = x - (gridOffset.current.x % squareSize);
-          const squareY = y - (gridOffset.current.y % squareSize);
-
+      for (let x = -offsetX; x < canvas.width; x += squareSize) {
+        for (let y = -offsetY; y < canvas.height; y += squareSize) {
           if (
-            hoveredSquare.current &&
-            Math.floor((mouseX.current - squareX) / squareSize) === 0 &&
-            Math.floor((mouseY.current - squareY) / squareSize) === 0
+            mouseX.current !== -1 &&
+            mouseX.current >= x &&
+            mouseX.current < x + squareSize &&
+            mouseY.current >= y &&
+            mouseY.current < y + squareSize
           ) {
             ctx.fillStyle = hoverFillColor;
-            ctx.fillRect(squareX, squareY, squareSize, squareSize);
+            ctx.fillRect(x, y, squareSize, squareSize);
           }
-
           ctx.strokeStyle = borderColor;
-          ctx.strokeRect(squareX, squareY, squareSize, squareSize);
+          ctx.strokeRect(x, y, squareSize, squareSize);
         }
       }
 
+      // This creates a vignette effect
       const gradient = ctx.createRadialGradient(
         canvas.width / 2,
         canvas.height / 2,
-        0,
+        Math.min(canvas.width, canvas.height) / 4,
         canvas.width / 2,
         canvas.height / 2,
-        Math.sqrt(canvas.width ** 2 + canvas.height ** 2) / 2
+        Math.max(canvas.width, canvas.height) / 1.5
       );
-      gradient.addColorStop(0, 'rgba(0, 0, 0, 0)');
+      gradient.addColorStop(0, 'rgba(var(--background-rgb), 0)');
+      gradient.addColorStop(1, 'rgba(var(--background-rgb), 1)');
 
       ctx.fillStyle = gradient;
       ctx.fillRect(0, 0, canvas.width, canvas.height);
@@ -72,7 +74,7 @@ const Squares = ({
       const effectiveSpeed = Math.max(speed, 0.1);
       switch (direction) {
         case 'right':
-          gridOffset.current.x = (gridOffset.current.x - effectiveSpeed + squareSize * 2) % squareSize;
+          gridOffset.current.x = (gridOffset.current.x - effectiveSpeed + (squareSize * 2)) % squareSize;
           break;
         case 'left':
           gridOffset.current.x = (gridOffset.current.x + effectiveSpeed) % squareSize;
@@ -81,11 +83,11 @@ const Squares = ({
           gridOffset.current.y = (gridOffset.current.y + effectiveSpeed) % squareSize;
           break;
         case 'down':
-          gridOffset.current.y = (gridOffset.current.y - effectiveSpeed + squareSize * 2) % squareSize;
+          gridOffset.current.y = (gridOffset.current.y - effectiveSpeed + (squareSize * 2)) % squareSize;
           break;
         case 'diagonal':
-          gridOffset.current.x = (gridOffset.current.x - effectiveSpeed + squareSize * 2) % squareSize;
-          gridOffset.current.y = (gridOffset.current.y - effectiveSpeed + squareSize * 2) % squareSize;
+          gridOffset.current.x = (gridOffset.current.x - effectiveSpeed + (squareSize * 2)) % squareSize;
+          gridOffset.current.y = (gridOffset.current.y - effectiveSpeed + (squareSize * 2)) % squareSize;
           break;
         default:
           break;
@@ -94,9 +96,6 @@ const Squares = ({
       drawGrid();
       animationFrameId.current = requestAnimationFrame(updateAnimation);
     };
-
-    const mouseX = useRef(0);
-    const mouseY = useRef(0);
     
     const handleMouseMove = (event) => {
       const rect = canvas.getBoundingClientRect();
