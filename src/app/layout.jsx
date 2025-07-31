@@ -26,7 +26,6 @@ export default function RootLayout({
           speed={0.1} 
           squareSize={40}
           direction='diagonal'
-          borderColor='hsl(var(--primary) / 0.1)'
           hoverFillColor='hsl(var(--primary) / 0.2)'
           className="opacity-50"
         />

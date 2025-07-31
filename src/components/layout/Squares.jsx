@@ -6,7 +6,6 @@ import './squares.css';
 const Squares = ({
   direction = 'right',
   speed = 1,
-  borderColor = '#999',
   squareSize = 40,
   hoverFillColor = '#222',
   className = ''
@@ -17,6 +16,7 @@ const Squares = ({
   const mouseX = useRef(-1);
   const mouseY = useRef(-1);
   const backgroundRgb = useRef('');
+  const borderColor = useRef('hsl(var(--primary) / 0.1)');
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -24,7 +24,13 @@ const Squares = ({
     const ctx = canvas.getContext('2d');
 
     // Get the computed background color from CSS variables
-    backgroundRgb.current = getComputedStyle(document.body).getPropertyValue('--background-rgb').trim();
+    const computedStyle = getComputedStyle(document.body);
+    backgroundRgb.current = computedStyle.getPropertyValue('--background-rgb').trim();
+    const primaryHsl = computedStyle.getPropertyValue('--primary').trim();
+    if (primaryHsl) {
+        borderColor.current = `hsla(${primaryHsl}, 0.1)`;
+    }
+
 
     const resizeCanvas = () => {
       canvas.width = canvas.offsetWidth;
@@ -53,7 +59,7 @@ const Squares = ({
             ctx.fillStyle = hoverFillColor;
             ctx.fillRect(x, y, squareSize, squareSize);
           }
-          ctx.strokeStyle = borderColor;
+          ctx.strokeStyle = borderColor.current;
           ctx.strokeRect(x, y, squareSize, squareSize);
         }
       }
@@ -130,7 +136,7 @@ const Squares = ({
         canvas.removeEventListener('mouseleave', handleMouseLeave);
       }
     };
-  }, [direction, speed, borderColor, hoverFillColor, squareSize]);
+  }, [direction, speed, hoverFillColor, squareSize]);
 
   return <canvas ref={canvasRef} className={`squares-canvas ${className}`}></canvas>;
 };
