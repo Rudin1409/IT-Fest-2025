@@ -407,9 +407,9 @@ export default function Home() {
             <div className="grid sm:grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
               <SpeakerCard 
                 image="https://placehold.co/400x600.png" 
-                name="Shandy Luo"
-                title="Content Creator"
-                hint="man content creator"
+                name="Theresa Tandrawinata"
+                title="Creator, Web3 & Business"
+                hint="woman creator"
               />
               <SpeakerCard 
                 image="https://placehold.co/400x600.png" 
@@ -484,5 +484,7 @@ export default function Home() {
     </div>
   );
 }
+
+    
 
     
