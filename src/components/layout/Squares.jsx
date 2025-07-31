@@ -11,7 +11,7 @@ const Squares = ({
   className = ''
 }) => {
   const canvasRef = useRef(null);
-  const requestRef = useRef(null);
+  const animationFrameId = useRef(null);
   const gridOffset = useRef({ x: 0, y: 0 });
   const hoveredSquare = useRef(null);
 
@@ -19,8 +19,6 @@ const Squares = ({
     const canvas = canvasRef.current;
     if (!canvas) return;
     const ctx = canvas.getContext('2d');
-
-    let animationFrameId;
 
     const resizeCanvas = () => {
       canvas.width = canvas.offsetWidth;
@@ -44,8 +42,8 @@ const Squares = ({
 
           if (
             hoveredSquare.current &&
-            Math.floor((x - startX) / squareSize) === hoveredSquare.current.x &&
-            Math.floor((y - startY) / squareSize) === hoveredSquare.current.y
+            Math.floor((mouseX.current - squareX) / squareSize) === 0 &&
+            Math.floor((mouseY.current - squareY) / squareSize) === 0
           ) {
             ctx.fillStyle = hoverFillColor;
             ctx.fillRect(squareX, squareY, squareSize, squareSize);
@@ -74,49 +72,41 @@ const Squares = ({
       const effectiveSpeed = Math.max(speed, 0.1);
       switch (direction) {
         case 'right':
-          gridOffset.current.x = (gridOffset.current.x - effectiveSpeed + squareSize) % squareSize;
+          gridOffset.current.x = (gridOffset.current.x - effectiveSpeed + squareSize * 2) % squareSize;
           break;
         case 'left':
-          gridOffset.current.x = (gridOffset.current.x + effectiveSpeed + squareSize) % squareSize;
+          gridOffset.current.x = (gridOffset.current.x + effectiveSpeed) % squareSize;
           break;
         case 'up':
-          gridOffset.current.y = (gridOffset.current.y + effectiveSpeed + squareSize) % squareSize;
+          gridOffset.current.y = (gridOffset.current.y + effectiveSpeed) % squareSize;
           break;
         case 'down':
-          gridOffset.current.y = (gridOffset.current.y - effectiveSpeed + squareSize) % squareSize;
+          gridOffset.current.y = (gridOffset.current.y - effectiveSpeed + squareSize * 2) % squareSize;
           break;
         case 'diagonal':
-          gridOffset.current.x = (gridOffset.current.x - effectiveSpeed + squareSize) % squareSize;
-          gridOffset.current.y = (gridOffset.current.y - effectiveSpeed + squareSize) % squareSize;
+          gridOffset.current.x = (gridOffset.current.x - effectiveSpeed + squareSize * 2) % squareSize;
+          gridOffset.current.y = (gridOffset.current.y - effectiveSpeed + squareSize * 2) % squareSize;
           break;
         default:
           break;
       }
 
       drawGrid();
-      animationFrameId = requestAnimationFrame(updateAnimation);
+      animationFrameId.current = requestAnimationFrame(updateAnimation);
     };
 
+    const mouseX = useRef(0);
+    const mouseY = useRef(0);
+    
     const handleMouseMove = (event) => {
       const rect = canvas.getBoundingClientRect();
-      const mouseX = event.clientX - rect.left;
-      const mouseY = event.clientY - rect.top;
-
-      const hoveredSquareX = Math.floor((mouseX + (gridOffset.current.x % squareSize)) / squareSize);
-      const hoveredSquareY = Math.floor((mouseY + (gridOffset.current.y % squareSize)) / squareSize);
-
-
-      if (
-        !hoveredSquare.current ||
-        hoveredSquare.current.x !== hoveredSquareX ||
-        hoveredSquare.current.y !== hoveredSquareY
-      ) {
-        hoveredSquare.current = { x: hoveredSquareX, y: hoveredSquareY };
-      }
+      mouseX.current = event.clientX - rect.left;
+      mouseY.current = event.clientY - rect.top;
     };
 
     const handleMouseLeave = () => {
-      hoveredSquare.current = null;
+        mouseX.current = -1;
+        mouseY.current = -1;
     };
 
     canvas.addEventListener('mousemove', handleMouseMove);
@@ -126,7 +116,9 @@ const Squares = ({
 
     return () => {
       window.removeEventListener('resize', resizeCanvas);
-      cancelAnimationFrame(animationFrameId);
+      if(animationFrameId.current) {
+        cancelAnimationFrame(animationFrameId.current);
+      }
       if (canvas) {
         canvas.removeEventListener('mousemove', handleMouseMove);
         canvas.removeEventListener('mouseleave', handleMouseLeave);
