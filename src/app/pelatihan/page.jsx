@@ -52,9 +52,9 @@ const ClassCard = ({ title, image, hint }) => (
         <div className='border-t border-primary/50 pt-4 flex-grow flex flex-col justify-center'>
           <h3 className="font-headline text-xl min-h-[3.5rem] flex items-center justify-center">{title}</h3>
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 mt-auto">
-          <Button variant="default">Kelas A</Button>
-          <Button variant="default">Kelas B</Button>
+        <div className="flex flex-col sm:flex-row justify-around gap-2 mt-auto">
+          <Button variant="default" className="w-full">Kelas A</Button>
+          <Button variant="default" className="w-full">Kelas B</Button>
         </div>
       </CardContent>
     </Card>
@@ -161,7 +161,7 @@ export default function PelatihanPage() {
                 onMouseLeave={() => autoplayPlugin.current.play()}
                 className="w-full"
               >
-                <CarouselContent className="gap-4">
+                <CarouselContent className="-ml-4 gap-4">
                   <CarouselItem className="basis-full sm:basis-1/2 lg:basis-1/2 pl-4">
                     <TrainingCategoryCard
                       title="Android Development"
