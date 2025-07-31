@@ -4,6 +4,13 @@
 @tailwind utilities;
 
 @layer base {
+  @font-face {
+    font-family: 'Valorant';
+    src: url('/fonts/valorant.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+
   :root {
     --background: 225 47% 16%;
     --foreground: 0 0% 98%;
