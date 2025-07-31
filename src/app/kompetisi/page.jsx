@@ -20,7 +20,7 @@ import Autoplay from "embla-carousel-autoplay";
  */
 const CompetitionCard = ({ title, image, hint }) => (
   <Card className="bg-card/80 backdrop-blur-sm border-primary/10 hover:border-primary transition-all duration-300 transform hover:scale-105 hover:shadow-2xl hover:shadow-primary/20 overflow-hidden text-center flex flex-col h-full">
-    <div className="relative h-56 w-full">
+    <div className="relative h-48 w-full">
       <Image src={image} alt={title} fill className="object-contain p-4" data-ai-hint={hint} />
     </div>
     <CardContent className="p-4 flex flex-col flex-grow">
@@ -131,49 +131,55 @@ export default function KompetisiPage() {
             <div className='flex items-center justify-center'>
               <Button className='mb-8'>Daftar Kompetisi</Button>
             </div>
-            <Carousel
-              opts={{
-                align: "start",
-                loop: true,
-              }}
-              plugins={[plugin.current]}
-              onMouseEnter={() => plugin.current.stop()}
-              onMouseLeave={() => plugin.current.play()}
-              className="w-full max-w-xs sm:max-w-xl lg:max-w-5xl mx-auto"
-            >
-              <CarouselContent>
-                <CarouselItem className="basis-full sm:basis-1/2 lg:basis-1/3 p-2">
-                  <CompetitionCard
-                    title="Mobile Legends"
-                    image="https://placehold.co/400x400.png"
-                    hint="gaming character"
-                  />
-                </CarouselItem>
-                <CarouselItem className="basis-full sm:basis-1/2 lg:basis-1/3 p-2">
-                  <CompetitionCard
-                    title="Poster Design"
-                    image="https://placehold.co/400x400.png"
-                    hint="design character"
-                  />
-                </CarouselItem>
-                <CarouselItem className="basis-full sm:basis-1/2 lg:basis-1/3 p-2">
-                  <CompetitionCard
-                    title="E-Goverment"
-                    image="https://placehold.co/400x400.png"
-                    hint="government building"
-                  />
-                </CarouselItem>
-                 <CarouselItem className="basis-full sm:basis-1/2 lg:basis-1/3 p-2">
-                  <CompetitionCard
-                    title="Lomba Cipta Inovasi"
-                    image="https://placehold.co/400x400.png"
-                    hint="innovation lightbulb"
-                  />
-                </CarouselItem>
-              </CarouselContent>
-              <CarouselPrevious className="hidden sm:flex" />
-              <CarouselNext className="hidden sm:flex" />
-            </Carousel>
+            <div className="relative w-full max-w-xs sm:max-w-xl lg:max-w-5xl mx-auto">
+              <Carousel
+                opts={{
+                  align: "start",
+                  loop: true,
+                }}
+                plugins={[plugin.current]}
+                onMouseEnter={() => plugin.current.stop()}
+                onMouseLeave={() => plugin.current.play()}
+                className="w-full"
+              >
+                <CarouselContent className="-ml-2">
+                  <CarouselItem className="basis-full sm:basis-1/2 lg:basis-1/3 p-2">
+                    <CompetitionCard
+                      title="Mobile Legends"
+                      image="https://placehold.co/400x400.png"
+                      hint="gaming character"
+                    />
+                  </CarouselItem>
+                  <CarouselItem className="basis-full sm:basis-1/2 lg:basis-1/3 p-2">
+                    <CompetitionCard
+                      title="Poster Design"
+                      image="https://placehold.co/400x400.png"
+                      hint="design character"
+                    />
+                  </CarouselItem>
+                  <CarouselItem className="basis-full sm:basis-1/2 lg:basis-1/3 p-2">
+                    <CompetitionCard
+                      title="E-Goverment"
+                      image="https://placehold.co/400x400.png"
+                      hint="government building"
+                    />
+                  </CarouselItem>
+                   <CarouselItem className="basis-full sm:basis-1/2 lg:basis-1/3 p-2">
+                    <CompetitionCard
+                      title="Lomba Cipta Inovasi"
+                      image="https://placehold.co/400x400.png"
+                      hint="innovation lightbulb"
+                    />
+                  </CarouselItem>
+                </CarouselContent>
+                <CarouselPrevious className="sm:flex hidden -left-12" />
+                <CarouselNext className="sm:flex hidden -right-12" />
+              </Carousel>
+              <div className="sm:hidden flex justify-center gap-4 mt-4">
+                  <CarouselPrevious className="static translate-y-0" />
+                  <CarouselNext className="static translate-y-0" />
+              </div>
+            </div>
           </div>
         </section>
       </main>
