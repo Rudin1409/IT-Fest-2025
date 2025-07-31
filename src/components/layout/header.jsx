@@ -7,6 +7,7 @@ import { cn } from '@/lib/utils';
 import {
   Sheet,
   SheetContent,
+  SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
 import { Menu } from 'lucide-react';
@@ -66,6 +67,7 @@ export const Header = () => {
             </Button>
           </SheetTrigger>
           <SheetContent side="right">
+            <SheetTitle className="sr-only">Menu</SheetTitle>
             <nav className="flex flex-col space-y-6 mt-8">
               {navLinks.map((link) => (
                 <Link
