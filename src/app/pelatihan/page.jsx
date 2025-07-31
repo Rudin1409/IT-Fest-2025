@@ -19,7 +19,7 @@ import Autoplay from "embla-carousel-autoplay";
  * @returns {JSX.Element} Kartu yang menampilkan kategori pelatihan.
  */
 const TrainingCategoryCard = ({ title, image, hint }) => (
-    <Card className="bg-card/80 backdrop-blur-sm border-primary/10 hover:border-primary transition-all duration-300 transform hover:scale-105 hover:shadow-2xl hover:shadow-primary/20 overflow-hidden text-center flex flex-col">
+    <Card className="bg-card/80 backdrop-blur-sm border-primary/10 hover:border-primary transition-all duration-300 transform hover:scale-105 hover:shadow-2xl hover:shadow-primary/20 overflow-hidden text-center flex flex-col h-full">
       <div className="relative h-80 w-full">
         <Image src={image} alt={title} fill className="object-contain p-4" data-ai-hint={hint} />
       </div>
@@ -44,7 +44,7 @@ const TrainingCategoryCard = ({ title, image, hint }) => (
  * @returns {JSX.Element} Kartu yang menampilkan detail kelas dengan pilihan pendaftaran.
  */
 const ClassCard = ({ title, image, hint }) => (
-    <Card className="bg-card/80 backdrop-blur-sm border-primary/10 hover:border-primary transition-all duration-300 transform hover:scale-105 hover:shadow-2xl hover:shadow-primary/20 overflow-hidden text-center flex flex-col">
+    <Card className="bg-card/80 backdrop-blur-sm border-primary/10 hover:border-primary transition-all duration-300 transform hover:scale-105 hover:shadow-2xl hover:shadow-primary/20 overflow-hidden text-center flex flex-col h-full">
       <div className="relative h-80 w-full">
         <Image src={image} alt={title} fill className="object-contain p-4" data-ai-hint={hint} />
       </div>
@@ -155,9 +155,9 @@ export default function PelatihanPage() {
                 align: "start",
                 loop: true,
               }}
-              plugins={[autoplayPlugin.current]}
-              onMouseEnter={() => autoplayPlugin.current.stop()}
-              onMouseLeave={() => autoplayPlugin.current.play()}
+              plugins={autoplayPlugin.current ? [autoplayPlugin.current] : []}
+              onMouseEnter={() => autoplayPlugin.current?.stop()}
+              onMouseLeave={() => autoplayPlugin.current?.play()}
               className="w-full max-w-sm md:max-w-xl lg:max-w-5xl mx-auto"
             >
               <CarouselContent>
@@ -184,7 +184,7 @@ export default function PelatihanPage() {
         <section className="py-20 px-4">
             <div className="container mx-auto">
                 <h2 className="text-4xl font-headline font-bold text-center mb-12">DAFTAR KELAS</h2>
-                <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto items-stretch">
                   <ClassCard
                     title="Kelas Android"
                     image="/pelatihan/android.png"
