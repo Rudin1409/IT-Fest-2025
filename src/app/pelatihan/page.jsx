@@ -44,15 +44,15 @@ const TrainingCategoryCard = ({ title, image, hint }) => (
  * @returns {JSX.Element} Kartu yang menampilkan detail kelas dengan pilihan pendaftaran.
  */
 const ClassCard = ({ title, image, hint }) => (
-    <Card className="bg-card/80 backdrop-blur-sm border-primary/10 hover:border-primary transition-all duration-300 transform hover:scale-105 hover:shadow-2xl hover:shadow-primary/20 overflow-hidden text-center">
+    <Card className="bg-card/80 backdrop-blur-sm border-primary/10 hover:border-primary transition-all duration-300 transform hover:scale-105 hover:shadow-2xl hover:shadow-primary/20 overflow-hidden text-center flex flex-col">
       <div className="relative h-80 w-full">
         <Image src={image} alt={title} fill className="object-contain p-4" data-ai-hint={hint} />
       </div>
-      <CardContent className="p-4 space-y-4">
-        <div className='border-t border-primary/50 pt-4'>
-          <h3 className="font-headline text-xl">{title}</h3>
+      <CardContent className="p-4 space-y-4 flex flex-col flex-grow">
+        <div className='border-t border-primary/50 pt-4 flex-grow'>
+          <h3 className="font-headline text-xl h-14 flex items-center justify-center">{title}</h3>
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 mt-auto">
           <Button variant="default">Kelas A</Button>
           <Button variant="default">Kelas B</Button>
         </div>
@@ -156,19 +156,19 @@ export default function PelatihanPage() {
                 loop: true,
               }}
               plugins={[autoplayPlugin.current]}
-              onMouseEnter={autoplayPlugin.current.stop}
-              onMouseLeave={autoplayPlugin.current.reset}
+              onMouseEnter={() => autoplayPlugin.current.stop()}
+              onMouseLeave={() => autoplayPlugin.current.play()}
               className="w-full max-w-sm md:max-w-xl lg:max-w-5xl mx-auto"
             >
               <CarouselContent>
-                <CarouselItem className="sm:basis-1/2 lg:basis-1/2 flex flex-col">
+                <CarouselItem className="sm:basis-1/2 lg:basis-1/2 flex">
                   <TrainingCategoryCard
                     title="Android Development"
                     image="https://placehold.co/400x400.png"
                     hint="mobile app"
                   />
                 </CarouselItem>
-                <CarouselItem className="sm:basis-1/2 lg:basis-1/2 flex flex-col">
+                <CarouselItem className="sm:basis-1/2 lg:basis-1/2 flex">
                   <TrainingCategoryCard
                     title="Full-Stack Web"
                     image="https://placehold.co/400x400.png"
