@@ -114,9 +114,7 @@ const TrainingTimeline = () => (
  * @returns {JSX.Element} Halaman utama untuk bagian pelatihan.
  */
 export default function PelatihanPage() {
-    const autoplayPlugin = React.useRef(
-        Autoplay({ delay: 3000, stopOnInteraction: true })
-      );
+    const autoplayPlugin = Autoplay({ delay: 3000, stopOnInteraction: true });
 
   return (
     <div className="flex flex-col min-h-screen bg-background text-foreground">
@@ -155,9 +153,9 @@ export default function PelatihanPage() {
                 align: "start",
                 loop: true,
               }}
-              plugins={autoplayPlugin.current ? [autoplayPlugin.current] : []}
-              onMouseEnter={() => autoplayPlugin.current?.stop()}
-              onMouseLeave={() => autoplayPlugin.current?.play()}
+              plugins={[autoplayPlugin]}
+              onMouseEnter={autoplayPlugin.stop}
+              onMouseLeave={autoplayPlugin.play}
               className="w-full max-w-sm md:max-w-xl lg:max-w-5xl mx-auto"
             >
               <CarouselContent>
