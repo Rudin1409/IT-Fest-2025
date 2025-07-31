@@ -6,7 +6,7 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Header } from '@/components/layout/header';
 import { Footer } from '@/components/layout/footer';
 import { CalendarDays } from 'lucide-react';
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
 
@@ -25,7 +25,7 @@ const TrainingCategoryCard = ({ title, image, hint }) => (
       </div>
       <CardContent className="p-4 space-y-4 flex flex-col flex-grow">
         <div className='border-t border-primary/50 pt-4 flex-grow'>
-          <h3 className="font-headline text-xl">{title}</h3>
+          <h3 className="font-headline text-xl h-14 flex items-center justify-center">{title}</h3>
         </div>
         <div className="flex flex-col sm:flex-row justify-around gap-2 mt-auto">
             <Button variant="default" className="w-full">Daftar</Button>
@@ -114,10 +114,12 @@ const TrainingTimeline = () => (
  * @returns {JSX.Element} Halaman utama untuk bagian pelatihan.
  */
 export default function PelatihanPage() {
-    // Plugin untuk autoplay korsel
-    const autoplayPlugin = React.useRef(
-        Autoplay({ delay: 3000, stopOnInteraction: true })
-      );
+    const autoplayPlugin = useRef(null);
+
+    useEffect(() => {
+        autoplayPlugin.current = Autoplay({ delay: 3000, stopOnInteraction: true });
+    }, []);
+
 
   return (
     <div className="flex flex-col min-h-screen bg-background text-foreground">
@@ -154,10 +156,11 @@ export default function PelatihanPage() {
             <Carousel
               opts={{
                 align: "start",
+                loop: true,
               }}
               plugins={autoplayPlugin.current ? [autoplayPlugin.current] : []}
-              onMouseEnter={() => autoplayPlugin.current && autoplayPlugin.current.stop()}
-              onMouseLeave={() => autoplayPlugin.current && autoplayPlugin.current.play()}
+              onMouseEnter={() => autoplayPlugin.current?.stop()}
+              onMouseLeave={() => autoplayPlugin.current?.play()}
               className="w-full max-w-sm md:max-w-xl lg:max-w-5xl mx-auto"
             >
               <CarouselContent>
