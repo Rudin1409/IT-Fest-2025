@@ -157,8 +157,8 @@ export default function PelatihanPage() {
                 loop: true,
               }}
               plugins={[autoplayPlugin.current]}
-              onMouseEnter={() => autoplayPlugin.current.stop()}
-              onMouseLeave={() => autoplayPlugin.current.play()}
+              onMouseEnter={() => autoplayPlugin.current && autoplayPlugin.current.stop()}
+              onMouseLeave={() => autoplayPlugin.current && autoplayPlugin.current.play()}
               className="w-full max-w-sm md:max-w-xl lg:max-w-5xl mx-auto"
             >
               <CarouselContent>
