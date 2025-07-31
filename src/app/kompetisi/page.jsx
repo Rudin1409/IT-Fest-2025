@@ -19,15 +19,15 @@ import Autoplay from "embla-carousel-autoplay";
  * @returns {JSX.Element} Kartu yang menampilkan detail kompetisi.
  */
 const CompetitionCard = ({ title, image, hint }) => (
-  <Card className="bg-card/80 backdrop-blur-sm border-primary/10 hover:border-primary transition-all duration-300 transform hover:scale-105 hover:shadow-2xl hover:shadow-primary/20 overflow-hidden text-center">
+  <Card className="bg-card/80 backdrop-blur-sm border-primary/10 hover:border-primary transition-all duration-300 transform hover:scale-105 hover:shadow-2xl hover:shadow-primary/20 overflow-hidden text-center flex flex-col h-full">
     <div className="relative h-80 w-full">
       <Image src={image} alt={title} fill className="object-contain p-4" data-ai-hint={hint} />
     </div>
-    <CardContent className="p-4 space-y-4">
-      <div className='border-t border-primary/50 pt-4'>
-        <h3 className="font-headline text-xl">{title}</h3>
+    <CardContent className="p-4 space-y-4 flex flex-col flex-grow">
+      <div className='border-t border-primary/50 pt-4 flex-grow'>
+        <h3 className="font-headline text-xl h-14 flex items-center justify-center">{title}</h3>
       </div>
-      <div className="flex flex-col sm:flex-row justify-around gap-2">
+      <div className="flex flex-col sm:flex-row justify-around gap-2 mt-auto">
         <Button variant="default" className="w-full">Daftar</Button>
         <Button variant="outline" className="w-full">Guide Book</Button>
       </div>
@@ -92,8 +92,7 @@ const CompetitionTimeline = () => (
  * @returns {JSX.Element} Halaman utama untuk bagian kompetisi.
  */
 export default function KompetisiPage() {
-  // Plugin untuk autoplay korsel
-  const autoplayPlugin = React.useRef(
+  const plugin = React.useRef(
     Autoplay({ delay: 3000, stopOnInteraction: true })
   );
 
@@ -137,34 +136,34 @@ export default function KompetisiPage() {
                 align: "start",
                 loop: true,
               }}
-              plugins={[autoplayPlugin.current]}
-              onMouseEnter={() => autoplayPlugin.current.stop()}
-              onMouseLeave={() => autoplayPlugin.current.play()}
+              plugins={[plugin.current]}
+              onMouseEnter={() => plugin.current.stop()}
+              onMouseLeave={() => plugin.current.play()}
               className="w-full max-w-sm md:max-w-xl lg:max-w-5xl mx-auto"
             >
               <CarouselContent>
-                <CarouselItem className="sm:basis-1/2 lg:basis-1/3">
+                <CarouselItem className="sm:basis-1/2 lg:basis-1/3 flex">
                   <CompetitionCard
                     title="Mobile Legends"
                     image="https://placehold.co/400x400.png"
                     hint="gaming character"
                   />
                 </CarouselItem>
-                <CarouselItem className="sm:basis-1/2 lg:basis-1/3">
+                <CarouselItem className="sm:basis-1/2 lg:basis-1/3 flex">
                   <CompetitionCard
                     title="Poster Design"
                     image="https://placehold.co/400x400.png"
                     hint="design character"
                   />
                 </CarouselItem>
-                <CarouselItem className="sm:basis-1/2 lg:basis-1/3">
+                <CarouselItem className="sm:basis-1/2 lg:basis-1/3 flex">
                   <CompetitionCard
                     title="E-Goverment"
                     image="https://placehold.co/400x400.png"
                     hint="government building"
                   />
                 </CarouselItem>
-                 <CarouselItem className="sm:basis-1/2 lg:basis-1/3">
+                 <CarouselItem className="sm:basis-1/2 lg:basis-1/3 flex">
                   <CompetitionCard
                     title="Lomba Cipta Inovasi"
                     image="https://placehold.co/400x400.png"
