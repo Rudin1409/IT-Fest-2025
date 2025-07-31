@@ -53,40 +53,40 @@ const SpeakerCard = ({ image, name, title, hint }) => (
 // Data untuk linimasa acara
 const timelineEvents = [
   {
-    title: 'Pendaftaran Seminar, Lomba & Pelatihan Dibuka',
-    date: 'Selasa, 16 Agustus 2025',
+    title: 'Pendaftaran Seminar & Pelatihan Dibuka',
+    date: '16 Agustus 2025',
   },
   {
     title: 'Penutupan Pendaftaran Pelatihan & Seminar',
-    date: 'Sabtu, 6 September 2025',
+    date: '6 September 2025',
   },
   {
     title: 'Opening Ceremony, Seminar & Talkshow',
-    date: 'Selasa, 16 September 2025',
+    date: '16 September 2025',
   },
   {
-    title: 'Pelaksanaan Pelatihan Android & Web',
-    date: 'Rabu – Sabtu, 17 – 20 September 2025',
+    title: 'Pelaksanaan Pelatihan',
+    date: '17 – 20 September 2025',
   },
   {
     title: 'Penutupan Pendaftaran Lomba',
-    date: 'Selasa, 30 September 2025',
+    date: '30 September 2025',
   },
   {
     title: 'Technical Meeting Lomba',
-    date: "Jum'at, 3 Oktober 2025",
+    date: "3 Oktober 2025",
   },
   {
-    title: 'Turnamen dan Penjurian Lomba',
+    title: 'Pelaksanaan Lomba',
     date: '4 - 16 Oktober 2025',
   },
   {
-    title: 'Batas Akhir Pengumpulan Karya Lomba',
-    date: 'Senin, 13 Oktober 2025',
+    title: 'Batas Akhir Pengumpulan Karya',
+    date: '13 Oktober 2025',
   },
   {
     title: 'Closing Ceremony & Pengumuman Pemenang',
-    date: 'Senin, 20 Oktober 2025',
+    date: '20 Oktober 2025',
   },
 ];
 

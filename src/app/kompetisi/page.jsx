@@ -38,7 +38,11 @@ const CompetitionCard = ({ title, image, hint }) => (
 // Data untuk linimasa kompetisi
 const timelineData = [
     {
-      title: 'Pendaftaran & Pembuatan Karya',
+      title: 'Pendaftaran Lomba',
+      date: '16 Agustus - 30 September 2025',
+    },
+    {
+      title: 'Pembuatan Karya',
       date: '16 Agustus - 13 Oktober 2025',
     },
     {
@@ -67,7 +71,7 @@ const CompetitionTimeline = () => (
         </h2>
         <div className="relative">
           <div className="hidden md:block absolute top-1/2 left-0 w-full h-0.5 bg-primary/30 -translate-y-1/2"></div>
-          <div className="grid md:grid-cols-4 gap-y-12 md:gap-8">
+          <div className="grid md:grid-cols-5 gap-y-12 md:gap-8">
             {timelineData.map((item, index) => (
               <div key={index} className="flex flex-col items-center text-center relative">
                  <div className="relative z-10 flex items-center justify-center w-12 h-12 bg-card border-2 border-primary rounded-full mb-4">
