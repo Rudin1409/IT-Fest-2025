@@ -161,7 +161,7 @@ export default function PelatihanPage() {
                 onMouseLeave={() => autoplayPlugin.current.play()}
                 className="w-full"
               >
-                <CarouselContent className="-ml-4 gap-4">
+                <CarouselContent className="flex gap-4">
                   <CarouselItem className="basis-full sm:basis-1/2 lg:basis-1/2 pl-4">
                     <TrainingCategoryCard
                       title="Android Development"
@@ -177,8 +177,6 @@ export default function PelatihanPage() {
                     />
                   </CarouselItem>
                 </CarouselContent>
-                <CarouselPrevious className="sm:flex hidden -left-12" />
-                <CarouselNext className="sm:flex hidden -right-12" />
                 <div className="sm:hidden flex justify-center gap-4 mt-8">
                   <CarouselPrevious className="static translate-y-0" />
                   <CarouselNext className="static translate-y-0" />
