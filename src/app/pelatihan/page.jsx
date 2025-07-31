@@ -20,14 +20,14 @@ import Autoplay from "embla-carousel-autoplay";
  */
 const TrainingCategoryCard = ({ title, image, hint }) => (
     <Card className="bg-card/80 backdrop-blur-sm border-primary/10 hover:border-primary transition-all duration-300 transform hover:scale-105 hover:shadow-2xl hover:shadow-primary/20 overflow-hidden text-center flex flex-col h-full">
-      <div className="relative h-80 w-full">
+      <div className="relative h-64 w-full">
         <Image src={image} alt={title} fill className="object-contain p-4" data-ai-hint={hint} />
       </div>
-      <CardContent className="p-4 space-y-4 flex flex-col flex-grow">
-        <div className='border-t border-primary/50 pt-4 flex-grow'>
-          <h3 className="font-headline text-xl h-14 flex items-center justify-center">{title}</h3>
+      <CardContent className="p-4 flex flex-col flex-grow">
+        <div className='border-t border-primary/50 pt-4 flex-grow flex flex-col'>
+          <h3 className="font-headline text-xl min-h-[3.5rem] flex items-center justify-center">{title}</h3>
         </div>
-        <div className="flex flex-col sm:flex-row justify-around gap-2 mt-auto">
+        <div className="flex flex-col sm:flex-row justify-around gap-2 mt-auto pt-4">
             <Button variant="default" className="w-full">Daftar</Button>
             <Button variant="outline" className="w-full">Guide Book</Button>
         </div>
@@ -45,20 +45,21 @@ const TrainingCategoryCard = ({ title, image, hint }) => (
  */
 const ClassCard = ({ title, image, hint }) => (
     <Card className="bg-card/80 backdrop-blur-sm border-primary/10 hover:border-primary transition-all duration-300 transform hover:scale-105 hover:shadow-2xl hover:shadow-primary/20 overflow-hidden text-center flex flex-col h-full">
-      <div className="relative h-80 w-full">
+      <div className="relative h-64 w-full">
         <Image src={image} alt={title} fill className="object-contain p-4" data-ai-hint={hint} />
       </div>
-      <CardContent className="p-4 space-y-4 flex flex-col flex-grow">
-        <div className='border-t border-primary/50 pt-4 flex-grow'>
-          <h3 className="font-headline text-xl h-14 flex items-center justify-center">{title}</h3>
+      <CardContent className="p-4 flex flex-col flex-grow">
+        <div className='border-t border-primary/50 pt-4 flex-grow flex flex-col'>
+          <h3 className="font-headline text-xl min-h-[3.5rem] flex items-center justify-center">{title}</h3>
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 mt-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 mt-auto pt-4">
           <Button variant="default">Kelas A</Button>
           <Button variant="default">Kelas B</Button>
         </div>
       </CardContent>
     </Card>
   );
+
 
 // Data untuk linimasa pelatihan
 const timelineData = [
@@ -114,7 +115,10 @@ const TrainingTimeline = () => (
  * @returns {JSX.Element} Halaman utama untuk bagian pelatihan.
  */
 export default function PelatihanPage() {
-    const autoplayPlugin = Autoplay({ delay: 3000, stopOnInteraction: true });
+    
+  const plugin = React.useRef(
+    Autoplay({ delay: 3000, stopOnInteraction: true })
+  );
 
   return (
     <div className="flex flex-col min-h-screen bg-background text-foreground">
@@ -129,7 +133,7 @@ export default function PelatihanPage() {
                 <h2 className="text-4xl md:text-6xl font-black font-headline text-transparent bg-clip-text bg-gradient-to-b from-white to-accent mb-4">
                   PELATIHAN
                 </h2>
-                <p className="text-2xl md:text-4xl font-headline font-bold text-primary mb-8">IT-FESTIVAL 2025</p>
+                <p className="text-2xl md:text-4xl font-headline font-bold text-primary mb-8">IT-FESTIVAL</p>
                 <p className="text-lg md:text-xl text-muted-foreground max-w-xl">
                     Tingkatkan keahlian Anda dengan sesi pelatihan praktis kami yang dipimpin oleh para ahli industri.
                 </p>
@@ -149,24 +153,24 @@ export default function PelatihanPage() {
           <div className="container mx-auto">
             <h2 className="text-4xl font-headline font-bold text-center mb-12">KATEGORI PELATIHAN</h2>
             <Carousel
-              opts={{
+               opts={{
                 align: "start",
                 loop: true,
               }}
-              plugins={[autoplayPlugin]}
-              onMouseEnter={() => autoplayPlugin.stop()}
-              onMouseLeave={() => autoplayPlugin.play()}
+              plugins={[plugin.current]}
+              onMouseEnter={() => plugin.current.stop()}
+              onMouseLeave={() => plugin.current.play()}
               className="w-full max-w-sm md:max-w-xl lg:max-w-5xl mx-auto"
             >
               <CarouselContent>
-                <CarouselItem className="sm:basis-1/2 lg:basis-1/2 flex">
+                <CarouselItem className="basis-full sm:basis-1/2 lg:basis-1/2 p-2 flex">
                   <TrainingCategoryCard
                     title="Android Development"
                     image="https://placehold.co/400x400.png"
                     hint="mobile app"
                   />
                 </CarouselItem>
-                <CarouselItem className="sm:basis-1/2 lg:basis-1/2 flex">
+                <CarouselItem className="basis-full sm:basis-1/2 lg:basis-1/2 p-2 flex">
                   <TrainingCategoryCard
                     title="Full-Stack Web"
                     image="https://placehold.co/400x400.png"
@@ -174,6 +178,12 @@ export default function PelatihanPage() {
                   />
                 </CarouselItem>
               </CarouselContent>
+              <CarouselPrevious className="sm:flex hidden -left-12" />
+              <CarouselNext className="sm:flex hidden -right-12" />
+              <div className="sm:hidden flex justify-center gap-4 mt-4">
+                  <CarouselPrevious className="static translate-y-0" />
+                  <CarouselNext className="static translate-y-0" />
+                </div>
             </Carousel>
           </div>
         </section>
