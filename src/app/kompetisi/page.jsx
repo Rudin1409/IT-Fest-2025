@@ -97,7 +97,7 @@ export default function KompetisiPage() {
   );
 
   return (
-    <div className="flex flex-col min-h-screen text-foreground bg-background">
+    <div className="flex flex-col min-h-screen text-foreground">
       <Header />
       <main className="flex-grow pt-24">
         

@@ -43,7 +43,7 @@ const GuestSpeakerCard = ({ image, name, title, topic, date, hint, speakerLabel 
  */
 export default function SeminarPage() {
   return (
-    <div className="flex flex-col min-h-screen bg-background text-foreground">
+    <div className="flex flex-col min-h-screen text-foreground">
       <Header />
       <main className="flex-grow pt-24">
         

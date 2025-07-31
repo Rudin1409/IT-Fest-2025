@@ -119,7 +119,7 @@ export default function PelatihanPage() {
   const autoplayPlugin = React.useRef(Autoplay({ delay: 3000, stopOnInteraction: true }));
 
   return (
-    <div className="flex flex-col min-h-screen text-foreground bg-background">
+    <div className="flex flex-col min-h-screen text-foreground">
       <Header />
       <main className="flex-grow pt-24">
         
