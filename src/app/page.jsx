@@ -1,4 +1,3 @@
-
 'use client';
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
@@ -203,20 +202,6 @@ const CountdownTimer = () => {
 };
 
 /**
- * Komponen FloatingSquares
- * @returns {JSX.Element} Animasi kotak-kotak mengambang sebagai latar belakang.
- */
-const FloatingSquares = () => (
-  <div className="absolute inset-0 w-full h-full overflow-hidden z-0">
-    <ul className="squares">
-      {Array.from({ length: 10 }).map((_, i) => (
-        <li key={i}></li>
-      ))}
-    </ul>
-  </div>
-);
-
-/**
  * Komponen TypingAnimation
  * @param {object} props - Properti komponen
  * @param {string} props.text - Teks yang akan ditampilkan dengan animasi mengetik
@@ -297,7 +282,6 @@ export default function Home() {
         
         {/* Bagian Hero */}
         <section id="hero" className="text-center px-4 relative overflow-hidden h-[90vh] flex flex-col justify-center">
-          <FloatingSquares />
            <div className="container mx-auto relative">
             <TypingAnimation text="WELCOME TO IT-FESTIVAL 2025" />
             <p className="text-2xl md:text-4xl font-headline font-bold text-primary mb-4">Berakhir Dalam</p>
@@ -452,7 +436,3 @@ export default function Home() {
     </div>
   );
 }
-
-    
-
-    

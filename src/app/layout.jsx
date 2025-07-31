@@ -1,6 +1,7 @@
-
 import './globals.css';
 import { Toaster } from "@/components/ui/toaster";
+import Squares from '@/components/layout/Squares';
+import './globals.css';
 
 
 export const metadata = {
@@ -20,6 +21,13 @@ export default function RootLayout({
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet" />
       </head>
       <body className="font-body antialiased">
+        <Squares 
+          speed={0.1} 
+          squareSize={40}
+          direction='diagonal'
+          borderColor='hsl(var(--primary) / 0.1)'
+          hoverFillColor='hsl(var(--primary) / 0.2)'
+        />
         {children}
         <Toaster />
       </body>
