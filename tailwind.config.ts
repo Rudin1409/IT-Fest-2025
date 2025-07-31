@@ -12,7 +12,7 @@ export default {
     extend: {
       fontFamily: {
         body: ['Montserrat', 'Arial', 'sans-serif'],
-        headline: ['Orbitron', 'sans-serif'],
+        headline: ['"Russo One"', 'sans-serif'],
         code: ['monospace'],
       },
       colors: {
