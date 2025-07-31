@@ -1,3 +1,4 @@
+
 'use client';
 import { useRef, useEffect } from 'react';
 import './squares.css';
@@ -13,7 +14,6 @@ const Squares = ({
   const canvasRef = useRef(null);
   const animationFrameId = useRef(null);
   const gridOffset = useRef({ x: 0, y: 0 });
-  const hoveredSquare = useRef(null);
   const mouseX = useRef(-1);
   const mouseY = useRef(-1);
   const backgroundRgb = useRef('');

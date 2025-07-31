@@ -8,7 +8,6 @@ import { Header } from '@/components/layout/header';
 import { Footer } from '@/components/layout/footer';
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
-import Squares from '@/components/layout/Squares';
 
 /**
  * Komponen EventCard
@@ -278,20 +277,12 @@ export default function Home() {
   const mediaPartnerLogos = Array.from({ length: 10 }, (_, i) => ({ src: `https://placehold.co/200x100.png`, alt: `Media Partner ${i + 1}` }));
 
   return (
-    <div className="flex flex-col min-h-screen bg-background text-foreground">
+    <div className="flex flex-col min-h-screen bg-transparent text-foreground">
       <Header />
       <main className="flex-grow">
         
         {/* Bagian Hero */}
         <section id="hero" className="text-center px-4 relative overflow-hidden h-screen flex flex-col justify-center pt-24">
-          <Squares 
-            speed={0.1} 
-            squareSize={40}
-            direction='diagonal'
-            borderColor='hsl(var(--primary) / 0.1)'
-            hoverFillColor='hsl(var(--primary) / 0.2)'
-            className="opacity-50"
-          />
            <div className="container mx-auto relative">
             <TypingAnimation text="WELCOME TO IT-FESTIVAL 2025" />
             <p className="text-2xl md:text-4xl font-headline font-bold text-primary mb-4">Berakhir Dalam</p>
@@ -306,7 +297,7 @@ export default function Home() {
         </section>
 
         {/* Bagian Tentang Kami */}
-        <section id="about" className="py-20 px-4">
+        <section id="about" className="py-20 px-4 bg-background">
             <div className="container mx-auto grid md:grid-cols-2 gap-12 items-center">
                 <div>
                     <h2 className="text-4xl font-headline font-bold mb-4 text-transparent bg-clip-text bg-gradient-to-b from-white to-accent">ABOUT US</h2>
@@ -362,7 +353,7 @@ export default function Home() {
         </section>
         
         {/* Bagian Pembicara */}
-        <section id="speakers" className="py-20 px-4">
+        <section id="speakers" className="py-20 px-4 bg-background">
           <div className="container mx-auto">
             <h2 className="text-4xl font-headline font-bold text-center mb-2 text-transparent bg-clip-text bg-gradient-to-b from-white to-accent">OUR SPEAKERS</h2>
             <p className="text-center text-primary text-lg mb-12">Meet Our Professional Speakers</p>
@@ -405,7 +396,7 @@ export default function Home() {
         </section>
 
         {/* Bagian Didukung Oleh */}
-        <section id="supported-by" className="py-20 px-4">
+        <section id="supported-by" className="py-20 px-4 bg-background">
             <div className="container mx-auto text-center">
                 <h2 className="text-4xl font-headline font-bold mb-12 text-transparent bg-clip-text bg-gradient-to-b from-white to-accent">SUPPORTED BY</h2>
                 <div className="grid md:grid-cols-3 gap-12 items-start justify-center">
@@ -434,7 +425,7 @@ export default function Home() {
         </section>
 
         {/* Bagian Mitra Media */}
-        <section id="media-partners" className="py-20 px-4">
+        <section id="media-partners" className="py-20 px-4 bg-background">
           <div className="container mx-auto text-center">
             <h2 className="text-4xl font-headline font-bold mb-12 text-transparent bg-clip-text bg-gradient-to-b from-white to-accent">MEDIA PARTNERS</h2>
             <ScrollingLogos items={mediaPartnerLogos} hint="media logo" duration="60s" />

@@ -2,6 +2,7 @@
 import './globals.css';
 import { Toaster } from "@/components/ui/toaster";
 import './globals.css';
+import Squares from '@/components/layout/Squares';
 
 
 export const metadata = {
@@ -21,7 +22,17 @@ export default function RootLayout({
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet" />
       </head>
       <body className="font-body antialiased">
-        {children}
+        <Squares 
+          speed={0.1} 
+          squareSize={40}
+          direction='diagonal'
+          borderColor='hsl(var(--primary) / 0.1)'
+          hoverFillColor='hsl(var(--primary) / 0.2)'
+          className="opacity-50"
+        />
+        <div className="relative z-10">
+          {children}
+        </div>
         <Toaster />
       </body>
     </html>
