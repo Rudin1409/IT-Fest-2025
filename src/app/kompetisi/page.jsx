@@ -96,9 +96,9 @@ const CompetitionTimeline = () => (
  * @returns {JSX.Element} Halaman utama untuk bagian kompetisi.
  */
 export default function KompetisiPage() {
-  const plugin = React.useRef(
-    Autoplay({ delay: 3000, stopOnInteraction: true })
-  );
+    const plugin = React.useRef(
+        Autoplay({ delay: 3000, stopOnInteraction: true })
+      );
 
   return (
     <div className="flex flex-col min-h-screen text-foreground">
@@ -144,8 +144,8 @@ export default function KompetisiPage() {
                   loop: true,
                 }}
                 plugins={[plugin.current]}
-                onMouseEnter={() => plugin.current.stop()}
-                onMouseLeave={() => plugin.current.play()}
+                onMouseEnter={plugin.current.stop}
+                onMouseLeave={plugin.current.reset}
                 className="w-full"
               >
                 <CarouselContent>

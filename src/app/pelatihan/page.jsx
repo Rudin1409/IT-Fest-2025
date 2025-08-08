@@ -126,7 +126,9 @@ const TrainingTimeline = () => (
  */
 export default function PelatihanPage() {
     
-  const autoplayPlugin = React.useRef(Autoplay({ delay: 3000, stopOnInteraction: true }));
+    const plugin = React.useRef(
+        Autoplay({ delay: 3000, stopOnInteraction: true })
+      );
 
   return (
     <div className="flex flex-col min-h-screen text-foreground">
@@ -166,9 +168,9 @@ export default function PelatihanPage() {
                   align: "start",
                   loop: true,
                 }}
-                plugins={[autoplayPlugin.current]}
-                onMouseEnter={() => autoplayPlugin.current.stop()}
-                onMouseLeave={() => autoplayPlugin.current.play()}
+                plugins={[plugin.current]}
+                onMouseEnter={plugin.current.stop}
+                onMouseLeave={plugin.current.reset}
                 className="w-full"
               >
                 <CarouselContent>
