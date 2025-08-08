@@ -9,6 +9,7 @@ import { CalendarDays } from 'lucide-react';
 import React from 'react';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
+import Link from 'next/link';
 
 /**
  * Komponen TrainingCategoryCard
@@ -16,9 +17,10 @@ import Autoplay from "embla-carousel-autoplay";
  * @param {string} props.title - Judul kategori pelatihan
  * @param {string} props.image - URL gambar untuk kategori
  * @param {string} props.hint - Petunjuk AI untuk gambar
+ * @param {string} props.registerLink - Tautan untuk pendaftaran
  * @returns {JSX.Element} Kartu yang menampilkan kategori pelatihan.
  */
-const TrainingCategoryCard = ({ title, image, hint }) => (
+const TrainingCategoryCard = ({ title, image, hint, registerLink }) => (
     <Card className="flex flex-col h-full overflow-hidden text-center transition-all duration-300 transform bg-card/80 backdrop-blur-sm border-primary/10 hover:border-primary hover:scale-105 hover:shadow-2xl hover:shadow-primary/20">
       <div className="relative w-full h-48">
         <Image src={image} alt={title} fill className="object-contain p-4" data-ai-hint={hint} />
@@ -28,7 +30,9 @@ const TrainingCategoryCard = ({ title, image, hint }) => (
           <h3 className="flex items-center justify-center min-h-[3.5rem] text-xl font-headline">{title}</h3>
         </div>
         <div className="flex flex-col gap-2 mt-auto sm:flex-row justify-around">
-            <Button variant="default" className="w-full">Daftar</Button>
+            <Link href={registerLink} target='_blank' rel='noopener noreferrer' className='w-full'>
+              <Button variant="default" className="w-full">Daftar</Button>
+            </Link>
             <Button variant="outline" className="w-full">Guide Book</Button>
         </div>
       </CardContent>
@@ -41,9 +45,11 @@ const TrainingCategoryCard = ({ title, image, hint }) => (
  * @param {string} props.title - Judul kelas
  * @param {string} props.image - URL gambar untuk kelas
  * @param {string} props.hint - Petunjuk AI untuk gambar
+ * @param {string} props.registerLinkA - Tautan pendaftaran kelas A
+ * @param {string} props.registerLinkB - Tautan pendaftaran kelas B
  * @returns {JSX.Element} Kartu yang menampilkan detail kelas dengan pilihan pendaftaran.
  */
-const ClassCard = ({ title, image, hint }) => (
+const ClassCard = ({ title, image, hint, registerLinkA, registerLinkB }) => (
     <Card className="flex flex-col h-full overflow-hidden text-center transition-all duration-300 transform bg-card/80 backdrop-blur-sm border-primary/10 hover:border-primary hover:scale-105 hover:shadow-2xl hover:shadow-primary/20">
       <div className="relative w-full h-48">
         <Image src={image} alt={title} fill className="object-contain p-4" data-ai-hint={hint} />
@@ -53,8 +59,12 @@ const ClassCard = ({ title, image, hint }) => (
           <h3 className="flex items-center justify-center min-h-[3.5rem] text-xl font-headline">{title}</h3>
         </div>
         <div className="flex flex-col gap-2 mt-auto sm:flex-row justify-around">
-          <Button variant="default" className="w-full">Kelas A</Button>
-          <Button variant="default" className="w-full">Kelas B</Button>
+          <Link href={registerLinkA} target='_blank' rel='noopener noreferrer' className='w-full'>
+            <Button variant="default" className="w-full">Kelas A</Button>
+          </Link>
+          <Link href={registerLinkB} target='_blank' rel='noopener noreferrer' className='w-full'>
+            <Button variant="default" className="w-full">Kelas B</Button>
+          </Link>
         </div>
       </CardContent>
     </Card>
@@ -167,6 +177,7 @@ export default function PelatihanPage() {
                       title="Android Development"
                       image="https://placehold.co/400x400.png"
                       hint="mobile app"
+                      registerLink="https://bit.ly/PendaftaranPelatihanAndroidITFestival2025"
                     />
                   </CarouselItem>
                   <CarouselItem className="pl-4 basis-full sm:basis-1/2">
@@ -174,6 +185,7 @@ export default function PelatihanPage() {
                       title="Full-Stack Web"
                       image="https://placehold.co/400x400.png"
                       hint="web development"
+                      registerLink="https://bit.ly/PendaftaranPelatihanWebITFestival2025"
                     />
                   </CarouselItem>
                 </CarouselContent>
@@ -195,11 +207,15 @@ export default function PelatihanPage() {
                     title="Kelas Android"
                     image="/pelatihan/android.png"
                     hint="android logo"
+                    registerLinkA="https://bit.ly/PendaftaranPelatihanAndroidITFestival2025"
+                    registerLinkB="https://bit.ly/PendaftaranPelatihanAndroidITFestival2025"
                   />
                   <ClassCard
                     title="Kelas Web Design"
                     image="/pelatihan/web.png"
                     hint="vscode logo"
+                    registerLinkA="https://bit.ly/PendaftaranPelatihanWebITFestival2025"
+                    registerLinkB="https://bit.ly/PendaftaranPelatihanWebITFestival2025"
                   />
               </div>
             </div>

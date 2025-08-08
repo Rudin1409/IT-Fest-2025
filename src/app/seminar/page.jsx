@@ -6,6 +6,7 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/com
 import { Header } from '@/components/layout/header';
 import { Footer } from '@/components/layout/footer';
 import { User } from 'lucide-react';
+import Link from 'next/link';
 
 /**
  * Komponen GuestSpeakerCard
@@ -96,9 +97,11 @@ export default function SeminarPage() {
 
         {/* Tombol Pendaftaran */}
         <section className="py-10 px-4 text-center">
-            <Button size="lg" className="font-bold text-lg px-10 py-6">
-                Daftar Seminar
-            </Button>
+            <Link href="https://bit.ly/PendaftaranSeminarITFestival2025" target="_blank" rel="noopener noreferrer">
+                <Button size="lg" className="font-bold text-lg px-10 py-6">
+                    Daftar Seminar
+                </Button>
+            </Link>
         </section>
 
       </main>

@@ -5,7 +5,8 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Header } from '@/components/layout/header';
 import { Footer } from '@/components/layout/footer';
-import { Award, Code, Mic, Users } from 'lucide-react';
+import { Award, Code, Mic, Users, Film } from 'lucide-react';
+import Link from 'next/link';
 
 /**
  * Komponen RegistrationCard
@@ -13,9 +14,10 @@ import { Award, Code, Mic, Users } from 'lucide-react';
  * @param {string} props.title - Judul acara (misal: "Mobile Legends")
  * @param {string} props.description - Deskripsi singkat acara
  * @param {React.ReactNode} props.icon - Ikon untuk kartu
+ * @param {string} props.registerLink - Tautan untuk pendaftaran
  * @returns {JSX.Element} Kartu untuk pendaftaran satu acara.
  */
-const RegistrationCard = ({ title, description, icon }) => (
+const RegistrationCard = ({ title, description, icon, registerLink }) => (
     <Card className="bg-card/80 backdrop-blur-sm border-primary/10 hover:border-primary transition-all duration-300 transform hover:scale-105 hover:shadow-2xl hover:shadow-primary/20 overflow-hidden text-left w-full md:max-w-sm">
       <CardContent className="p-6 space-y-4">
         <div className="flex items-center gap-4">
@@ -23,7 +25,9 @@ const RegistrationCard = ({ title, description, icon }) => (
             <h3 className="font-headline text-2xl font-bold">{title}</h3>
         </div>
         <p className="text-muted-foreground">{description}</p>
-        <Button variant="default" className="w-full font-bold">Daftar Sekarang</Button>
+        <Link href={registerLink} target='_blank' rel='noopener noreferrer' className='w-full'>
+            <Button variant="default" className="w-full font-bold">Daftar Sekarang</Button>
+        </Link>
       </CardContent>
     </Card>
   );
@@ -97,10 +101,11 @@ export default function RegisterPage() {
 
         {/* Bagian Kompetisi */}
         <Section title="Kompetisi" icon={<Award size={32} />}>
-            <RegistrationCard title="Mobile Legends" description="Adu strategi dan kekompakan tim dalam turnamen e-sport paling bergengsi." icon={<Award size={24} />} />
-            <RegistrationCard title="Poster Design" description="Tuangkan kreativitas tanpa batas dalam kompetisi desain poster yang inovatif." icon={<Award size={24} />} />
-            <RegistrationCard title="E-Goverment" description="Kompetisi membuat solusi inovatif untuk pemerintahan digital." icon={<Award size={24} />} />
-            <RegistrationCard title="Lomba Cipta Inovasi" description="Ciptakan dan presentasikan inovasi teknologi kreatifmu." icon={<Award size={24} />} />
+            <RegistrationCard title="Mobile Legends" description="Adu strategi dan kekompakan tim dalam turnamen e-sport paling bergengsi." icon={<Award size={24} />} registerLink="https://bit.ly/PendaftaranLombaMobileLegendITFestival2025" />
+            <RegistrationCard title="Poster Design" description="Tuangkan kreativitas tanpa batas dalam kompetisi desain poster yang inovatif." icon={<Award size={24} />} registerLink="https://bit.ly/PendaftaranLombaDesignPosterITFestival2025" />
+            <RegistrationCard title="E-Goverment" description="Kompetisi membuat solusi inovatif untuk pemerintahan digital." icon={<Award size={24} />} registerLink="https://bit.ly/PendaftaranLombaE-GovernmentITFestival2025" />
+            <RegistrationCard title="Lomba Cipta Inovasi" description="Ciptakan dan presentasikan inovasi teknologi kreatifmu." icon={<Award size={24} />} registerLink="https://bit.ly/PendaftaranLombaCiptaInovasiITFestival2025" />
+            <RegistrationCard title="Lomba Animasi" description="Buat karya animasi 3D yang memukau dan menangkan hadiahnya." icon={<Film size={24} />} registerLink="https://bit.ly/PendaftaranLombaAnimasiITFestival2025" />
         </Section>
         
         <div className="px-4">
@@ -109,8 +114,8 @@ export default function RegisterPage() {
 
         {/* Bagian Pelatihan */}
         <Section title="Pelatihan" icon={<Code size={32} />}>
-            <RegistrationCard title="Android Development" description="Belajar membangun aplikasi Android dari dasar hingga mahir bersama para ahli." icon={<Code size={24} />} />
-            <RegistrationCard title="Full-Stack Web" description="Kuasai pengembangan web dari sisi front-end hingga back-end dalam pelatihan intensif." icon={<Code size={24} />} />
+            <RegistrationCard title="Android Development" description="Belajar membangun aplikasi Android dari dasar hingga mahir bersama para ahli." icon={<Code size={24} />} registerLink="https://bit.ly/PendaftaranPelatihanAndroidITFestival2025" />
+            <RegistrationCard title="Full-Stack Web" description="Kuasai pengembangan web dari sisi front-end hingga back-end dalam pelatihan intensif." icon={<Code size={24} />} registerLink="https://bit.ly/PendaftaranPelatihanWebITFestival2025" />
         </Section>
         
         <div className="px-4">
@@ -119,7 +124,7 @@ export default function RegisterPage() {
 
         {/* Bagian Seminar */}
         <SeminarSection title="Seminar" icon={<Mic size={32} />}>
-           <RegistrationCard title="Seminar Teknologi" description="Dapatkan wawasan terbaru dari para pembicara ahli di industri teknologi." icon={<Mic size={24} />} />
+           <RegistrationCard title="Seminar Teknologi" description="Dapatkan wawasan terbaru dari para pembicara ahli di industri teknologi." icon={<Mic size={24} />} registerLink="https://bit.ly/PendaftaranSeminarITFestival2025" />
         </SeminarSection>
 
       </main>

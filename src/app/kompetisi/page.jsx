@@ -9,6 +9,7 @@ import { CalendarDays } from 'lucide-react';
 import React from 'react';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
+import Link from 'next/link';
 
 /**
  * Komponen CompetitionCard
@@ -16,9 +17,10 @@ import Autoplay from "embla-carousel-autoplay";
  * @param {string} props.title - Judul kompetisi
  * @param {string} props.image - URL gambar untuk kompetisi
  * @param {string} props.hint - Petunjuk AI untuk gambar
+ * @param {string} props.registerLink - Tautan untuk pendaftaran
  * @returns {JSX.Element} Kartu yang menampilkan detail kompetisi.
  */
-const CompetitionCard = ({ title, image, hint }) => (
+const CompetitionCard = ({ title, image, hint, registerLink }) => (
     <Card className="flex flex-col h-full overflow-hidden text-center transition-all duration-300 transform bg-card/80 backdrop-blur-sm border-primary/10 hover:border-primary hover:scale-105 hover:shadow-2xl hover:shadow-primary/20">
       <div className="relative w-full h-48">
         <Image src={image} alt={title} fill className="object-contain p-4" data-ai-hint={hint} />
@@ -28,7 +30,9 @@ const CompetitionCard = ({ title, image, hint }) => (
           <h3 className="flex items-center justify-center min-h-[3.5rem] text-xl font-headline">{title}</h3>
         </div>
         <div className="flex flex-col gap-2 mt-auto sm:flex-row justify-around">
-          <Button variant="default" className="w-full">Daftar</Button>
+          <Link href={registerLink} target='_blank' rel='noopener noreferrer' className='w-full'>
+            <Button variant="default" className="w-full">Daftar</Button>
+          </Link>
           <Button variant="outline" className="w-full">Guide Book</Button>
         </div>
       </CardContent>
@@ -129,7 +133,9 @@ export default function KompetisiPage() {
           <div className="container mx-auto">
             <h2 className="mb-12 text-4xl font-bold text-center font-headline">KATEGORI KOMPETISI</h2>
             <div className='flex items-center justify-center'>
-              <Button className='mb-8'>Daftar Kompetisi</Button>
+                <Link href="/register">
+                    <Button className='mb-8'>Daftar Kompetisi</Button>
+                </Link>
             </div>
             <div className="relative w-full max-w-xs mx-auto sm:max-w-xl lg:max-w-5xl">
               <Carousel
@@ -148,6 +154,7 @@ export default function KompetisiPage() {
                       title="Mobile Legends"
                       image="https://placehold.co/400x400.png"
                       hint="gaming character"
+                      registerLink="https://bit.ly/PendaftaranLombaMobileLegendITFestival2025"
                     />
                   </CarouselItem>
                   <CarouselItem className="pl-4 basis-full sm:basis-1/2 lg:basis-1/3">
@@ -155,6 +162,7 @@ export default function KompetisiPage() {
                       title="Poster Design"
                       image="https://placehold.co/400x400.png"
                       hint="design character"
+                      registerLink="https://bit.ly/PendaftaranLombaDesignPosterITFestival2025"
                     />
                   </CarouselItem>
                   <CarouselItem className="pl-4 basis-full sm:basis-1/2 lg:basis-1/3">
@@ -162,6 +170,7 @@ export default function KompetisiPage() {
                       title="E-Goverment"
                       image="https://placehold.co/400x400.png"
                       hint="government building"
+                      registerLink="https://bit.ly/PendaftaranLombaE-GovernmentITFestival2025"
                     />
                   </CarouselItem>
                    <CarouselItem className="pl-4 basis-full sm:basis-1/2 lg:basis-1/3">
@@ -169,6 +178,15 @@ export default function KompetisiPage() {
                       title="Lomba Cipta Inovasi"
                       image="https://placehold.co/400x400.png"
                       hint="innovation lightbulb"
+                      registerLink="https://bit.ly/PendaftaranLombaCiptaInovasiITFestival2025"
+                    />
+                  </CarouselItem>
+                   <CarouselItem className="pl-4 basis-full sm:basis-1/2 lg:basis-1/3">
+                    <CompetitionCard
+                      title="Lomba Animasi"
+                      image="https://placehold.co/400x400.png"
+                      hint="3d animation"
+                      registerLink="https://bit.ly/PendaftaranLombaAnimasiITFestival2025"
                     />
                   </CarouselItem>
                 </CarouselContent>
