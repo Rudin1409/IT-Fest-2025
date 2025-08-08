@@ -52,27 +52,59 @@ const SpeakerCard = ({ image, name, title, hint }) => (
 
 // Data untuk linimasa acara
 const timelineEvents = [
-    {
-      title: 'Pendaftaran Lomba',
-      date: '16 Agustus - 30 September 2025',
-    },
-    {
-      title: 'Pembuatan Karya',
-      date: '16 Agustus - 13 Oktober 2025',
-    },
-    {
-      title: 'Technical Meeting',
-      date: '3 Oktober 2025',
-    },
-    {
-      title: 'Turnamen dan Penjurian',
-      date: '4 - 16 Oktober 2025',
-    },
-    {
-      title: 'Pengumuman Pemenang',
-      date: '20 Oktober 2025',
-    },
-  ];
+  {
+    title: 'Open Registration Seminar, Perlombaan dan Pelatihan (Android & Web)',
+    date: 'Selasa, 16 Agustus 2025',
+  },
+  {
+    title: 'Perlombaan (Pembuatan Karya)',
+    date: '16 Agustus – 13 Oktober 2025',
+  },
+  {
+    title: 'Close Registration Pelatihan dan Seminar',
+    date: 'Sabtu, 6 September 2025',
+  },
+  {
+    title: 'Opening Ceremony IT Festival 2025',
+    date: 'Selasa, 16 September 2025',
+  },
+  {
+    title: 'Pelaksanaan Seminar & Talkshow',
+    date: 'Selasa, 16 September 2025',
+  },
+  {
+    title: 'Pelatihan Android & Web',
+    date: 'Rabu – Sabtu, 17 – 20 September 2025',
+  },
+  {
+    title: 'Close Registration Lomba',
+    date: 'Selasa, 30 September 2025',
+  },
+  {
+    title: 'Pelaksanaan Technical Meeting Lomba',
+    date: 'Jum’at, 3 Oktober 2025',
+  },
+  {
+    title: 'Lomba Mobile Legends',
+    date: 'Sabtu, 4 Oktober 2025',
+  },
+  {
+    title: 'Batas Akhir Pengumpulan Karya Lomba',
+    date: 'Senin, 13 Oktober 2025',
+  },
+  {
+    title: 'Seleksi Karya Lomba Web Development',
+    date: 'Selasa - Rabu, 14 - 15 Oktober 2025',
+  },
+  {
+    title: 'Penjurian Lomba (Animasi, Poster Design, dan Web Development)',
+    date: 'Kamis, 16 Oktober 2025',
+  },
+  {
+    title: 'Closing Ceremony IT Festival 2025 & Pengumuman Pemenang',
+    date: 'Senin, 20 Oktober 2025',
+  },
+];
 
 /**
  * Komponen TimelineItem
@@ -297,7 +329,7 @@ export default function Home() {
         </section>
 
         {/* Bagian Tentang Kami */}
-        <section id="about" className="py-20 px-4 bg-background">
+        <section id="about" className="py-20 px-4">
             <div className="container mx-auto grid md:grid-cols-2 gap-12 items-center">
                 <div>
                     <h2 className="text-4xl font-headline font-bold mb-4 text-transparent bg-clip-text bg-gradient-to-b from-white to-accent">ABOUT US</h2>
@@ -353,7 +385,7 @@ export default function Home() {
         </section>
         
         {/* Bagian Pembicara */}
-        <section id="speakers" className="py-20 px-4 bg-background">
+        <section id="speakers" className="py-20 px-4">
           <div className="container mx-auto">
             <h2 className="text-4xl font-headline font-bold text-center mb-2 text-transparent bg-clip-text bg-gradient-to-b from-white to-accent">OUR SPEAKERS</h2>
             <p className="text-center text-primary text-lg mb-12">Meet Our Professional Speakers</p>
@@ -396,7 +428,7 @@ export default function Home() {
         </section>
 
         {/* Bagian Didukung Oleh */}
-        <section id="supported-by" className="py-20 px-4 bg-background">
+        <section id="supported-by" className="py-20 px-4">
             <div className="container mx-auto text-center">
                 <h2 className="text-4xl font-headline font-bold mb-12 text-transparent bg-clip-text bg-gradient-to-b from-white to-accent">SUPPORTED BY</h2>
                 <div className="grid md:grid-cols-3 gap-12 items-start justify-center">
@@ -425,7 +457,7 @@ export default function Home() {
         </section>
 
         {/* Bagian Mitra Media */}
-        <section id="media-partners" className="py-20 px-4 bg-background">
+        <section id="media-partners" className="py-20 px-4">
           <div className="container mx-auto text-center">
             <h2 className="text-4xl font-headline font-bold mb-12 text-transparent bg-clip-text bg-gradient-to-b from-white to-accent">MEDIA PARTNERS</h2>
             <ScrollingLogos items={mediaPartnerLogos} hint="media logo" duration="60s" />
