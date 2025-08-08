@@ -64,7 +64,7 @@ const timelineData = [
  * @returns {JSX.Element} Bagian yang menampilkan linimasa pelatihan.
  */
 const TrainingTimeline = () => (
-    <section className="px-4 py-20">
+    <section className="px-4 py-20 bg-secondary/50">
       <div className="container mx-auto text-center">
         <h2 className="inline-block px-6 py-3 mb-16 text-2xl font-bold border rounded-lg font-headline border-primary/50">
           Timeline Pelatihan
@@ -93,6 +93,9 @@ const TrainingTimeline = () => (
  * @returns {JSX.Element} Halaman utama untuk bagian pelatihan.
  */
 export default function PelatihanPage() {
+    const plugin = React.useRef(
+        Autoplay({ delay: 3000, stopOnInteraction: true })
+      );
 
   return (
     <div className="flex flex-col min-h-screen text-foreground">
@@ -123,7 +126,7 @@ export default function PelatihanPage() {
         <TrainingTimeline />
 
         {/* Bagian Kategori Pelatihan */}
-        <section className="px-4 py-20 bg-secondary/50">
+        <section className="px-4 py-20">
           <div className="container mx-auto">
             <h2 className="mb-12 text-4xl font-bold text-center font-headline">KATEGORI PELATIHAN</h2>
             <div className="relative w-full max-w-xs mx-auto sm:max-w-xl lg:max-w-xl">
@@ -132,7 +135,9 @@ export default function PelatihanPage() {
                   align: "start",
                   loop: true,
                 }}
-                plugins={[Autoplay({ delay: 3000, stopOnInteraction: true })]}
+                plugins={[plugin.current]}
+                onMouseEnter={plugin.current.stop}
+                onMouseLeave={plugin.current.reset}
                 className="w-full"
               >
                 <CarouselContent>
