@@ -28,7 +28,7 @@ export const Footer = () => (
             <Link href="https://www.instagram.com/ITFESTPOLSRI" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-primary/80 hover:bg-primary transition-colors flex items-center justify-center text-white">
                 <Instagram size={20} />
             </Link>
-            <Link href="https://whatsapp.com" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-primary/80 hover:bg-primary transition-colors flex items-center justify-center text-white">
+            <Link href="https://wa.me/62895604953816" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-primary/80 hover:bg-primary transition-colors flex items-center justify-center text-white">
                 <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="20"
