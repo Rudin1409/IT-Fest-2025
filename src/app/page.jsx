@@ -61,6 +61,18 @@ const timelineEvents = [
       date: '16 Agustus – 13 Oktober 2025',
     },
     {
+        title: 'Batas Submit Abstrak (Cipta Inovasi)',
+        date: 'Sabtu, 30 Agustus 2025',
+    },
+    {
+        title: 'Penyisihan Abstrak (Cipta Inovasi)',
+        date: 'Minggu, 31 Agustus 2025 – Selasa, 2 September 2025',
+    },
+    {
+        title: 'Pengumuman Lolos Batch 2 (Cipta Inovasi)',
+        date: 'Rabu, 3 September 2025',
+    },
+    {
       title: 'Close Registration Pelatihan dan Seminar',
       date: 'Sabtu, 6 September 2025',
     },
@@ -77,15 +89,27 @@ const timelineEvents = [
       date: 'Rabu – Sabtu, 17 – 20 September 2025',
     },
     {
-      title: 'Close Registration Lomba',
+        title: 'Batas pengumpulan Full Paper (Cipta Inovasi)',
+        date: 'Sabtu, 20 September 2025',
+    },
+    {
+        title: 'Batas Penyisihan Full Paper (Cipta Inovasi)',
+        date: 'Minggu, 21 September - Selasa, 23 September',
+    },
+    {
+        title: 'Pengumuman Finalis (Cipta Inovasi)',
+        date: 'Rabu, 24 September 2025',
+    },
+    {
+      title: 'Close Registration Lomba, Pegumpulan PPT Cipta Inovasi',
       date: 'Selasa, 30 September 2025',
     },
     {
-      title: 'Pelaksanaan Technical Meeting Lomba',
+      title: 'Pelaksanaan Technical Meeting Lomba (E-Government, Poster Design, Mobile Legends, dan Animasi)',
       date: 'Jum’at, 3 Oktober 2025',
     },
     {
-      title: 'Lomba Mobile Legends',
+      title: 'Lomba Mobile Legends, Presentasi Cipta Inovasi',
       date: 'Sabtu, 4 Oktober 2025',
     },
     {
@@ -101,7 +125,7 @@ const timelineEvents = [
       date: 'Kamis, 16 Oktober 2025',
     },
     {
-      title: 'Closing Ceremony IT Festival 2025 & Pengumuman Pemenang',
+      title: 'Closing Ceremony IT Festival 2025 & Pengumuman Pemenang Lomba (Pembagian Sertifikat)',
       date: 'Senin, 20 Oktober 2025',
     },
   ];
