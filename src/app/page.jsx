@@ -52,59 +52,59 @@ const SpeakerCard = ({ image, name, title, hint }) => (
 
 // Data untuk linimasa acara
 const timelineEvents = [
-  {
-    title: 'Open Registration Seminar, Perlombaan dan Pelatihan (Android & Web)',
-    date: 'Selasa, 16 Agustus 2025',
-  },
-  {
-    title: 'Perlombaan (Pembuatan Karya)',
-    date: '16 Agustus – 13 Oktober 2025',
-  },
-  {
-    title: 'Close Registration Pelatihan dan Seminar',
-    date: 'Sabtu, 6 September 2025',
-  },
-  {
-    title: 'Opening Ceremony IT Festival 2025',
-    date: 'Selasa, 16 September 2025',
-  },
-  {
-    title: 'Pelaksanaan Seminar & Talkshow',
-    date: 'Selasa, 16 September 2025',
-  },
-  {
-    title: 'Pelatihan Android & Web',
-    date: 'Rabu – Sabtu, 17 – 20 September 2025',
-  },
-  {
-    title: 'Close Registration Lomba',
-    date: 'Selasa, 30 September 2025',
-  },
-  {
-    title: 'Pelaksanaan Technical Meeting Lomba',
-    date: 'Jum’at, 3 Oktober 2025',
-  },
-  {
-    title: 'Lomba Mobile Legends',
-    date: 'Sabtu, 4 Oktober 2025',
-  },
-  {
-    title: 'Batas Akhir Pengumpulan Karya Lomba',
-    date: 'Senin, 13 Oktober 2025',
-  },
-  {
-    title: 'Seleksi Karya Lomba Web Development',
-    date: 'Selasa - Rabu, 14 - 15 Oktober 2025',
-  },
-  {
-    title: 'Penjurian Lomba (Animasi, Poster Design, dan Web Development)',
-    date: 'Kamis, 16 Oktober 2025',
-  },
-  {
-    title: 'Closing Ceremony IT Festival 2025 & Pengumuman Pemenang',
-    date: 'Senin, 20 Oktober 2025',
-  },
-];
+    {
+      title: 'Open Registration Seminar, Perlombaan dan Pelatihan (Android & Web)',
+      date: 'Selasa, 16 Agustus 2025',
+    },
+    {
+      title: 'Perlombaan (Pembuatan Karya)',
+      date: '16 Agustus – 13 Oktober 2025',
+    },
+    {
+      title: 'Close Registration Pelatihan dan Seminar',
+      date: 'Sabtu, 6 September 2025',
+    },
+    {
+      title: 'Opening Ceremony IT Festival 2025',
+      date: 'Selasa, 16 September 2025',
+    },
+    {
+      title: 'Pelaksanaan Seminar & Talkshow',
+      date: 'Selasa, 16 September 2025',
+    },
+    {
+      title: 'Pelatihan Android & Web',
+      date: 'Rabu – Sabtu, 17 – 20 September 2025',
+    },
+    {
+      title: 'Close Registration Lomba',
+      date: 'Selasa, 30 September 2025',
+    },
+    {
+      title: 'Pelaksanaan Technical Meeting Lomba',
+      date: 'Jum’at, 3 Oktober 2025',
+    },
+    {
+      title: 'Lomba Mobile Legends',
+      date: 'Sabtu, 4 Oktober 2025',
+    },
+    {
+      title: 'Batas Akhir Pengumpulan Karya Lomba',
+      date: 'Senin, 13 Oktober 2025',
+    },
+    {
+      title: 'Seleksi Karya Lomba Web Development',
+      date: 'Selasa - Rabu, 14 - 15 Oktober 2025',
+    },
+    {
+      title: 'Penjurian Lomba (Animasi, Poster Design, dan Web Development)',
+      date: 'Kamis, 16 Oktober 2025',
+    },
+    {
+      title: 'Closing Ceremony IT Festival 2025 & Pengumuman Pemenang',
+      date: 'Senin, 20 Oktober 2025',
+    },
+  ];
 
 /**
  * Komponen TimelineItem
@@ -309,7 +309,7 @@ export default function Home() {
   const mediaPartnerLogos = Array.from({ length: 10 }, (_, i) => ({ src: `https://placehold.co/200x100.png`, alt: `Media Partner ${i + 1}` }));
 
   return (
-    <div className="flex flex-col min-h-screen bg-transparent text-foreground">
+    <div className="flex flex-col min-h-screen text-foreground">
       <Header />
       <main className="flex-grow">
         
@@ -335,7 +335,7 @@ export default function Home() {
                     <h2 className="text-4xl font-headline font-bold mb-4 text-transparent bg-clip-text bg-gradient-to-b from-white to-accent">ABOUT US</h2>
                     <h3 className="text-2xl font-bold text-primary mb-6">The Biggest IT-Festival in 2025</h3>
                     <p className="text-muted-foreground text-lg leading-relaxed">
-                    IT-FESTIVAL 2025 adalah acara utama yang menyatukan mahasiswa, profesional, dan penggemar teknologi dari seluruh dunia. Misi kami adalah untuk mendorong inovasi, kolaborasi, dan pembelajaran di bidang teknologi informasi yang terus berkembang. Dengan berbagai acara, kompetisi, dan seminar, IT-FESTIVAL 2025 adalah platform yang sempurna untuk menunjukkan keahlian Anda, belajar dari yang terbaik, dan berjejaring dengan individu yang berpikiran sama.
+                    IT-FESTIVAL 2025 adalah acara utama yang menyatukan mahasiswa, profesional, dan penggemar teknologi dari seluruh Indonesia. Misi kami adalah untuk mendorong inovasi, kolaborasi, dan pembelajaran di bidang teknologi informasi yang terus berkembang. Dengan berbagai acara, kompetisi, dan seminar, IT-FESTIVAL 2025 adalah platform yang sempurna untuk menunjukkan keahlian Anda, belajar dari yang terbaik, dan berjejaring dengan individu yang berpikiran sama.
                     </p>
                 </div>
                 <div className="relative h-96 rounded-lg overflow-hidden shadow-2xl shadow-primary/20">
