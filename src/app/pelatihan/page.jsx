@@ -39,38 +39,6 @@ const TrainingCategoryCard = ({ title, image, hint, registerLink }) => (
     </Card>
   );
 
-/**
- * Komponen ClassCard
- * @param {object} props - Properti komponen
- * @param {string} props.title - Judul kelas
- * @param {string} props.image - URL gambar untuk kelas
- * @param {string} props.hint - Petunjuk AI untuk gambar
- * @param {string} props.registerLinkA - Tautan pendaftaran kelas A
- * @param {string} props.registerLinkB - Tautan pendaftaran kelas B
- * @returns {JSX.Element} Kartu yang menampilkan detail kelas dengan pilihan pendaftaran.
- */
-const ClassCard = ({ title, image, hint, registerLinkA, registerLinkB }) => (
-    <Card className="flex flex-col h-full overflow-hidden text-center transition-all duration-300 transform bg-card/80 backdrop-blur-sm border-primary/10 hover:border-primary hover:scale-105 hover:shadow-2xl hover:shadow-primary/20">
-      <div className="relative w-full h-48">
-        <Image src={image} alt={title} fill className="object-contain p-4" data-ai-hint={hint} />
-      </div>
-      <CardContent className="flex flex-col flex-grow p-4">
-        <div className='flex-grow pt-4 border-t border-primary/50 flex flex-col justify-center'>
-          <h3 className="flex items-center justify-center min-h-[3.5rem] text-xl font-headline">{title}</h3>
-        </div>
-        <div className="flex flex-col gap-2 mt-auto sm:flex-row justify-around">
-          <Link href={registerLinkA} target='_blank' rel='noopener noreferrer' className='w-full'>
-            <Button variant="default" className="w-full">Kelas A</Button>
-          </Link>
-          <Link href={registerLinkB} target='_blank' rel='noopener noreferrer' className='w-full'>
-            <Button variant="default" className="w-full">Kelas B</Button>
-          </Link>
-        </div>
-      </CardContent>
-    </Card>
-  );
-
-
 // Data untuk linimasa pelatihan
 const timelineData = [
     {
@@ -125,10 +93,6 @@ const TrainingTimeline = () => (
  * @returns {JSX.Element} Halaman utama untuk bagian pelatihan.
  */
 export default function PelatihanPage() {
-    
-    const plugin = React.useRef(
-        Autoplay({ delay: 3000, stopOnInteraction: true })
-      );
 
   return (
     <div className="flex flex-col min-h-screen text-foreground">
@@ -168,9 +132,7 @@ export default function PelatihanPage() {
                   align: "start",
                   loop: true,
                 }}
-                plugins={[plugin.current]}
-                onMouseEnter={plugin.current.stop}
-                onMouseLeave={plugin.current.reset}
+                plugins={[Autoplay({ delay: 3000, stopOnInteraction: true })]}
                 className="w-full"
               >
                 <CarouselContent>
@@ -198,29 +160,6 @@ export default function PelatihanPage() {
               </Carousel>
             </div>
           </div>
-        </section>
-
-        {/* Bagian Daftar Kelas */}
-        <section className="px-4 py-20">
-            <div className="container mx-auto">
-                <h2 className="mb-12 text-4xl font-bold text-center font-headline">DAFTAR KELAS</h2>
-                <div className="grid items-stretch grid-cols-1 gap-8 mx-auto md:grid-cols-2 max-w-4xl">
-                  <ClassCard
-                    title="Kelas Android"
-                    image="/pelatihan/android.png"
-                    hint="android logo"
-                    registerLinkA="https://bit.ly/PendaftaranPelatihanAndroidITFestival2025"
-                    registerLinkB="https://bit.ly/PendaftaranPelatihanAndroidITFestival2025"
-                  />
-                  <ClassCard
-                    title="Kelas Web Design"
-                    image="/pelatihan/web.png"
-                    hint="vscode logo"
-                    registerLinkA="https://bit.ly/PendaftaranPelatihanWebITFestival2025"
-                    registerLinkB="https://bit.ly/PendaftaranPelatihanWebITFestival2025"
-                  />
-              </div>
-            </div>
         </section>
 
       </main>
