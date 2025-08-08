@@ -102,7 +102,6 @@ export default function RegisterPage() {
         {/* Bagian Kompetisi */}
         <Section title="Kompetisi" icon={<Award size={32} />}>
             <RegistrationCard title="Mobile Legends" description="Adu strategi dan kekompakan tim dalam turnamen e-sport paling bergengsi." icon={<Award size={24} />} registerLink="https://bit.ly/PendaftaranLombaMobileLegendITFestival2025" />
-            <RegistrationCard title="Poster Design" description="Tuangkan kreativitas tanpa batas dalam kompetisi desain poster yang inovatif." icon={<Award size={24} />} registerLink="https://bit.ly/PendaftaranLombaDesignPosterITFestival2025" />
             <RegistrationCard title="E-Goverment" description="Kompetisi membuat solusi inovatif untuk pemerintahan digital." icon={<Award size={24} />} registerLink="https://bit.ly/PendaftaranLombaE-GovernmentITFestival2025" />
             <RegistrationCard title="Lomba Cipta Inovasi" description="Ciptakan dan presentasikan inovasi teknologi kreatifmu." icon={<Award size={24} />} registerLink="https://bit.ly/PendaftaranLombaCiptaInovasiITFestival2025" />
             <RegistrationCard title="Lomba Animasi" description="Buat karya animasi 3D yang memukau dan menangkan hadiahnya." icon={<Film size={24} />} registerLink="https://bit.ly/PendaftaranLombaAnimasiITFestival2025" />
