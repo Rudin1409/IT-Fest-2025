@@ -75,7 +75,7 @@ export default function SeminarPage() {
               <GuestSpeakerCard
                 name="Theresa Tandrawinata"
                 title="Creator, Web3 & Business"
-                topic="Building a Personal Brand in the Web3 Era"
+                topic="From Zero to Digital Hero by Embracing Tech for a Better Future"
                 date="16 September 2025 | 14.45 WIB"
                 image="https://placehold.co/400x600.png"
                 hint="woman creator"
