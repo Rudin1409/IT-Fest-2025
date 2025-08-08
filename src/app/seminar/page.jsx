@@ -15,13 +15,12 @@ import Link from 'next/link';
  * @param {string} props.name - Nama pembicara
  * @param {string} props.title - Jabatan atau gelar pembicara
  * @param {string} props.topic - Topik yang akan dibawakan
- * @param {string} props.date - Tanggal dan waktu seminar
  * @param {string} props.hint - Petunjuk AI untuk gambar
  * @param {string} [props.speakerLabel="Guest Star :"] - Label untuk pembicara
  * @param {'left' | 'right'} [props.imagePosition='left'] - Posisi gambar (kiri atau kanan)
  * @returns {JSX.Element} Kartu yang menampilkan detail pembicara dan seminar.
  */
-const GuestSpeakerCard = ({ image, name, title, topic, date, hint, speakerLabel = "Guest Star :", imagePosition = 'left' }) => (
+const GuestSpeakerCard = ({ image, name, title, topic, hint, speakerLabel = "Guest Star :", imagePosition = 'left' }) => (
   <Card className="bg-card/80 backdrop-blur-sm border-primary/10 hover:border-primary transition-all duration-300 transform hover:scale-105 hover:shadow-2xl hover:shadow-primary/20 overflow-hidden w-full">
     <div className="grid md:grid-cols-3 items-center">
       <div className={`relative h-80 md:h-full min-h-[300px] ${imagePosition === 'right' ? 'md:order-last' : ''}`}>
@@ -32,7 +31,6 @@ const GuestSpeakerCard = ({ image, name, title, topic, date, hint, speakerLabel 
         <h3 className="text-3xl md:text-4xl font-headline font-black mb-2 text-white uppercase">{name}</h3>
         <p className="text-lg md:text-xl font-semibold text-primary mb-4">{title}</p>
         <p className="text-xl md:text-2xl text-accent mb-6 italic">"{topic}"</p>
-        <p className="text-muted-foreground text-md md:text-lg">{date}</p>
       </div>
     </div>
   </Card>
@@ -76,17 +74,15 @@ export default function SeminarPage() {
                 name="Theresa Tandrawinata"
                 title="Creator, Web3 & Business"
                 topic="From Zero to Digital Hero by Embracing Tech for a Better Future"
-                date="16 September 2025 | 14.45 WIB"
                 image="https://placehold.co/400x600.png"
                 hint="woman creator"
                 imagePosition="left"
               />
               <GuestSpeakerCard
-                name="Nabila Carissa"
+                name="Shelvina Puteri"
                 speakerLabel="Speaker :"
-                title="Content Creator & Social Media Influencer"
-                topic="Self-Confident Importance for Struggling In Digital Era"
-                date="16 September 2025 | 13.45 WIB"
+                title="Content Creator & MC"
+                topic="Mastering Digital Skills for Tomorrow’s Success"
                 image="https://placehold.co/400x600.png"
                 hint="woman influencer"
                 imagePosition="right"

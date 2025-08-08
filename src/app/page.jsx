@@ -422,8 +422,8 @@ export default function Home() {
               />
               <SpeakerCard
                 image="https://placehold.co/400x600.png"
-                name="Nabila Carissa"
-                title="Content Creator & Social Media Influencer"
+                name="Shelvina Puteri"
+                title="Content Creator & MC"
                 hint="woman influencer"
               />
             </div>
