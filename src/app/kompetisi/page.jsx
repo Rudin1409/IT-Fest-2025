@@ -68,7 +68,7 @@ const timelineData = [
  * @returns {JSX.Element} Bagian yang menampilkan linimasa kompetisi.
  */
 const CompetitionTimeline = () => (
-    <section className="px-4 py-20">
+    <section className="px-4 py-20 bg-secondary/50">
       <div className="container mx-auto text-center">
         <h2 className="inline-block px-6 py-3 mb-16 text-2xl font-bold border rounded-lg font-headline border-primary/50">
           Timeline Kompetisi
@@ -96,9 +96,6 @@ const CompetitionTimeline = () => (
  * @returns {JSX.Element} Halaman utama untuk bagian kompetisi.
  */
 export default function KompetisiPage() {
-    const plugin = React.useRef(
-        Autoplay({ delay: 3000, stopOnInteraction: true })
-      );
 
   return (
     <div className="flex flex-col min-h-screen text-foreground">
@@ -129,7 +126,7 @@ export default function KompetisiPage() {
         <CompetitionTimeline />
 
         {/* Bagian Kategori Kompetisi */}
-        <section className="px-4 py-20 bg-secondary/50">
+        <section className="px-4 py-20">
           <div className="container mx-auto">
             <h2 className="mb-12 text-4xl font-bold text-center font-headline">KATEGORI KOMPETISI</h2>
             <div className='flex items-center justify-center'>
@@ -143,9 +140,7 @@ export default function KompetisiPage() {
                   align: "start",
                   loop: true,
                 }}
-                plugins={[plugin.current]}
-                onMouseEnter={plugin.current.stop}
-                onMouseLeave={plugin.current.reset}
+                plugins={[Autoplay({ delay: 3000, stopOnInteraction: true })]}
                 className="w-full"
               >
                 <CarouselContent>
