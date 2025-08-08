@@ -114,7 +114,7 @@ export default function RegisterPage() {
         {/* Bagian Pelatihan */}
         <Section title="Pelatihan" icon={<Code size={32} />}>
             <RegistrationCard title="Android Development" description="Belajar membangun aplikasi Android dari dasar hingga mahir bersama para ahli." icon={<Code size={24} />} registerLink="https://bit.ly/PendaftaranPelatihanAndroidITFestival2025" />
-            <RegistrationCard title="Full-Stack Web" description="Kuasai pengembangan web dari sisi front-end hingga back-end dalam pelatihan intensif." icon={<Code size={24} />} registerLink="https://bit.ly/PendaftaranPelatihanWebITFestival2025" />
+            <RegistrationCard title="Web Development" description="Kuasai pengembangan web dari sisi front-end hingga back-end dalam pelatihan intensif." icon={<Code size={24} />} registerLink="https://bit.ly/PendaftaranPelatihanWebITFestival2025" />
         </Section>
         
         <div className="px-4">
