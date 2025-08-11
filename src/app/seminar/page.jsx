@@ -90,7 +90,7 @@ export default function SeminarPage() {
                 title="Content Creator & MC"
                 topic="Mastering Digital Skills for Tomorrow’s Success"
                 date="Selasa, 16 September 2025"
-                image="https://placehold.co/400x600.png"
+                image="/image/shelvina.jpg"
                 hint="woman influencer"
                 imagePosition="right"
               />

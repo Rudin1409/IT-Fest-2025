@@ -421,7 +421,7 @@ export default function Home() {
                 hint="woman creator"
               />
               <SpeakerCard
-                image="https://placehold.co/400x600.png"
+                image="/image/shelvina.jpg"
                 name="Shelvina Puteri"
                 title="Content Creator & MC"
                 hint="woman influencer"
