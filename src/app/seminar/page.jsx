@@ -94,7 +94,7 @@ export default function SeminarPage() {
                 image="/image/shelvina.jpg"
                 hint="woman influencer"
                 imagePosition="right"
-                imageClassName=""
+                imageClassName="object-[center_20%]"
               />
             </div>
           </div>
@@ -114,3 +114,5 @@ export default function SeminarPage() {
     </div>
   );
 }
+
+    

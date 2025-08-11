@@ -426,7 +426,7 @@ export default function Home() {
                 name="Shelvina Puteri"
                 title="Content Creator & MC"
                 hint="woman influencer"
-                className=""
+                className="object-[center_20%]"
               />
             </div>
             <div className="text-center mt-12">
@@ -496,3 +496,6 @@ export default function Home() {
   );
 }
 
+
+
+    
