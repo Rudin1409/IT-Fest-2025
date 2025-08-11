@@ -36,12 +36,13 @@ const EventCard = ({ icon, title, description }) => (
  * @param {string} props.name - Nama pembicara
  * @param {string} props.title - Jabatan atau gelar pembicara
  * @param {string} props.hint - Petunjuk AI untuk gambar
+ * @param {string} props.className - ClassName tambahan untuk gambar
  * @returns {JSX.Element} Kartu yang menampilkan profil pembicara.
  */
-const SpeakerCard = ({ image, name, title, hint }) => (
+const SpeakerCard = ({ image, name, title, hint, className }) => (
   <Card className="text-center bg-card/80 backdrop-blur-sm border-primary/10 hover:border-primary transition-all duration-300 transform hover:scale-105 hover:shadow-2xl hover:shadow-primary/20 overflow-hidden">
     <div className="relative h-72 w-full">
-      <Image src={image} alt={name} fill className="object-cover" data-ai-hint={hint} />
+      <Image src={image} alt={name} fill className={`object-cover ${className}`} data-ai-hint={hint} />
     </div>
     <CardContent className="p-4">
       <h3 className="font-headline text-xl font-bold">{name}</h3>
@@ -425,6 +426,7 @@ export default function Home() {
                 name="Shelvina Puteri"
                 title="Content Creator & MC"
                 hint="woman influencer"
+                className="object-top"
               />
             </div>
             <div className="text-center mt-12">

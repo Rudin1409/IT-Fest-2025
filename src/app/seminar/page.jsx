@@ -19,13 +19,14 @@ import Link from 'next/link';
  * @param {string} props.hint - Petunjuk AI untuk gambar
  * @param {string} [props.speakerLabel="Guest Star :"] - Label untuk pembicara
  * @param {'left' | 'right'} [props.imagePosition='left'] - Posisi gambar (kiri atau kanan)
+ * @param {string} [props.imageClassName=""] - ClassName tambahan untuk gambar
  * @returns {JSX.Element} Kartu yang menampilkan detail pembicara dan seminar.
  */
-const GuestSpeakerCard = ({ image, name, title, topic, date, hint, speakerLabel = "Guest Star :", imagePosition = 'left' }) => (
+const GuestSpeakerCard = ({ image, name, title, topic, date, hint, speakerLabel = "Guest Star :", imagePosition = 'left', imageClassName = "" }) => (
   <Card className="bg-card/80 backdrop-blur-sm border-primary/10 hover:border-primary transition-all duration-300 transform hover:scale-105 hover:shadow-2xl hover:shadow-primary/20 overflow-hidden w-full">
     <div className="grid md:grid-cols-3 items-center">
       <div className={`relative h-80 md:h-full min-h-[300px] ${imagePosition === 'right' ? 'md:order-last' : ''}`}>
-        <Image src={image} alt={name} fill className="object-cover" data-ai-hint={hint} />
+        <Image src={image} alt={name} fill className={`object-cover ${imageClassName}`} data-ai-hint={hint} />
       </div>
       <div className="md:col-span-2 p-6 md:p-8 text-left">
         <p className="text-muted-foreground mb-2 text-lg">{speakerLabel}</p>
@@ -93,6 +94,7 @@ export default function SeminarPage() {
                 image="/image/shelvina.jpg"
                 hint="woman influencer"
                 imagePosition="right"
+                imageClassName="object-top"
               />
             </div>
           </div>
