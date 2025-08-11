@@ -415,7 +415,7 @@ export default function Home() {
             <p className="text-center text-primary text-lg mb-12">Meet Our Professional Speakers</p>
             <div className="grid sm:grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
             <SpeakerCard
-                image="https://placehold.co/400x600.png"
+                image="/image/theresa.jpg"
                 name="Theresa Tandrawinata"
                 title="Creator, Web3 & Business"
                 hint="woman creator"

@@ -80,7 +80,7 @@ export default function SeminarPage() {
                 title="Creator, Web3 & Business"
                 topic="From Zero to Digital Hero by Embracing Tech for a Better Future"
                 date="Selasa, 16 September 2025"
-                image="https://placehold.co/400x600.png"
+                image="/image/theresa.jpg"
                 hint="woman creator"
                 imagePosition="left"
               />
