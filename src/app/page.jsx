@@ -362,8 +362,8 @@ export default function Home() {
                     IT-FESTIVAL 2025 adalah acara utama yang menyatukan mahasiswa, profesional, dan penggemar teknologi dari seluruh Indonesia. Misi kami adalah untuk mendorong inovasi, kolaborasi, dan pembelajaran di bidang teknologi informasi yang terus berkembang. Dengan berbagai acara, kompetisi, dan seminar, IT-FESTIVAL 2025 adalah platform yang sempurna untuk menunjukkan keahlian Anda, belajar dari yang terbaik, dan berjejaring dengan individu yang berpikiran sama.
                     </p>
                 </div>
-                <div className="relative h-96 rounded-lg overflow-hidden shadow-2xl shadow-primary/20">
-                     <Image src="/image/maskotabout.png" alt="About IT Festival" fill className="object-cover" data-ai-hint="mascot illustration" />
+                <div className="relative h-96 rounded-lg overflow-hidden">
+                     <Image src="/image/maskotabout.png" alt="About IT Festival" fill className="object-contain" data-ai-hint="mascot illustration" />
                 </div>
             </div>
         </section>
