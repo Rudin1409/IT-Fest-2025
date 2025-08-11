@@ -363,7 +363,7 @@ export default function Home() {
                     </p>
                 </div>
                 <div className="relative h-96 rounded-lg overflow-hidden shadow-2xl shadow-primary/20">
-                     <Image src="/maskotabout.png" alt="About IT Festival" fill className="object-cover" data-ai-hint="mascot illustration" />
+                     <Image src="/image/maskotabout.png" alt="About IT Festival" fill className="object-cover" data-ai-hint="mascot illustration" />
                 </div>
             </div>
         </section>
