@@ -414,7 +414,7 @@ export default function Home() {
           <div className="container mx-auto">
             <h2 className="text-4xl font-headline font-bold text-center mb-2 text-transparent bg-clip-text bg-gradient-to-b from-white to-accent">OUR SPEAKERS</h2>
             <p className="text-center text-primary text-lg mb-12">Meet Our Professional Speakers</p>
-            <div className="grid sm:grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-md md:max-w-4xl mx-auto">
             <SpeakerCard
                 image="/image/theresa.jpg"
                 name="Theresa Tandrawinata"
