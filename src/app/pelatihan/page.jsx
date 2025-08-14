@@ -138,8 +138,8 @@ export default function PelatihanPage() {
                 plugins={[Autoplay({ delay: 3000, stopOnInteraction: true })]}
                 className="w-full"
               >
-                <CarouselContent className="-ml-4 py-4">
-                  <CarouselItem className="pl-4 basis-full sm:basis-1/2 overflow-visible">
+                <CarouselContent className="-ml-8 py-4">
+                  <CarouselItem className="pl-8 basis-full sm:basis-1/2 overflow-visible">
                     <TrainingCategoryCard
                       title="Android Development"
                       image="https://placehold.co/400x400.png"
@@ -147,7 +147,7 @@ export default function PelatihanPage() {
                       registerLink="https://bit.ly/PendaftaranPelatihanAndroidITFestival2025"
                     />
                   </CarouselItem>
-                  <CarouselItem className="pl-4 basis-full sm:basis-1/2 overflow-visible">
+                  <CarouselItem className="pl-8 basis-full sm:basis-1/2 overflow-visible">
                     <TrainingCategoryCard
                       title="Web Development"
                       image="https://placehold.co/400x400.png"
