@@ -1,0 +1,10 @@
+
+# DO NOT REMOVE. CLOUDLINUX PASSENGER CONFIGURATION.
+# BEGIN CLOUDLINUX PASSENGER CONFIGURATION
+PassengerAppRoot "/home/itfestiv/it-fest-app"
+PassengerBaseURI "/"
+PassengerNodejs "/home/itfestiv/nodevenv/it-fest-app/20/bin/node"
+PassengerAppType node
+PassengerStartupFile server.js
+# END CLOUDLINUX PASSENGER CONFIGURATION
+PassengerEnabled on
