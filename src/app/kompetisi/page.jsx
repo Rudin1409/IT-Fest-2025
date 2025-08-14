@@ -21,7 +21,7 @@ import Link from 'next/link';
  * @returns {JSX.Element} Kartu yang menampilkan detail kompetisi.
  */
 const CompetitionCard = ({ title, image, hint, registerLink }) => (
-    <Card className="flex flex-col h-full overflow-hidden text-center transition-all duration-300 transform bg-card/80 backdrop-blur-sm border-primary/10 hover:border-primary hover:scale-105 hover:shadow-2xl hover:shadow-primary/20">
+    <Card className="relative flex flex-col h-full text-center transition-all duration-300 transform bg-card/80 backdrop-blur-sm border-primary/10 hover:border-primary hover:scale-105 hover:shadow-2xl hover:shadow-primary/20 hover:z-10">
       <div className="relative w-full h-48">
         <Image src={image} alt={title} fill className="object-contain p-4" data-ai-hint={hint} />
       </div>
