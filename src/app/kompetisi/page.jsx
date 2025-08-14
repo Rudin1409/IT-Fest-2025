@@ -176,6 +176,14 @@ export default function KompetisiPage() {
                       registerLink="https://bit.ly/PendaftaranLombaAnimasiITFestival2025"
                     />
                   </CarouselItem>
+                  <CarouselItem className="pl-4 basis-full sm:basis-1/2 lg:basis-1/3">
+                    <CompetitionCard
+                      title="Lomba Desain Poster"
+                      image="https://placehold.co/400x400.png"
+                      hint="poster design"
+                      registerLink="https://bit.ly/PendaftaranLombaDesignPosterITFestival2025"
+                    />
+                  </CarouselItem>
                 </CarouselContent>
                 <CarouselPrevious className="hidden -left-12 sm:flex" />
                 <CarouselNext className="hidden -right-12 sm:flex" />

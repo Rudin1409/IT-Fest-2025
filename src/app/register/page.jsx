@@ -5,7 +5,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Header } from '@/components/layout/header';
 import { Footer } from '@/components/layout/footer';
-import { Award, Code, Mic, Users, Film } from 'lucide-react';
+import { Award, Code, Mic, Users, Film, Palette } from 'lucide-react';
 import Link from 'next/link';
 
 /**
@@ -105,6 +105,7 @@ export default function RegisterPage() {
             <RegistrationCard title="E-Goverment" description="Kompetisi membuat solusi inovatif untuk pemerintahan digital." icon={<Award size={24} />} registerLink="https://bit.ly/PendaftaranLombaE-GovernmentITFestival2025" />
             <RegistrationCard title="Lomba Cipta Inovasi" description="Ciptakan dan presentasikan inovasi teknologi kreatifmu." icon={<Award size={24} />} registerLink="https://bit.ly/PendaftaranLombaCiptaInovasiITFestival2025" />
             <RegistrationCard title="Lomba Animasi" description="Buat karya animasi 3D yang memukau dan menangkan hadiahnya." icon={<Film size={24} />} registerLink="https://bit.ly/PendaftaranLombaAnimasiITFestival2025" />
+            <RegistrationCard title="Lomba Desain Poster" description="Rancang poster yang menarik dan informatif sesuai tema." icon={<Palette size={24} />} registerLink="https://bit.ly/PendaftaranLombaDesignPosterITFestival2025" />
         </Section>
         
         <div className="px-4">
