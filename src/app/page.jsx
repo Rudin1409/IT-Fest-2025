@@ -364,7 +364,7 @@ export default function Home() {
                     </p>
                 </div>
                 <div className="relative h-96 rounded-lg overflow-hidden">
-                     <Image src="/maskot/maskotweb.png" alt="About IT Festival" fill className="object-contain" data-ai-hint="mascot illustration" />
+                     <Image src="/masckot/maskotweb.png" alt="About IT Festival" fill className="object-contain" data-ai-hint="mascot illustration" />
                 </div>
             </div>
         </section>

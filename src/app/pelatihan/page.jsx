@@ -150,7 +150,7 @@ export default function PelatihanPage() {
                   <CarouselItem className="pl-8 basis-full sm:basis-1/2 overflow-visible">
                     <TrainingCategoryCard
                       title="Web Development"
-                      image="/maskot/pelatihanweb.png"
+                      image="/masckot/pelatihanweb.png"
                       hint="web development"
                       registerLink="https://bit.ly/PendaftaranPelatihanWebITFestival2025"
                     />
