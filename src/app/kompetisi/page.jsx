@@ -144,7 +144,7 @@ export default function KompetisiPage() {
                 className="w-full"
               >
                 <CarouselContent className="-ml-8 py-4">
-                  <CarouselItem className="pl-8 basis-full sm:basis-1/2 lg:basis-1/3 overflow-visible">
+                  <CarouselItem className="pl-8 overflow-visible basis-full sm:basis-1/2 lg:basis-1/3">
                     <CompetitionCard
                       title="Mobile Legends"
                       image="/masckot/maskotml.png"
@@ -152,7 +152,7 @@ export default function KompetisiPage() {
                       registerLink="https://bit.ly/PendaftaranLombaMobileLegendITFestival2025"
                     />
                   </CarouselItem>
-                  <CarouselItem className="pl-8 basis-full sm:basis-1/2 lg:basis-1/3 overflow-visible">
+                  <CarouselItem className="pl-8 overflow-visible basis-full sm:basis-1/2 lg:basis-1/3">
                     <CompetitionCard
                       title="E-Goverment"
                       image="https://placehold.co/400x400.png"
@@ -160,7 +160,7 @@ export default function KompetisiPage() {
                       registerLink="https://bit.ly/PendaftaranLombaE-GovernmentITFestival2025"
                     />
                   </CarouselItem>
-                   <CarouselItem className="pl-8 basis-full sm:basis-1/2 lg:basis-1/3 overflow-visible">
+                   <CarouselItem className="pl-8 overflow-visible basis-full sm:basis-1/2 lg:basis-1/3">
                     <CompetitionCard
                       title="Lomba Cipta Inovasi"
                       image="https://placehold.co/400x400.png"
@@ -168,7 +168,7 @@ export default function KompetisiPage() {
                       registerLink="https://bit.ly/PendaftaranLombaCiptaInovasiITFestival2025"
                     />
                   </CarouselItem>
-                   <CarouselItem className="pl-8 basis-full sm:basis-1/2 lg:basis-1/3 overflow-visible">
+                   <CarouselItem className="pl-8 overflow-visible basis-full sm:basis-1/2 lg:basis-1/3">
                     <CompetitionCard
                       title="Lomba Animasi"
                       image="https://placehold.co/400x400.png"
@@ -176,7 +176,7 @@ export default function KompetisiPage() {
                       registerLink="https://bit.ly/PendaftaranLombaAnimasiITFestival2025"
                     />
                   </CarouselItem>
-                  <CarouselItem className="pl-8 basis-full sm:basis-1/2 lg:basis-1/3 overflow-visible">
+                  <CarouselItem className="pl-8 overflow-visible basis-full sm:basis-1/2 lg:basis-1/3">
                     <CompetitionCard
                       title="Lomba Desain Poster"
                       image="https://placehold.co/400x400.png"
@@ -200,5 +200,3 @@ export default function KompetisiPage() {
     </div>
   );
 }
-
-    

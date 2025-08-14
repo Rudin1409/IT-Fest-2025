@@ -2,10 +2,10 @@
 'use client';
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
+import { Card } from '@/components/ui/card';
 import { Header } from '@/components/layout/header';
 import { Footer } from '@/components/layout/footer';
-import { CalendarDays, User } from 'lucide-react';
+import { CalendarDays } from 'lucide-react';
 import Link from 'next/link';
 
 /**
@@ -23,16 +23,16 @@ import Link from 'next/link';
  * @returns {JSX.Element} Kartu yang menampilkan detail pembicara dan seminar.
  */
 const GuestSpeakerCard = ({ image, name, title, topic, date, hint, speakerLabel = "Guest Star :", imagePosition = 'left', imageClassName = "" }) => (
-  <Card className="bg-card/80 backdrop-blur-sm border-primary/10 hover:border-primary transition-all duration-300 transform hover:scale-105 hover:shadow-2xl hover:shadow-primary/20 overflow-hidden w-full">
-    <div className="grid md:grid-cols-3 items-center">
-      <div className={`relative h-80 md:h-full min-h-[300px] ${imagePosition === 'right' ? 'md:order-last' : ''}`}>
+  <Card className="w-full overflow-hidden transition-all duration-300 transform bg-card/80 backdrop-blur-sm border-primary/10 hover:border-primary hover:scale-105 hover:shadow-2xl hover:shadow-primary/20">
+    <div className="grid items-center md:grid-cols-3">
+      <div className={`relative h-80 min-h-[300px] md:h-full ${imagePosition === 'right' ? 'md:order-last' : ''}`}>
         <Image src={image} alt={name} fill className={`object-cover ${imageClassName}`} data-ai-hint={hint} />
       </div>
-      <div className="md:col-span-2 p-6 md:p-8 text-left">
-        <p className="text-muted-foreground mb-2 text-lg">{speakerLabel}</p>
-        <h3 className="text-3xl md:text-4xl font-headline font-black mb-2 text-white uppercase">{name}</h3>
-        <p className="text-lg md:text-xl font-semibold text-primary mb-4">{title}</p>
-        <p className="text-xl md:text-2xl text-accent mb-6 italic">"{topic}"</p>
+      <div className="p-6 text-left md:col-span-2 md:p-8">
+        <p className="mb-2 text-lg text-muted-foreground">{speakerLabel}</p>
+        <h3 className="mb-2 text-3xl font-black uppercase md:text-4xl font-headline text-white">{name}</h3>
+        <p className="mb-4 text-lg font-semibold md:text-xl text-primary">{title}</p>
+        <p className="mb-6 text-xl italic md:text-2xl text-accent">"{topic}"</p>
         <div className="flex items-center gap-2 text-muted-foreground">
           <CalendarDays className="w-5 h-5 text-primary" />
           <span>{date}</span>
@@ -53,19 +53,19 @@ export default function SeminarPage() {
       <main className="flex-grow pt-24">
         
         {/* Bagian Hero */}
-        <section className="py-20 px-4 relative overflow-hidden">
+        <section className="relative px-4 py-20 overflow-hidden">
         <div className="container mx-auto">
-            <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div className="grid items-center gap-12 md:grid-cols-2">
               <div className="text-center md:text-left">
-                <h2 className="text-4xl md:text-6xl font-black font-headline text-transparent bg-clip-text bg-gradient-to-b from-white to-accent mb-4">
+                <h2 className="mb-4 text-4xl font-black md:text-6xl font-headline text-transparent bg-clip-text bg-gradient-to-b from-white to-accent">
                   SEMINAR
                 </h2>
-                <p className="text-2xl md:text-4xl font-headline font-bold text-primary mb-8">IT-FESTIVAL 2025</p>
-                <p className="text-lg md:text-xl text-muted-foreground max-w-xl">
+                <p className="mb-8 text-2xl font-bold md:text-4xl font-headline text-primary">IT-FESTIVAL 2025</p>
+                <p className="max-w-xl text-lg md:text-xl text-muted-foreground">
                   Ikuti seminar kami dan dapatkan wawasan berharga dari para ahli di bidang teknologi.
                 </p>
               </div>
-              <div className="relative h-80 w-full rounded-lg overflow-hidden shadow-2xl shadow-primary/20">
+              <div className="relative w-full h-80 rounded-lg overflow-hidden shadow-2xl shadow-primary/20">
                 <Image src="https://placehold.co/600x400.png" alt="Seminar IT Festival" fill className="object-cover" data-ai-hint="conference presentation" />
               </div>
             </div>
@@ -73,9 +73,9 @@ export default function SeminarPage() {
         </section>
 
         {/* Bagian Pembicara */}
-        <section className="py-20 px-4">
+        <section className="px-4 py-20">
           <div className="container mx-auto">
-            <div className="grid lg:grid-cols-1 gap-12 max-w-5xl mx-auto">
+            <div className="grid gap-12 mx-auto lg:grid-cols-1 max-w-5xl">
               <GuestSpeakerCard
                 name="Theresa Tandrawinata"
                 title="Creator, Web3 & Business"
@@ -101,9 +101,9 @@ export default function SeminarPage() {
         </section>
 
         {/* Tombol Pendaftaran */}
-        <section className="py-10 px-4 text-center">
+        <section className="px-4 py-10 text-center">
             <Link href="https://bit.ly/PendaftaranSeminarITFestival2025" target="_blank" rel="noopener noreferrer">
-                <Button size="lg" className="font-bold text-lg px-10 py-6">
+                <Button size="lg" className="px-10 py-6 text-lg font-bold">
                     Daftar Seminar
                 </Button>
             </Link>
@@ -114,5 +114,3 @@ export default function SeminarPage() {
     </div>
   );
 }
-
-    

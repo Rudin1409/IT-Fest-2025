@@ -18,10 +18,10 @@ import Link from 'next/link';
  * @returns {JSX.Element} Kartu yang menampilkan detail acara.
  */
 const EventCard = ({ icon, title, description }) => (
-  <Card className="bg-card/80 backdrop-blur-sm border-primary/10 hover:border-primary transition-all duration-300 transform hover:scale-105 hover:shadow-2xl hover:shadow-primary/20">
+  <Card className="transition-all duration-300 transform bg-card/80 backdrop-blur-sm border-primary/10 hover:border-primary hover:scale-105 hover:shadow-2xl hover:shadow-primary/20">
     <CardHeader className="flex flex-row items-center gap-4">
       <div className="p-3 rounded-md bg-primary/20 text-primary">{icon}</div>
-      <CardTitle className="font-headline text-xl">{title}</CardTitle>
+      <CardTitle className="text-xl font-headline">{title}</CardTitle>
     </CardHeader>
     <CardContent>
       <p className="text-muted-foreground">{description}</p>
@@ -40,13 +40,13 @@ const EventCard = ({ icon, title, description }) => (
  * @returns {JSX.Element} Kartu yang menampilkan profil pembicara.
  */
 const SpeakerCard = ({ image, name, title, hint, className }) => (
-  <Card className="text-center bg-card/80 backdrop-blur-sm border-primary/10 hover:border-primary transition-all duration-300 transform hover:scale-105 hover:shadow-2xl hover:shadow-primary/20 overflow-hidden">
-    <div className="relative h-72 w-full">
+  <Card className="overflow-hidden text-center transition-all duration-300 transform bg-card/80 backdrop-blur-sm border-primary/10 hover:border-primary hover:scale-105 hover:shadow-2xl hover:shadow-primary/20">
+    <div className="relative w-full h-72">
       <Image src={image} alt={name} fill className={`object-cover ${className}`} data-ai-hint={hint} />
     </div>
     <CardContent className="p-4">
-      <h3 className="font-headline text-xl font-bold">{name}</h3>
-      <p className="text-primary font-semibold">{title}</p>
+      <h3 className="text-xl font-bold font-headline">{name}</h3>
+      <p className="font-semibold text-primary">{title}</p>
     </CardContent>
   </Card>
 );
@@ -144,18 +144,18 @@ const TimelineItem = ({ event, index }) => {
     return (
       <div className="flex w-full my-4 md:my-8">
         {/* Desktop view */}
-        <div className="hidden md:flex w-full items-center">
+        <div className="hidden w-full md:flex items-center">
             {isLeft ? (
             <>
                 <div className="w-5/12 pr-8 text-right">
-                <div className="p-4 rounded-lg bg-card/80 border border-primary/20 shadow-primary/10 shadow-lg">
-                    <h4 className="font-headline text-lg font-bold text-accent">{event.title}</h4>
-                    <p className="text-sm text-muted-foreground mt-1">{event.date}</p>
+                <div className="p-4 border rounded-lg shadow-lg bg-card/80 border-primary/20 shadow-primary/10">
+                    <h4 className="text-lg font-bold font-headline text-accent">{event.title}</h4>
+                    <p className="mt-1 text-sm text-muted-foreground">{event.date}</p>
                 </div>
                 </div>
-                <div className="w-2/12 flex-shrink-0 flex justify-center">
+                <div className="flex-shrink-0 w-2/12 flex justify-center">
                     <div className="relative">
-                        <div className="flex items-center justify-center h-10 w-10 rounded-full bg-primary font-bold text-primary-foreground z-10">
+                        <div className="z-10 flex items-center justify-center w-10 h-10 font-bold rounded-full bg-primary text-primary-foreground">
                         {index + 1}
                         </div>
                     </div>
@@ -165,35 +165,35 @@ const TimelineItem = ({ event, index }) => {
             ) : (
             <>
                 <div className="w-5/12"></div>
-                <div className="w-2/12 flex-shrink-0 flex justify-center">
+                <div className="flex-shrink-0 w-2/12 flex justify-center">
                 <div className="relative">
-                    <div className="flex items-center justify-center h-10 w-10 rounded-full bg-primary font-bold text-primary-foreground z-10">
+                    <div className="z-10 flex items-center justify-center w-10 h-10 font-bold rounded-full bg-primary text-primary-foreground">
                     {index + 1}
                     </div>
                 </div>
                 </div>
                 <div className="w-5/12 pl-8 text-left">
-                <div className="p-4 rounded-lg bg-card/80 border border-primary/20 shadow-primary/10 shadow-lg">
-                    <h4 className="font-headline text-lg font-bold text-accent">{event.title}</h4>
-                    <p className="text-sm text-muted-foreground mt-1">{event.date}</p>
+                <div className="p-4 border rounded-lg shadow-lg bg-card/80 border-primary/20 shadow-primary/10">
+                    <h4 className="text-lg font-bold font-headline text-accent">{event.title}</h4>
+                    <p className="mt-1 text-sm text-muted-foreground">{event.date}</p>
                 </div>
                 </div>
             </>
             )}
         </div>
         {/* Mobile view */}
-        <div className="flex md:hidden w-full items-start">
-            <div className="w-2/12 flex-shrink-0 flex justify-center">
+        <div className="flex items-start w-full md:hidden">
+            <div className="flex-shrink-0 w-2/12 flex justify-center">
                 <div className="relative">
-                    <div className="flex items-center justify-center h-10 w-10 rounded-full bg-primary font-bold text-primary-foreground z-10">
+                    <div className="z-10 flex items-center justify-center w-10 h-10 font-bold rounded-full bg-primary text-primary-foreground">
                     {index + 1}
                     </div>
                 </div>
             </div>
             <div className="w-10/12 pl-4 text-left">
-                <div className="p-4 rounded-lg bg-card/80 border border-primary/20 shadow-primary/10 shadow-lg">
-                    <h4 className="font-headline text-md font-bold text-accent">{event.title}</h4>
-                    <p className="text-xs text-muted-foreground mt-1">{event.date}</p>
+                <div className="p-4 border rounded-lg shadow-lg bg-card/80 border-primary/20 shadow-primary/10">
+                    <h4 className="text-md font-bold font-headline text-accent">{event.title}</h4>
+                    <p className="mt-1 text-xs text-muted-foreground">{event.date}</p>
                 </div>
             </div>
         </div>
@@ -242,10 +242,10 @@ const CountdownTimer = () => {
   const timerComponents = isClient ? (
     Object.keys(timeLeft).map((interval) => (
       <div key={interval} className="flex flex-col items-center">
-        <span className="text-4xl md:text-6xl font-black font-headline text-primary">
+        <span className="text-4xl font-black md:text-6xl font-headline text-primary">
           {String(timeLeft[interval]).padStart(2, '0')}
         </span>
-        <span className="text-sm md:text-lg font-body uppercase tracking-widest text-muted-foreground">{interval}</span>
+        <span className="text-sm uppercase md:text-lg font-body tracking-widest text-muted-foreground">{interval}</span>
       </div>
     ))
   ) : (
@@ -253,7 +253,7 @@ const CountdownTimer = () => {
   );
 
   return (
-    <div className="flex justify-center gap-4 md:gap-8 my-8">
+    <div className="flex justify-center gap-4 my-8 md:gap-8">
       {timerComponents}
     </div>
   );
@@ -294,7 +294,7 @@ const TypingAnimation = ({ text }) => {
   }, [displayedText, isDeleting, text, loopNum, typingSpeed]);
 
   return (
-    <h2 className="text-4xl md:text-6xl font-black font-headline text-transparent bg-clip-text bg-gradient-to-b from-white to-accent mb-4 h-20 md:h-24">
+    <h2 className="h-20 mb-4 text-4xl font-black md:text-6xl md:h-24 font-headline text-transparent bg-clip-text bg-gradient-to-b from-white to-accent">
       <span className="typing-text">{displayedText}</span>
       <span className="typing-cursor"></span>
     </h2>
@@ -339,27 +339,27 @@ export default function Home() {
       <main className="flex-grow">
         
         {/* Bagian Hero */}
-        <section id="hero" className="text-center px-4 relative overflow-hidden h-screen flex flex-col justify-center pt-24">
-           <div className="container mx-auto relative">
+        <section id="hero" className="relative flex flex-col items-center justify-center h-screen px-4 pt-24 overflow-hidden text-center">
+           <div className="container relative mx-auto">
             <TypingAnimation text="WELCOME TO IT-FESTIVAL 2025" />
-            <p className="text-2xl md:text-4xl font-headline font-bold text-primary mb-4">Berakhir Dalam</p>
+            <p className="mb-4 text-2xl font-bold md:text-4xl font-headline text-primary">Berakhir Dalam</p>
             <CountdownTimer />
-             <p className="text-2xl md:text-4xl font-headline font-bold text-transparent bg-clip-text bg-gradient-to-b from-white to-accent mb-8">THE BIGGEST IT-FESTIVAL</p>
+             <p className="mb-8 text-2xl font-bold text-transparent md:text-4xl font-headline bg-clip-text bg-gradient-to-b from-white to-accent">THE BIGGEST IT-FESTIVAL</p>
           </div>
-          <a href="#about" onClick={handleScroll} className="absolute bottom-10 left-1/2 -translate-x-1/2 cursor-pointer">
-              <div className="w-12 h-12 text-primary flex items-center justify-center animate-pulse-arrow">
+          <a href="#about" onClick={handleScroll} className="absolute cursor-pointer bottom-10 left-1/2 -translate-x-1/2">
+              <div className="flex items-center justify-center w-12 h-12 text-primary animate-pulse-arrow">
                 <ArrowDown size={48} />
               </div>
             </a>
         </section>
 
         {/* Bagian Tentang Kami */}
-        <section id="about" className="py-20 px-4">
-            <div className="container mx-auto grid md:grid-cols-2 gap-12 items-center">
+        <section id="about" className="px-4 py-20">
+            <div className="container grid items-center gap-12 mx-auto md:grid-cols-2">
                 <div>
-                    <h2 className="text-4xl font-headline font-bold mb-4 text-transparent bg-clip-text bg-gradient-to-b from-white to-accent">ABOUT US</h2>
-                    <h3 className="text-2xl font-bold text-primary mb-6">The Biggest IT-Festival in 2025</h3>
-                    <p className="text-muted-foreground text-lg leading-relaxed">
+                    <h2 className="mb-4 text-4xl font-bold font-headline text-transparent bg-clip-text bg-gradient-to-b from-white to-accent">ABOUT US</h2>
+                    <h3 className="mb-6 text-2xl font-bold text-primary">The Biggest IT-Festival in 2025</h3>
+                    <p className="text-lg leading-relaxed text-muted-foreground">
                     IT-FESTIVAL 2025 adalah acara utama yang menyatukan mahasiswa, profesional, dan penggemar teknologi dari seluruh Indonesia. Misi kami adalah untuk mendorong inovasi, kolaborasi, dan pembelajaran di bidang teknologi informasi yang terus berkembang. Dengan berbagai acara, kompetisi, dan seminar, IT-FESTIVAL 2025 adalah platform yang sempurna untuk menunjukkan keahlian Anda, belajar dari yang terbaik, dan berjejaring dengan individu yang berpikiran sama.
                     </p>
                 </div>
@@ -370,11 +370,11 @@ export default function Home() {
         </section>
 
         {/* Bagian Acara Kami */}
-        <section id="events" className="py-20 px-4 bg-secondary/50">
+        <section id="events" className="px-4 py-20 bg-secondary/50">
           <div className="container mx-auto">
-            <h2 className="text-4xl font-headline font-bold text-center mb-2 text-transparent bg-clip-text bg-gradient-to-b from-white to-accent">OUR EVENTS</h2>
-            <p className="text-center text-primary text-lg mb-12">Check Our Best Events</p>
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 justify-center">
+            <h2 className="mb-2 text-4xl font-bold text-center font-headline text-transparent bg-clip-text bg-gradient-to-b from-white to-accent">OUR EVENTS</h2>
+            <p className="mb-12 text-lg text-center text-primary">Check Our Best Events</p>
+            <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3 justify-center">
               <EventCard 
                 icon={<Mic size={24} />} 
                 title="Webinar" 
@@ -410,11 +410,11 @@ export default function Home() {
         </section>
         
         {/* Bagian Pembicara */}
-        <section id="speakers" className="py-20 px-4">
+        <section id="speakers" className="px-4 py-20">
           <div className="container mx-auto">
-            <h2 className="text-4xl font-headline font-bold text-center mb-2 text-transparent bg-clip-text bg-gradient-to-b from-white to-accent">OUR SPEAKERS</h2>
-            <p className="text-center text-primary text-lg mb-12">Meet Our Professional Speakers</p>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            <h2 className="mb-2 text-4xl font-bold text-center font-headline text-transparent bg-clip-text bg-gradient-to-b from-white to-accent">OUR SPEAKERS</h2>
+            <p className="mb-12 text-lg text-center text-primary">Meet Our Professional Speakers</p>
+            <div className="grid grid-cols-1 gap-8 mx-auto md:grid-cols-2 max-w-4xl">
             <SpeakerCard
                 image="/image/theresa.jpg"
                 name="Theresa Tandrawinata"
@@ -429,9 +429,9 @@ export default function Home() {
                 className="object-[center_20%]"
               />
             </div>
-            <div className="text-center mt-12">
+            <div className="mt-12 text-center">
                 <Link href="/seminar">
-                    <Button size="lg" className="font-bold text-lg px-10 py-6">
+                    <Button size="lg" className="px-10 py-6 text-lg font-bold">
                         Lihat Semua Pembicara
                     </Button>
                 </Link>
@@ -440,9 +440,9 @@ export default function Home() {
         </section>
 
         {/* Bagian Linimasa */}
-        <section id="timeline" className="py-20 px-4 bg-secondary/50">
+        <section id="timeline" className="px-4 py-20 bg-secondary/50">
             <div className="container mx-auto">
-                <h2 className="text-4xl font-headline font-bold text-center mb-12 text-transparent bg-clip-text bg-gradient-to-b from-white to-accent">TIMELINE</h2>
+                <h2 className="mb-12 text-4xl font-bold text-center font-headline text-transparent bg-clip-text bg-gradient-to-b from-white to-accent">TIMELINE</h2>
                 <div className="relative max-w-5xl mx-auto">
                 <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-0.5 bg-primary/50 hidden md:block"></div>
                 <div className="absolute left-[calc(1.25rem-1px)] md:left-1/2 h-full w-0.5 bg-primary/50"></div>
@@ -454,38 +454,38 @@ export default function Home() {
         </section>
 
         {/* Bagian Didukung Oleh */}
-        <section id="supported-by" className="py-20 px-4">
+        <section id="supported-by" className="px-4 py-20">
             <div className="container mx-auto text-center">
-                <h2 className="text-4xl font-headline font-bold mb-12 text-transparent bg-clip-text bg-gradient-to-b from-white to-accent">SUPPORTED BY</h2>
-                <div className="grid md:grid-cols-3 gap-12 items-start justify-center">
+                <h2 className="mb-12 text-4xl font-bold font-headline text-transparent bg-clip-text bg-gradient-to-b from-white to-accent">SUPPORTED BY</h2>
+                <div className="grid items-start justify-center gap-12 md:grid-cols-3">
                     <div className="flex flex-col items-center gap-4">
-                        <Image src="/logopolsri.png" alt="Politeknik Negeri Sriwijaya" width={150} height={75} className="mx-auto object-contain" data-ai-hint="university logo" />
-                        <p className="text-xl font-headline font-bold text-primary mt-4">Politeknik Negeri Sriwijaya</p>
+                        <Image src="/logopolsri.png" alt="Politeknik Negeri Sriwijaya" width={150} height={75} className="object-contain mx-auto" data-ai-hint="university logo" />
+                        <p className="mt-4 text-xl font-bold font-headline text-primary">Politeknik Negeri Sriwijaya</p>
                     </div>
                     <div className="flex flex-col items-center gap-4">
-                        <Image src="/logomi.webp" alt="Jurusan Manajemen Informatika" width={150} height={75} className="mx-auto object-contain" data-ai-hint="university logo" />
-                        <p className="text-xl font-headline font-bold text-primary mt-4">Jurusan Manajemen Informatika</p>
+                        <Image src="/logomi.webp" alt="Jurusan Manajemen Informatika" width={150} height={75} className="object-contain mx-auto" data-ai-hint="university logo" />
+                        <p className="mt-4 text-xl font-bold font-headline text-primary">Jurusan Manajemen Informatika</p>
                     </div>
                     <div className="flex flex-col items-center gap-4">
-                        <Image src="/logohmj.png" alt="Himpunan Mahasiswa Jurusan Manajemen Informatika" width={150} height={75} className="mx-auto object-contain" data-ai-hint="organization logo" />
-                        <p className="text-xl font-headline font-bold text-primary mt-4 text-center">Himpunan Mahasiswa Jurusan Manajemen Informatika</p>
+                        <Image src="/logohmj.png" alt="Himpunan Mahasiswa Jurusan Manajemen Informatika" width={150} height={75} className="object-contain mx-auto" data-ai-hint="organization logo" />
+                        <p className="mt-4 text-xl font-bold text-center font-headline text-primary">Himpunan Mahasiswa Jurusan Manajemen Informatika</p>
                     </div>
                 </div>
             </div>
         </section>
 
         {/* Bagian Sponsor */}
-        <section id="sponsors" className="py-20 px-4 bg-secondary/50">
+        <section id="sponsors" className="px-4 py-20 bg-secondary/50">
           <div className="container mx-auto text-center">
-            <h2 className="text-4xl font-headline font-bold mb-12 text-transparent bg-clip-text bg-gradient-to-b from-white to-accent">SPONSORS</h2>
+            <h2 className="mb-12 text-4xl font-bold font-headline text-transparent bg-clip-text bg-gradient-to-b from-white to-accent">SPONSORS</h2>
              <ScrollingLogos items={sponsorLogos} hint="company logo" duration="60s" />
           </div>
         </section>
 
         {/* Bagian Mitra Media */}
-        <section id="media-partners" className="py-20 px-4">
+        <section id="media-partners" className="px-4 py-20">
           <div className="container mx-auto text-center">
-            <h2 className="text-4xl font-headline font-bold mb-12 text-transparent bg-clip-text bg-gradient-to-b from-white to-accent">MEDIA PARTNERS</h2>
+            <h2 className="mb-12 text-4xl font-bold font-headline text-transparent bg-clip-text bg-gradient-to-b from-white to-accent">MEDIA PARTNERS</h2>
             <ScrollingLogos items={mediaPartnerLogos} hint="media logo" duration="60s" />
           </div>
         </section>
@@ -495,8 +495,3 @@ export default function Home() {
     </div>
   );
 }
-
-
-
-    
-    

@@ -18,11 +18,11 @@ import Link from 'next/link';
  * @returns {JSX.Element} Kartu untuk pendaftaran satu acara.
  */
 const RegistrationCard = ({ title, description, icon, registerLink }) => (
-    <Card className="bg-card/80 backdrop-blur-sm border-primary/10 hover:border-primary transition-all duration-300 transform hover:scale-105 hover:shadow-2xl hover:shadow-primary/20 overflow-hidden text-left w-full md:max-w-sm">
+    <Card className="w-full overflow-hidden text-left transition-all duration-300 transform bg-card/80 backdrop-blur-sm border-primary/10 hover:border-primary hover:scale-105 hover:shadow-2xl hover:shadow-primary/20 md:max-w-sm">
       <CardContent className="p-6 space-y-4">
         <div className="flex items-center gap-4">
             <div className="p-3 rounded-md bg-primary/20 text-primary">{icon}</div>
-            <h3 className="font-headline text-2xl font-bold">{title}</h3>
+            <h3 className="text-2xl font-bold font-headline">{title}</h3>
         </div>
         <p className="text-muted-foreground">{description}</p>
         <Link href={registerLink} target='_blank' rel='noopener noreferrer' className='w-full'>
@@ -45,9 +45,9 @@ const Section = ({ title, children, icon }) => (
         <div className="container mx-auto">
             <div className="flex items-center justify-center gap-4 mb-12">
                 <div className="text-primary">{icon}</div>
-                <h2 className="text-4xl font-headline font-bold text-center">{title}</h2>
+                <h2 className="text-4xl font-bold text-center font-headline">{title}</h2>
             </div>
-            <div className="flex flex-wrap justify-center items-stretch gap-8">
+            <div className="flex flex-wrap items-stretch justify-center gap-8">
                 {children}
             </div>
         </div>
@@ -67,7 +67,7 @@ const SeminarSection = ({ title, children, icon }) => (
         <div className="container mx-auto">
             <div className="flex items-center justify-center gap-4 mb-12">
                 <div className="text-primary">{icon}</div>
-                <h2 className="text-4xl font-headline font-bold text-center">{title}</h2>
+                <h2 className="text-4xl font-bold text-center font-headline">{title}</h2>
             </div>
             <div className="flex justify-center">
                 <div className="w-full md:w-auto">
@@ -89,12 +89,12 @@ export default function RegisterPage() {
       <main className="flex-grow pt-24">
         
         {/* Bagian Hero */}
-        <section className="py-20 px-4 text-center">
-            <h1 className="text-5xl md:text-7xl font-black font-headline text-transparent bg-clip-text bg-gradient-to-b from-white to-accent mb-4">
+        <section className="px-4 py-20 text-center">
+            <h1 className="mb-4 text-5xl font-black md:text-7xl font-headline text-transparent bg-clip-text bg-gradient-to-b from-white to-accent">
                 PENDAFTARAN
             </h1>
-            <p className="text-2xl font-headline font-bold text-primary">IT-FESTIVAL</p>
-            <p className="mt-4 max-w-2xl mx-auto text-muted-foreground">
+            <p className="text-2xl font-bold font-headline text-primary">IT-FESTIVAL</p>
+            <p className="max-w-2xl mx-auto mt-4 text-muted-foreground">
                 Pilih kategori acara yang ingin Anda ikuti. Amankan tempat Anda sekarang dan jadilah bagian dari festival teknologi terbesar tahun ini!
             </p>
         </section>
@@ -109,7 +109,7 @@ export default function RegisterPage() {
         </Section>
         
         <div className="px-4">
-            <div className="border-t border-primary/20 container mx-auto"></div>
+            <div className="container mx-auto border-t border-primary/20"></div>
         </div>
 
         {/* Bagian Pelatihan */}
@@ -119,7 +119,7 @@ export default function RegisterPage() {
         </Section>
         
         <div className="px-4">
-            <div className="border-t border-primary/20 container mx-auto"></div>
+            <div className="container mx-auto border-t border-primary/20"></div>
         </div>
 
         {/* Bagian Seminar */}

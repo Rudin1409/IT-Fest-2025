@@ -139,7 +139,7 @@ export default function PelatihanPage() {
                 className="w-full"
               >
                 <CarouselContent className="-ml-8 py-4">
-                  <CarouselItem className="pl-8 basis-full sm:basis-1/2 overflow-visible">
+                  <CarouselItem className="pl-8 overflow-visible basis-full sm:basis-1/2">
                     <TrainingCategoryCard
                       title="Android Development"
                       image="https://placehold.co/400x400.png"
@@ -147,7 +147,7 @@ export default function PelatihanPage() {
                       registerLink="https://bit.ly/PendaftaranPelatihanAndroidITFestival2025"
                     />
                   </CarouselItem>
-                  <CarouselItem className="pl-8 basis-full sm:basis-1/2 overflow-visible">
+                  <CarouselItem className="pl-8 overflow-visible basis-full sm:basis-1/2">
                     <TrainingCategoryCard
                       title="Web Development"
                       image="/masckot/pelatihanweb.png"
@@ -170,5 +170,3 @@ export default function PelatihanPage() {
     </div>
   );
 }
-
-    
