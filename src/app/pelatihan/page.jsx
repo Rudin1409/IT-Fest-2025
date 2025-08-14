@@ -21,7 +21,7 @@ import Link from 'next/link';
  * @returns {JSX.Element} Kartu yang menampilkan kategori pelatihan.
  */
 const TrainingCategoryCard = ({ title, image, hint, registerLink }) => (
-    <Card className="flex flex-col h-full overflow-hidden text-center transition-all duration-300 transform bg-card/80 backdrop-blur-sm border-primary/10 hover:border-primary hover:scale-105 hover:shadow-2xl hover:shadow-primary/20">
+    <Card className="relative flex flex-col h-full text-center transition-all duration-300 bg-card/80 backdrop-blur-sm border-primary/10 hover:border-primary hover:scale-105 hover:shadow-2xl hover:shadow-primary/20 hover:z-50">
       <div className="relative w-full h-48">
         <Image src={image} alt={title} fill className="object-contain p-4" data-ai-hint={hint} />
       </div>
@@ -138,8 +138,8 @@ export default function PelatihanPage() {
                 plugins={[Autoplay({ delay: 3000, stopOnInteraction: true })]}
                 className="w-full"
               >
-                <CarouselContent>
-                  <CarouselItem className="pl-4 basis-full sm:basis-1/2">
+                <CarouselContent className="-ml-4 py-4">
+                  <CarouselItem className="pl-4 basis-full sm:basis-1/2 overflow-visible">
                     <TrainingCategoryCard
                       title="Android Development"
                       image="https://placehold.co/400x400.png"
@@ -147,7 +147,7 @@ export default function PelatihanPage() {
                       registerLink="https://bit.ly/PendaftaranPelatihanAndroidITFestival2025"
                     />
                   </CarouselItem>
-                  <CarouselItem className="pl-4 basis-full sm:basis-1/2">
+                  <CarouselItem className="pl-4 basis-full sm:basis-1/2 overflow-visible">
                     <TrainingCategoryCard
                       title="Web Development"
                       image="https://placehold.co/400x400.png"

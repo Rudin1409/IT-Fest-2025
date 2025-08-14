@@ -21,7 +21,7 @@ import Link from 'next/link';
  * @returns {JSX.Element} Kartu yang menampilkan detail kompetisi.
  */
 const CompetitionCard = ({ title, image, hint, registerLink }) => (
-    <Card className="relative flex flex-col h-full text-center transition-all duration-300 transform bg-card/80 backdrop-blur-sm border-primary/10 hover:border-primary hover:scale-105 hover:shadow-2xl hover:shadow-primary/20 hover:z-10">
+    <Card className="relative flex flex-col h-full text-center transition-all duration-300 bg-card/80 backdrop-blur-sm border-primary/10 hover:border-primary hover:scale-105 hover:shadow-2xl hover:shadow-primary/20 hover:z-50">
       <div className="relative w-full h-48">
         <Image src={image} alt={title} fill className="object-contain p-4" data-ai-hint={hint} />
       </div>
@@ -143,8 +143,8 @@ export default function KompetisiPage() {
                 plugins={[Autoplay({ delay: 3000, stopOnInteraction: true })]}
                 className="w-full"
               >
-                <CarouselContent>
-                  <CarouselItem className="pl-4 basis-full sm:basis-1/2 lg:basis-1/3">
+                <CarouselContent className="-ml-4 py-4">
+                  <CarouselItem className="pl-4 basis-full sm:basis-1/2 lg:basis-1/3 overflow-visible">
                     <CompetitionCard
                       title="Mobile Legends"
                       image="https://placehold.co/400x400.png"
@@ -152,7 +152,7 @@ export default function KompetisiPage() {
                       registerLink="https://bit.ly/PendaftaranLombaMobileLegendITFestival2025"
                     />
                   </CarouselItem>
-                  <CarouselItem className="pl-4 basis-full sm:basis-1/2 lg:basis-1/3">
+                  <CarouselItem className="pl-4 basis-full sm:basis-1/2 lg:basis-1/3 overflow-visible">
                     <CompetitionCard
                       title="E-Goverment"
                       image="https://placehold.co/400x400.png"
@@ -160,7 +160,7 @@ export default function KompetisiPage() {
                       registerLink="https://bit.ly/PendaftaranLombaE-GovernmentITFestival2025"
                     />
                   </CarouselItem>
-                   <CarouselItem className="pl-4 basis-full sm:basis-1/2 lg:basis-1/3">
+                   <CarouselItem className="pl-4 basis-full sm:basis-1/2 lg:basis-1/3 overflow-visible">
                     <CompetitionCard
                       title="Lomba Cipta Inovasi"
                       image="https://placehold.co/400x400.png"
@@ -168,7 +168,7 @@ export default function KompetisiPage() {
                       registerLink="https://bit.ly/PendaftaranLombaCiptaInovasiITFestival2025"
                     />
                   </CarouselItem>
-                   <CarouselItem className="pl-4 basis-full sm:basis-1/2 lg:basis-1/3">
+                   <CarouselItem className="pl-4 basis-full sm:basis-1/2 lg:basis-1/3 overflow-visible">
                     <CompetitionCard
                       title="Lomba Animasi"
                       image="https://placehold.co/400x400.png"
@@ -176,7 +176,7 @@ export default function KompetisiPage() {
                       registerLink="https://bit.ly/PendaftaranLombaAnimasiITFestival2025"
                     />
                   </CarouselItem>
-                  <CarouselItem className="pl-4 basis-full sm:basis-1/2 lg:basis-1/3">
+                  <CarouselItem className="pl-4 basis-full sm:basis-1/2 lg:basis-1/3 overflow-visible">
                     <CompetitionCard
                       title="Lomba Desain Poster"
                       image="https://placehold.co/400x400.png"
