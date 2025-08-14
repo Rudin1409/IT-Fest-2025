@@ -147,7 +147,7 @@ export default function KompetisiPage() {
                   <CarouselItem className="pl-8 basis-full sm:basis-1/2 lg:basis-1/3 overflow-visible">
                     <CompetitionCard
                       title="Mobile Legends"
-                      image="https://placehold.co/400x400.png"
+                      image="/maskot/maskotml.png"
                       hint="gaming character"
                       registerLink="https://bit.ly/PendaftaranLombaMobileLegendITFestival2025"
                     />
@@ -200,3 +200,5 @@ export default function KompetisiPage() {
     </div>
   );
 }
+
+    
