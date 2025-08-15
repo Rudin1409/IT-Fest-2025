@@ -330,7 +330,11 @@ export default function Home() {
     }
   };
 
-  const sponsorLogos = Array.from({ length: 10 }, (_, i) => ({ src: `https://placehold.co/200x100.png`, alt: `Sponsor ${i + 1}` }));
+  const sponsorLogos = [
+    { src: '/sponsor/mandiri.png', alt: 'Logo Mandiri', hint: 'company logo' },
+    { src: '/sponsor/mau.jpeg', alt: 'Logo MAU', hint: 'company logo' },
+    { src: '/sponsor/pusri.png', alt: 'Logo Pusri', hint: 'company logo' },
+  ];
   const mediaPartnerLogos = Array.from({ length: 10 }, (_, i) => ({ src: `https://placehold.co/200x100.png`, alt: `Media Partner ${i + 1}` }));
 
   return (
@@ -478,7 +482,7 @@ export default function Home() {
         <section id="sponsors" className="px-4 py-20 bg-secondary/50">
           <div className="container mx-auto text-center">
             <h2 className="mb-12 text-4xl font-bold font-headline text-transparent bg-clip-text bg-gradient-to-b from-white to-accent">SPONSORS</h2>
-             <ScrollingLogos items={sponsorLogos} hint="company logo" duration="60s" />
+             <ScrollingLogos items={sponsorLogos} hint="company logo" duration="20s" />
           </div>
         </section>
 
