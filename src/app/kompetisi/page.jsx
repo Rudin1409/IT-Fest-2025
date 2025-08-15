@@ -155,7 +155,7 @@ export default function KompetisiPage() {
                   <CarouselItem className="pl-8 overflow-visible basis-full sm:basis-1/2 lg:basis-1/3">
                     <CompetitionCard
                       title="E-Goverment"
-                      image="https://placehold.co/400x400.png"
+                      image="/masckot/egov.png"
                       hint="government building"
                       registerLink="https://bit.ly/PendaftaranLombaE-GovernmentITFestival2025"
                     />
@@ -163,7 +163,7 @@ export default function KompetisiPage() {
                    <CarouselItem className="pl-8 overflow-visible basis-full sm:basis-1/2 lg:basis-1/3">
                     <CompetitionCard
                       title="Lomba Cipta Inovasi"
-                      image="https://placehold.co/400x400.png"
+                      image="/masckot/ciptainov.png"
                       hint="innovation lightbulb"
                       registerLink="https://bit.ly/PendaftaranLombaCiptaInovasiITFestival2025"
                     />
@@ -171,7 +171,7 @@ export default function KompetisiPage() {
                    <CarouselItem className="pl-8 overflow-visible basis-full sm:basis-1/2 lg:basis-1/3">
                     <CompetitionCard
                       title="Lomba Animasi"
-                      image="https://placehold.co/400x400.png"
+                      image="/masckot/aniamsi.png"
                       hint="3d animation"
                       registerLink="https://bit.ly/PendaftaranLombaAnimasiITFestival2025"
                     />
