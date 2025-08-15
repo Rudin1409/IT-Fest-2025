@@ -18,9 +18,10 @@ import Link from 'next/link';
  * @param {string} props.image - URL gambar untuk kompetisi
  * @param {string} props.hint - Petunjuk AI untuk gambar
  * @param {string} props.registerLink - Tautan untuk pendaftaran
+ * @param {string} [props.guidebookLink] - Tautan untuk guide book
  * @returns {JSX.Element} Kartu yang menampilkan detail kompetisi.
  */
-const CompetitionCard = ({ title, image, hint, registerLink }) => (
+const CompetitionCard = ({ title, image, hint, registerLink, guidebookLink }) => (
     <Card className="relative flex flex-col h-full text-center transition-all duration-300 bg-card/80 backdrop-blur-sm border-primary/10 hover:border-primary hover:scale-105 hover:shadow-2xl hover:shadow-primary/20 hover:z-50">
       <div className="relative w-full h-48">
         <Image src={image} alt={title} fill className="object-contain p-4" data-ai-hint={hint} />
@@ -33,7 +34,13 @@ const CompetitionCard = ({ title, image, hint, registerLink }) => (
           <Link href={registerLink} target='_blank' rel='noopener noreferrer' className='w-full'>
             <Button variant="default" className="w-full">Daftar</Button>
           </Link>
-          <Button variant="outline" className="w-full">Guide Book</Button>
+          {guidebookLink ? (
+             <Link href={guidebookLink} target='_blank' rel='noopener noreferrer' className='w-full'>
+                <Button variant="outline" className="w-full">Guide Book</Button>
+             </Link>
+          ) : (
+             <Button variant="outline" className="w-full" disabled>Guide Book</Button>
+          )}
         </div>
       </CardContent>
     </Card>
@@ -158,6 +165,7 @@ export default function KompetisiPage() {
                       image="/masckot/egov.png"
                       hint="government building"
                       registerLink="https://bit.ly/PendaftaranLombaE-GovernmentITFestival2025"
+                      guidebookLink="/guidbook/Guide Book E-Government[1].pdf"
                     />
                   </CarouselItem>
                    <CarouselItem className="pl-8 overflow-visible basis-full sm:basis-1/2 lg:basis-1/3">
@@ -166,6 +174,7 @@ export default function KompetisiPage() {
                       image="/masckot/ciptainov.png"
                       hint="innovation lightbulb"
                       registerLink="https://bit.ly/PendaftaranLombaCiptaInovasiITFestival2025"
+                      guidebookLink="/guidbook/GUIDEBOOK LOMBA CIPTA INOVASI[1].pdf"
                     />
                   </CarouselItem>
                    <CarouselItem className="pl-8 overflow-visible basis-full sm:basis-1/2 lg:basis-1/3">
@@ -174,6 +183,7 @@ export default function KompetisiPage() {
                       image="/masckot/aniamsi.png"
                       hint="3d animation"
                       registerLink="https://bit.ly/PendaftaranLombaAnimasiITFestival2025"
+                      guidebookLink="/guidbook/GUIDEBOOK LOMBA ANIMASI IT FESTIVAL 2025 new[1].pdf"
                     />
                   </CarouselItem>
                   <CarouselItem className="pl-8 overflow-visible basis-full sm:basis-1/2 lg:basis-1/3">

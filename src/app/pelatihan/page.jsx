@@ -18,9 +18,10 @@ import Link from 'next/link';
  * @param {string} props.image - URL gambar untuk kategori
  * @param {string} props.hint - Petunjuk AI untuk gambar
  * @param {string} props.registerLink - Tautan untuk pendaftaran
+ * @param {string} [props.guidebookLink] - Tautan untuk guide book
  * @returns {JSX.Element} Kartu yang menampilkan kategori pelatihan.
  */
-const TrainingCategoryCard = ({ title, image, hint, registerLink }) => (
+const TrainingCategoryCard = ({ title, image, hint, registerLink, guidebookLink }) => (
     <Card className="relative flex flex-col h-full text-center transition-all duration-300 bg-card/80 backdrop-blur-sm border-primary/10 hover:border-primary hover:scale-105 hover:shadow-2xl hover:shadow-primary/20 hover:z-50">
       <div className="relative w-full h-48">
         <Image src={image} alt={title} fill className="object-contain p-4" data-ai-hint={hint} />
@@ -33,7 +34,13 @@ const TrainingCategoryCard = ({ title, image, hint, registerLink }) => (
             <Link href={registerLink} target='_blank' rel='noopener noreferrer' className='w-full'>
               <Button variant="default" className="w-full">Daftar</Button>
             </Link>
-            <Button variant="outline" className="w-full">Guide Book</Button>
+            {guidebookLink ? (
+             <Link href={guidebookLink} target='_blank' rel='noopener noreferrer' className='w-full'>
+                <Button variant="outline" className="w-full">Guide Book</Button>
+             </Link>
+          ) : (
+             <Button variant="outline" className="w-full" disabled>Guide Book</Button>
+          )}
         </div>
       </CardContent>
     </Card>
@@ -143,8 +150,9 @@ export default function PelatihanPage() {
                     <TrainingCategoryCard
                       title="Android Development"
                       image="/masckot/pelatihanweb.png"
-                      hint="web development"
+                      hint="android development"
                       registerLink="https://bit.ly/PendaftaranPelatihanAndroidITFestival2025"
+                      guidebookLink="/guidbook/GUIDEBOOK PELATIHAN ANDROID 2025[1].pdf"
                     />
                   </CarouselItem>
                   <CarouselItem className="pl-8 overflow-visible basis-full sm:basis-1/2">
@@ -153,6 +161,7 @@ export default function PelatihanPage() {
                       image="/masckot/pelatihanweb.png"
                       hint="web development"
                       registerLink="https://bit.ly/PendaftaranPelatihanWebITFestival2025"
+                      guidebookLink="/guidbook/GUIDRBOOK PELATIHAN WEB 2025(1)[1].pdf"
                     />
                   </CarouselItem>
                 </CarouselContent>
