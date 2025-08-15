@@ -335,7 +335,9 @@ export default function Home() {
     { src: '/sponsor/mau.jpeg', alt: 'Logo MAU', hint: 'company logo' },
     { src: '/sponsor/pusri.png', alt: 'Logo Pusri', hint: 'company logo' },
   ];
-  const mediaPartnerLogos = Array.from({ length: 10 }, (_, i) => ({ src: `https://placehold.co/200x100.png`, alt: `Media Partner ${i + 1}` }));
+  const mediaPartnerLogos = [
+    { src: '/medpart/Logo HMJBI.png', alt: 'Logo HMJBI' },
+  ];
 
   return (
     <div className="flex flex-col min-h-screen text-foreground">
@@ -490,7 +492,7 @@ export default function Home() {
         <section id="media-partners" className="px-4 py-20">
           <div className="container mx-auto text-center">
             <h2 className="mb-12 text-4xl font-bold font-headline text-transparent bg-clip-text bg-gradient-to-b from-white to-accent">MEDIA PARTNERS</h2>
-            <ScrollingLogos items={mediaPartnerLogos} hint="media logo" duration="60s" />
+            <ScrollingLogos items={mediaPartnerLogos} hint="organization logo" duration="20s" />
           </div>
         </section>
 
