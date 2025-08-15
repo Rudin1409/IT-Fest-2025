@@ -142,8 +142,8 @@ export default function PelatihanPage() {
                   <CarouselItem className="pl-8 overflow-visible basis-full sm:basis-1/2">
                     <TrainingCategoryCard
                       title="Android Development"
-                      image="https://placehold.co/400x400.png"
-                      hint="mobile app"
+                      image="/masckot/pelatihanweb.png"
+                      hint="web development"
                       registerLink="https://bit.ly/PendaftaranPelatihanAndroidITFestival2025"
                     />
                   </CarouselItem>
