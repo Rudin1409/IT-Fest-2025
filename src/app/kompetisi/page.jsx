@@ -116,7 +116,7 @@ export default function KompetisiPage() {
                 </p>
               </div>
               <div className="relative w-full h-80 rounded-lg overflow-hidden shadow-2xl shadow-primary/20">
-                <Image src="https://placehold.co/600x400.png" alt="Kompetisi IT Festival" fill className="object-cover" data-ai-hint="programming competition" />
+                <Image src="/kompetisi.jpg" alt="Hero Kompetisi IT Festival" fill className="object-cover" data-ai-hint="tech event" />
               </div>
             </div>
           </div>

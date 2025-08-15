@@ -66,7 +66,7 @@ export default function SeminarPage() {
                 </p>
               </div>
               <div className="relative w-full h-80 rounded-lg overflow-hidden shadow-2xl shadow-primary/20">
-                <Image src="https://placehold.co/600x400.png" alt="Seminar IT Festival" fill className="object-cover" data-ai-hint="conference presentation" />
+                <Image src="/seminar.jpg" alt="Hero Seminar IT Festival" fill className="object-cover" data-ai-hint="tech conference" />
               </div>
             </div>
           </div>

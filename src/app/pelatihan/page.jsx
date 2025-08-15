@@ -116,7 +116,7 @@ export default function PelatihanPage() {
                 </p>
               </div>
               <div className="relative w-full h-80 rounded-lg overflow-hidden shadow-2xl shadow-primary/20">
-                <Image src="https://placehold.co/600x400.png" alt="Pelatihan IT Festival" fill className="object-cover" data-ai-hint="training workshop" />
+                <Image src="/pelatihan.jpg" alt="Hero Pelatihan IT Festival" fill className="object-cover" data-ai-hint="tech workshop" />
               </div>
             </div>
           </div>
