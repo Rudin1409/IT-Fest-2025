@@ -157,6 +157,7 @@ export default function KompetisiPage() {
                       image="/masckot/maskotml.png"
                       hint="gaming character"
                       registerLink="https://bit.ly/PendaftaranLombaMobileLegendITFestival2025"
+                      guidebookLink="/guidbook/Guide Book Mobile Legends ITFEST 2025.pdf"
                     />
                   </CarouselItem>
                   <CarouselItem className="pl-8 overflow-visible basis-full sm:basis-1/2 lg:basis-1/3">
@@ -192,6 +193,7 @@ export default function KompetisiPage() {
                       image="/masckot/maskotposterdesign.png"
                       hint="poster design"
                       registerLink="https://bit.ly/PendaftaranLombaDesignPosterITFestival2025"
+                      guidebookLink="/guidbook/Guide Book Design Poster ITFEST 2025.pdf"
                     />
                   </CarouselItem>
                 </CarouselContent>
