@@ -346,6 +346,7 @@ export default function Home() {
     { src: '/medpart/polnrj.png', alt: 'Logo Polnrj', hint: 'organization logo' },
     { src: '/medpart/teknoevent.png', alt: 'Logo Teknoevent', hint: 'organization logo' },
     { src: '/medpart/ukmpoltek.png', alt: 'Logo UKM Poltek', hint: 'organization logo' },
+    { src: '/medpart/HME.png', alt: 'Logo HME', hint: 'organization logo' },
   ];
 
   return (
@@ -510,6 +511,8 @@ export default function Home() {
     </div>
   );
 }
+
+    
 
     
 
