@@ -331,12 +331,20 @@ export default function Home() {
   };
 
   const sponsorLogos = [
+    { src: '/sponsor/Logo Cyborg.jpg', alt: 'Logo Cyborg', hint: 'company logo' },
     { src: '/sponsor/bri.png', alt: 'Logo BRI', hint: 'company logo' },
     { src: '/sponsor/mau.jpeg', alt: 'Logo MAU', hint: 'company logo' },
     { src: '/sponsor/pusri.png', alt: 'Logo Pusri', hint: 'company logo' },
   ];
   const mediaPartnerLogos = [
-    { src: '/medpart/Logo HMJBI.png', alt: 'Logo HMJBI' },
+    { src: '/medpart/Logo HMJBI.png', alt: 'Logo HMJBI', hint: 'organization logo' },
+    { src: '/medpart/himailkomunnes.png', alt: 'Logo Himailkom Unnes', hint: 'organization logo' },
+    { src: '/medpart/himifunpad.png', alt: 'Logo Himif Unpad', hint: 'organization logo' },
+    { src: '/medpart/himifunsika.png', alt: 'Logo Himif Unsika', hint: 'organization logo' },
+    { src: '/medpart/hmeuny.png', alt: 'Logo HME UNY', hint: 'organization logo' },
+    { src: '/medpart/polnrj.png', alt: 'Logo Polnrj', hint: 'organization logo' },
+    { src: '/medpart/teknoevent.png', alt: 'Logo Teknoevent', hint: 'organization logo' },
+    { src: '/medpart/ukmpoltek.png', alt: 'Logo UKM Poltek', hint: 'organization logo' },
   ];
 
   return (
@@ -492,7 +500,7 @@ export default function Home() {
         <section id="media-partners" className="px-4 py-20">
           <div className="container mx-auto text-center">
             <h2 className="mb-12 text-4xl font-bold font-headline text-transparent bg-clip-text bg-gradient-to-b from-white to-accent">MEDIA PARTNERS</h2>
-            <ScrollingLogos items={mediaPartnerLogos} hint="organization logo" duration="20s" />
+            <ScrollingLogos items={mediaPartnerLogos} hint="organization logo" duration="40s" />
           </div>
         </section>
 
