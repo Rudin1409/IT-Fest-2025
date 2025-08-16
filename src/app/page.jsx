@@ -331,7 +331,7 @@ export default function Home() {
   };
 
   const sponsorLogos = [
-    { src: '/sponsor/mandiri.png', alt: 'Logo Mandiri', hint: 'company logo' },
+    { src: '/sponsor/bri.png', alt: 'Logo BRI', hint: 'company logo' },
     { src: '/sponsor/mau.jpeg', alt: 'Logo MAU', hint: 'company logo' },
     { src: '/sponsor/pusri.png', alt: 'Logo Pusri', hint: 'company logo' },
   ];
