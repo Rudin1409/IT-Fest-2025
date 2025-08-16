@@ -431,14 +431,14 @@ export default function Home() {
             <div className="grid grid-cols-1 gap-8 mx-auto md:grid-cols-2 max-w-4xl">
             <SpeakerCard
                 image="/image/theresa.jpg"
-                name="Theresa Tandrawinata"
-                title="Creator, Web3 & Business"
+                name="Theresa Tjandrawinata"
+                title="Tech Entrepreneur & Educator"
                 hint="woman creator"
               />
               <SpeakerCard
                 image="/image/shelvina.jpg"
-                name="Shelvina Puteri"
-                title="Content Creator & MC"
+                name="Shelvina Putri"
+                title="Public Speaker & Digital Creator"
                 hint="woman influencer"
                 className="object-[center_20%]"
               />
@@ -509,3 +509,5 @@ export default function Home() {
     </div>
   );
 }
+
+    

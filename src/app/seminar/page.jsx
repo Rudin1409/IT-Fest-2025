@@ -77,8 +77,8 @@ export default function SeminarPage() {
           <div className="container mx-auto">
             <div className="grid gap-12 mx-auto lg:grid-cols-1 max-w-5xl">
               <GuestSpeakerCard
-                name="Theresa Tandrawinata"
-                title="Creator, Web3 & Business"
+                name="Theresa Tjandrawinata"
+                title="Tech Entrepreneur & Educator"
                 topic="From Zero to Digital Hero by Embracing Tech for a Better Future"
                 date="Selasa, 16 September 2025"
                 image="/image/theresa.jpg"
@@ -86,9 +86,9 @@ export default function SeminarPage() {
                 imagePosition="left"
               />
               <GuestSpeakerCard
-                name="Shelvina Puteri"
+                name="Shelvina Putri"
                 speakerLabel="Speaker :"
-                title="Content Creator & MC"
+                title="Public Speaker & Digital Creator"
                 topic="Mastering Digital Skills for Tomorrow’s Success"
                 date="Selasa, 16 September 2025"
                 image="/image/shelvina.jpg"
@@ -114,3 +114,5 @@ export default function SeminarPage() {
     </div>
   );
 }
+
+    
