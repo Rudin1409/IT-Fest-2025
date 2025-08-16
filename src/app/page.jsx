@@ -438,7 +438,7 @@ export default function Home() {
             <div className="mt-12 text-center">
                 <Link href="/seminar">
                     <Button size="lg" className="px-10 py-6 text-lg font-bold">
-                        Lihat Semua Pembicara
+                        Lihat Pembicara
                     </Button>
                 </Link>
             </div>
