@@ -335,6 +335,7 @@ export default function Home() {
     { src: '/sponsor/bri.png', alt: 'Logo BRI', hint: 'company logo' },
     { src: '/sponsor/mau.jpeg', alt: 'Logo MAU', hint: 'company logo' },
     { src: '/sponsor/pusri.png', alt: 'Logo Pusri', hint: 'company logo' },
+    { src: '/sponsor/logo-primary.png', alt: 'Sponsor Logo', hint: 'company logo' },
   ];
   const mediaPartnerLogos = [
     { src: '/medpart/Logo HMJBI.png', alt: 'Logo HMJBI', hint: 'organization logo' },
@@ -509,5 +510,7 @@ export default function Home() {
     </div>
   );
 }
+
+    
 
     
