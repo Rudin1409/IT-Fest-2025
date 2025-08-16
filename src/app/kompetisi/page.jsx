@@ -189,7 +189,7 @@ export default function KompetisiPage() {
                   <CarouselItem className="pl-8 overflow-visible basis-full sm:basis-1/2 lg:basis-1/3">
                     <CompetitionCard
                       title="Lomba Desain Poster"
-                      image="/masckot/ciptainov.png"
+                      image="/masckot/maskotposterdesign.png"
                       hint="poster design"
                       registerLink="https://bit.ly/PendaftaranLombaDesignPosterITFestival2025"
                     />
