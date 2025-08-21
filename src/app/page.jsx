@@ -336,6 +336,8 @@ export default function Home() {
     { src: '/sponsor/mau.jpeg', alt: 'Logo MAU', hint: 'company logo' },
     { src: '/sponsor/pusri.png', alt: 'Logo Pusri', hint: 'company logo' },
     { src: '/sponsor/logo-primary.png', alt: 'Sponsor Logo', hint: 'company logo' },
+    { src: '/sponsor/LOGO AP STUDIO.png', alt: 'AP Studio Logo', hint: 'company logo' },
+    { src: '/sponsor/LOGO SEWA KAMERA.png', alt: 'Sewa Kamera Logo', hint: 'company logo' },
   ];
   const mediaPartnerLogos = [
     { src: '/medpart/HIMA ILKOM.png', alt: 'HIMA ILKOM', hint: 'organization logo' },
@@ -357,6 +359,7 @@ export default function Home() {
     { src: '/medpart/Logo TeknoEventCampus25.png', alt: 'TeknoEvent Campus 25', hint: 'organization logo' },
     { src: '/medpart/Logo ukmpp.png', alt: 'UKMPP', hint: 'organization logo' },
     { src: '/medpart/teknoevent.png', alt: 'Teknoevent', hint: 'organization logo' },
+    { src: '/medpart/LOGOHIMAGEO.png', alt: 'HIMAGEO', hint: 'organization logo' },
   ];
 
   return (
