@@ -340,6 +340,7 @@ export default function Home() {
     { src: '/sponsor/LOGO SEWA KAMERA.png', alt: 'Sewa Kamera Logo', hint: 'company logo' },
   ];
   const mediaPartnerLogos = [
+    { src: '/medpart/BNCC for white bg.png', alt: 'BNCC', hint: 'organization logo' },
     { src: '/medpart/HIMA ILKOM.png', alt: 'HIMA ILKOM', hint: 'organization logo' },
     { src: '/medpart/himadata_its-removebg-preview.png', alt: 'Himadata ITS', hint: 'organization logo' },
     { src: '/medpart/himakomugm-removebg-preview.png', alt: 'Himakom UGM', hint: 'organization logo' },
@@ -347,6 +348,7 @@ export default function Home() {
     { src: '/medpart/hme polinema.png', alt: 'HME Polinema', hint: 'organization logo' },
     { src: '/medpart/HMe UNY.png', alt: 'HME UNY', hint: 'organization logo' },
     { src: '/medpart/hme_undip-removebg-preview.png', alt: 'HME Undip', hint: 'organization logo' },
+    { src: '/medpart/ikomunesa.png', alt: 'Ikom Unesa', hint: 'organization logo' },
     { src: '/medpart/LOGO BEMF-IK 2025.png', alt: 'BEMF-IK 2025', hint: 'organization logo' },
     { src: '/medpart/Logo Himatif (1).png', alt: 'Himatif', hint: 'organization logo' },
     { src: '/medpart/LOGO HME Polines.jpg', alt: 'HME Polines', hint: 'organization logo' },
@@ -358,6 +360,7 @@ export default function Home() {
     { src: '/medpart/Logo TeknoEventAcademy25.png', alt: 'TeknoEvent Academy 25', hint: 'organization logo' },
     { src: '/medpart/Logo TeknoEventCampus25.png', alt: 'TeknoEvent Campus 25', hint: 'organization logo' },
     { src: '/medpart/Logo ukmpp.png', alt: 'UKMPP', hint: 'organization logo' },
+    { src: '/medpart/LOGO ULE.png', alt: 'ULE', hint: 'organization logo' },
     { src: '/medpart/teknoevent.png', alt: 'Teknoevent', hint: 'organization logo' },
     { src: '/medpart/LOGOHIMAGEO.png', alt: 'HIMAGEO', hint: 'organization logo' },
   ];
@@ -497,7 +500,7 @@ export default function Home() {
                     </div>
                     <div className="flex flex-col items-center gap-4">
                         <Image src="/logohmj.png" alt="Himpunan Mahasiswa Jurusan Manajemen Informatika" width={150} height={75} className="object-contain mx-auto" data-ai-hint="organization logo" />
-                        <p className="mt-4 text-xl font-bold text-center font-headline text-primary">Himpunan Mahasiswa Jurusan Manajemen Informatika</p>
+                        <p className="mt-4 text-xl font-bold font-center font-headline text-primary">Himpunan Mahasiswa Jurusan Manajemen Informatika</p>
                     </div>
                 </div>
             </div>
@@ -530,3 +533,4 @@ export default function Home() {
     
 
     
+
