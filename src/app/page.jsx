@@ -401,7 +401,7 @@ export default function Home() {
                      <Image src="/masckot/maskotweb.png" alt="About IT Festival" fill className="object-contain" data-ai-hint="mascot illustration" />
                   </div>
                   <div className="px-6 py-2 font-bold text-lg rounded-full bg-primary/80 text-primary-foreground shadow-lg font-headline animate-pulse">
-                    Hallo, I'm Cvyra!
+                    Hallo, I'm Cyvra!
                   </div>
                 </div>
             </div>
@@ -541,5 +541,8 @@ export default function Home() {
     
 
     
+
+    
+
 
     
