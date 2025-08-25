@@ -363,7 +363,7 @@ export default function Home() {
     { src: '/medpart/LOGO ULE.png', alt: 'ULE', hint: 'organization logo' },
     { src: '/medpart/teknoevent.png', alt: 'Teknoevent', hint: 'organization logo' },
     { src: '/medpart/LOGOHIMAGEO.png', alt: 'HIMAGEO', hint: 'organization logo' },
-    { src: '/medpart/LOGO BEM.png', alt: 'BEM', hint: 'organization logo' },
+    { src: '/medpart/logobem.png', alt: 'BEM', hint: 'organization logo' },
   ];
 
   return (
@@ -528,6 +528,8 @@ export default function Home() {
     </div>
   );
 }
+
+    
 
     
 
