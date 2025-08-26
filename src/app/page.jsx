@@ -364,6 +364,7 @@ export default function Home() {
     { src: '/medpart/teknoevent.png', alt: 'Teknoevent', hint: 'organization logo' },
     { src: '/medpart/LOGOHIMAGEO.png', alt: 'HIMAGEO', hint: 'organization logo' },
     { src: '/medpart/logobem.png', alt: 'BEM', hint: 'organization logo' },
+    { src: '/medpart/HMJ BP Font.png', alt: 'HMJ BP', hint: 'organization logo' },
   ];
 
   return (
