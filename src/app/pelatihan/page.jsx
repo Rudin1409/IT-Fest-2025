@@ -10,6 +10,7 @@ import React from 'react';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
 import Link from 'next/link';
+import { trainingTimeline, trainingCategories } from '@/data/pelatihan';
 
 /**
  * Komponen TrainingCategoryCard
@@ -46,26 +47,6 @@ const TrainingCategoryCard = ({ title, image, hint, registerLink, guidebookLink 
     </Card>
   );
 
-// Data untuk linimasa pelatihan
-const timelineData = [
-    {
-      title: 'Pembukaan Pendaftaran',
-      date: '16 Agustus - 6 September 2025',
-    },
-    {
-      title: 'Pelaksanaan Pelatihan',
-      date: '17 - 20 September 2025',
-    },
-    {
-      title: 'Pengumpulan Proyek',
-      date: '20 September 2025',
-    },
-    {
-      title: 'Pengumuman Lulusan',
-      date: '20 September 2025',
-    },
-  ];
-
 /**
  * Komponen TrainingTimeline
  * @returns {JSX.Element} Bagian yang menampilkan linimasa pelatihan.
@@ -79,7 +60,7 @@ const TrainingTimeline = () => (
         <div className="relative">
           <div className="hidden md:block absolute top-1/2 left-0 w-full h-0.5 bg-primary/30 -translate-y-1/2"></div>
           <div className="grid gap-y-12 md:grid-cols-4 md:gap-8">
-            {timelineData.map((item, index) => (
+            {trainingTimeline.map((item, index) => (
               <div key={index} className="relative flex flex-col items-center text-center">
                  <div className="relative z-10 flex items-center justify-center w-12 h-12 mb-4 border-2 rounded-full bg-card border-primary">
                     <CalendarDays className="w-6 h-6 text-primary" />
@@ -146,24 +127,17 @@ export default function PelatihanPage() {
                 className="w-full"
               >
                 <CarouselContent className="-ml-8 py-4">
-                  <CarouselItem className="pl-8 overflow-visible basis-full sm:basis-1/2">
-                    <TrainingCategoryCard
-                      title="Android Development"
-                      image="/masckot/pelatihanweb.png"
-                      hint="android development"
-                      registerLink="https://bit.ly/PendaftaranPelatihanAndroidITFestival2025"
-                      guidebookLink="/guidbook/GUIDEBOOK PELATIHAN ANDROID 2025[1].pdf"
-                    />
-                  </CarouselItem>
-                  <CarouselItem className="pl-8 overflow-visible basis-full sm:basis-1/2">
-                    <TrainingCategoryCard
-                      title="Web Development"
-                      image="/masckot/pelatihanweb.png"
-                      hint="web development"
-                      registerLink="https://bit.ly/PendaftaranPelatihanWebITFestival2025"
-                      guidebookLink="/guidbook/GUIDRBOOK PELATIHAN WEB 2025(1)[1].pdf"
-                    />
-                  </CarouselItem>
+                  {trainingCategories.map((training, index) => (
+                     <CarouselItem key={index} className="pl-8 overflow-visible basis-full sm:basis-1/2">
+                        <TrainingCategoryCard
+                          title={training.title}
+                          image={training.image}
+                          hint={training.hint}
+                          registerLink={training.registerLink}
+                          guidebookLink={training.guidebookLink}
+                        />
+                    </CarouselItem>
+                  ))}
                 </CarouselContent>
                 <div className="flex justify-center gap-4 mt-8 sm:hidden">
                   <CarouselPrevious className="static translate-y-0" />

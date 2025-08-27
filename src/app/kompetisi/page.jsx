@@ -10,6 +10,7 @@ import React from 'react';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
 import Link from 'next/link';
+import { competitionTimeline, competitionCategories } from '@/data/kompetisi';
 
 /**
  * Komponen CompetitionCard
@@ -46,30 +47,6 @@ const CompetitionCard = ({ title, image, hint, registerLink, guidebookLink }) =>
     </Card>
   );
 
-// Data untuk linimasa kompetisi
-const timelineData = [
-    {
-      title: 'Pendaftaran Lomba',
-      date: '16 Agustus - 30 September 2025',
-    },
-    {
-      title: 'Pembuatan Karya',
-      date: '16 Agustus - 13 Oktober 2025',
-    },
-    {
-      title: 'Technical Meeting',
-      date: '3 Oktober 2025',
-    },
-    {
-      title: 'Turnamen dan Penjurian',
-      date: '4 - 16 Oktober 2025',
-    },
-    {
-      title: 'Pengumuman Pemenang',
-      date: '20 Oktober 2025',
-    },
-  ];
-
 /**
  * Komponen CompetitionTimeline
  * @returns {JSX.Element} Bagian yang menampilkan linimasa kompetisi.
@@ -83,7 +60,7 @@ const CompetitionTimeline = () => (
         <div className="relative">
           <div className="hidden md:block absolute top-1/2 left-0 w-full h-0.5 bg-primary/30 -translate-y-1/2"></div>
           <div className="grid gap-y-12 md:grid-cols-5 md:gap-8">
-            {timelineData.map((item, index) => (
+            {competitionTimeline.map((item, index) => (
               <div key={index} className="relative flex flex-col items-center text-center">
                  <div className="relative z-10 flex items-center justify-center w-12 h-12 mb-4 border-2 rounded-full bg-card border-primary">
                     <CalendarDays className="w-6 h-6 text-primary" />
@@ -151,51 +128,17 @@ export default function KompetisiPage() {
                 className="w-full"
               >
                 <CarouselContent className="-ml-8 py-4">
-                  <CarouselItem className="pl-8 overflow-visible basis-full sm:basis-1/2 lg:basis-1/3">
-                    <CompetitionCard
-                      title="Mobile Legends"
-                      image="/masckot/maskotml.png"
-                      hint="gaming character"
-                      registerLink="https://bit.ly/PendaftaranLombaMobileLegendITFestival2025"
-                      guidebookLink="/guidbook/Guide Book Mobile Legends ITFEST 2025.pdf"
-                    />
-                  </CarouselItem>
-                  <CarouselItem className="pl-8 overflow-visible basis-full sm:basis-1/2 lg:basis-1/3">
-                    <CompetitionCard
-                      title="E-Goverment"
-                      image="/masckot/egov.png"
-                      hint="government building"
-                      registerLink="https://bit.ly/PendaftaranLombaE-GovernmentITFestival2025"
-                      guidebookLink="/guidbook/Guide Book E-Government[1].pdf"
-                    />
-                  </CarouselItem>
-                   <CarouselItem className="pl-8 overflow-visible basis-full sm:basis-1/2 lg:basis-1/3">
-                    <CompetitionCard
-                      title="Lomba Cipta Inovasi"
-                      image="/masckot/ciptainov.png"
-                      hint="innovation lightbulb"
-                      registerLink="https://bit.ly/PendaftaranLombaCiptaInovasiITFestival2025"
-                      guidebookLink="/guidbook/GUIDEBOOK LOMBA CIPTA INOVASI[1].pdf"
-                    />
-                  </CarouselItem>
-                   <CarouselItem className="pl-8 overflow-visible basis-full sm:basis-1/2 lg:basis-1/3">
-                    <CompetitionCard
-                      title="Lomba Animasi"
-                      image="/masckot/aniamsi.png"
-                      hint="3d animation"
-                      registerLink="https://bit.ly/PendaftaranLombaAnimasiITFestival2025"
-                      guidebookLink="/guidbook/GUIDEBOOK LOMBA ANIMASI IT FESTIVAL 2025 new[1].pdf"
-                    />
-                  </CarouselItem>
-                  <CarouselItem className="pl-8 overflow-visible basis-full sm:basis-1/2 lg:basis-1/3">
-                    <CompetitionCard
-                      title="Lomba Desain Poster"
-                      image="/masckot/maskotposterdesign.png"
-                      hint="poster design"
-                      registerLink="https://bit.ly/PendaftaranLombaDesignPosterITFestival2025"
-                      guidebookLink="/guidbook/Guide Book Design Poster ITFEST 2025.pdf"
-                    />
-                  </CarouselItem>
+                  {competitionCategories.map((competition, index) => (
+                    <CarouselItem key={index} className="pl-8 overflow-visible basis-full sm:basis-1/2 lg:basis-1/3">
+                      <CompetitionCard
+                        title={competition.title}
+                        image={competition.image}
+                        hint={competition.hint}
+                        registerLink={competition.registerLink}
+                        guidebookLink={competition.guidebookLink}
+                      />
+                    </CarouselItem>
+                  ))}
                 </CarouselContent>
                 <CarouselPrevious className="hidden -left-12 sm:flex" />
                 <CarouselNext className="hidden -right-12 sm:flex" />

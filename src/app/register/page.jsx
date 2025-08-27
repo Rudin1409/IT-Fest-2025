@@ -5,8 +5,9 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Header } from '@/components/layout/header';
 import { Footer } from '@/components/layout/footer';
-import { Award, Code, Mic, Users, Film, Palette } from 'lucide-react';
+import { Award, Code, Mic } from 'lucide-react';
 import Link from 'next/link';
+import { competitions, trainings, seminars } from '@/data/register';
 
 /**
  * Komponen RegistrationCard
@@ -101,11 +102,14 @@ export default function RegisterPage() {
 
         {/* Bagian Kompetisi */}
         <Section title="Kompetisi" icon={<Award size={32} />}>
-            <RegistrationCard title="Mobile Legends" description="Adu strategi dan kekompakan tim dalam turnamen e-sport paling bergengsi." icon={<Award size={24} />} registerLink="https://bit.ly/PendaftaranLombaMobileLegendITFestival2025" />
-            <RegistrationCard title="E-Goverment" description="Kompetisi membuat solusi inovatif untuk pemerintahan digital." icon={<Award size={24} />} registerLink="https://bit.ly/PendaftaranLombaE-GovernmentITFestival2025" />
-            <RegistrationCard title="Lomba Cipta Inovasi" description="Ciptakan dan presentasikan inovasi teknologi kreatifmu." icon={<Award size={24} />} registerLink="https://bit.ly/PendaftaranLombaCiptaInovasiITFestival2025" />
-            <RegistrationCard title="Lomba Animasi" description="Buat karya animasi 3D yang memukau dan menangkan hadiahnya." icon={<Film size={24} />} registerLink="https://bit.ly/PendaftaranLombaAnimasiITFestival2025" />
-            <RegistrationCard title="Lomba Desain Poster" description="Rancang poster yang menarik dan informatif sesuai tema." icon={<Palette size={24} />} registerLink="https://bit.ly/PendaftaranLombaDesignPosterITFestival2025" />
+            {competitions.map((item, index) => (
+                <RegistrationCard 
+                    key={index}
+                    title={item.title} 
+                    description={item.description} 
+                    icon={item.icon} 
+                    registerLink={item.registerLink} />
+            ))}
         </Section>
         
         <div className="px-4">
@@ -114,8 +118,14 @@ export default function RegisterPage() {
 
         {/* Bagian Pelatihan */}
         <Section title="Pelatihan" icon={<Code size={32} />}>
-            <RegistrationCard title="Android Development" description="Belajar membangun aplikasi Android dari dasar hingga mahir bersama para ahli." icon={<Code size={24} />} registerLink="https://bit.ly/PendaftaranPelatihanAndroidITFestival2025" />
-            <RegistrationCard title="Web Development" description="Kuasai pengembangan web dari sisi front-end hingga back-end dalam pelatihan intensif." icon={<Code size={24} />} registerLink="https://bit.ly/PendaftaranPelatihanWebITFestival2025" />
+            {trainings.map((item, index) => (
+                <RegistrationCard 
+                    key={index}
+                    title={item.title} 
+                    description={item.description} 
+                    icon={item.icon} 
+                    registerLink={item.registerLink} />
+            ))}
         </Section>
         
         <div className="px-4">
@@ -124,7 +134,14 @@ export default function RegisterPage() {
 
         {/* Bagian Seminar */}
         <SeminarSection title="Seminar" icon={<Mic size={32} />}>
-           <RegistrationCard title="Seminar Teknologi" description="Dapatkan wawasan terbaru dari para pembicara ahli di industri teknologi." icon={<Mic size={24} />} registerLink="https://bit.ly/PendaftaranSeminarITFestival2025" />
+           {seminars.map((item, index) => (
+               <RegistrationCard 
+                    key={index}
+                    title={item.title} 
+                    description={item.description} 
+                    icon={item.icon} 
+                    registerLink={item.registerLink} />
+           ))}
         </SeminarSection>
 
       </main>

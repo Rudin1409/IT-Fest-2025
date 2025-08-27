@@ -7,6 +7,7 @@ import { Header } from '@/components/layout/header';
 import { Footer } from '@/components/layout/footer';
 import { CalendarDays } from 'lucide-react';
 import Link from 'next/link';
+import { speakers } from '@/data/seminar';
 
 /**
  * Komponen GuestSpeakerCard
@@ -76,26 +77,20 @@ export default function SeminarPage() {
         <section className="px-4 py-20">
           <div className="container mx-auto">
             <div className="grid gap-12 mx-auto lg:grid-cols-1 max-w-5xl">
-              <GuestSpeakerCard
-                name="Theresa Tjandrawinata"
-                title="Tech Entrepreneur & Educator"
-                topic="From Zero to Digital Hero by Embracing Tech for a Better Future"
-                date="Selasa, 16 September 2025"
-                image="/image/theresa.jpg"
-                hint="woman creator"
-                imagePosition="left"
-              />
-              <GuestSpeakerCard
-                name="Shelvina Putri"
-                speakerLabel="Speaker :"
-                title="Public Speaker & Digital Creator"
-                topic="Mastering Digital Skills for Tomorrow’s Success"
-                date="Selasa, 16 September 2025"
-                image="/image/shelvina.jpg"
-                hint="woman influencer"
-                imagePosition="right"
-                imageClassName="object-[center_20%]"
-              />
+              {speakers.map((speaker, index) => (
+                <GuestSpeakerCard
+                  key={index}
+                  name={speaker.name}
+                  title={speaker.title}
+                  topic={speaker.topic}
+                  date={speaker.date}
+                  image={speaker.image}
+                  hint={speaker.hint}
+                  speakerLabel={speaker.speakerLabel}
+                  imagePosition={speaker.imagePosition}
+                  imageClassName={speaker.imageClassName}
+                />
+              ))}
             </div>
           </div>
         </section>
