@@ -231,7 +231,15 @@ const ScrollingLogos = ({ items, hint, duration = '40s' }) => {
       <div className="scroller" data-animated="true" style={{ '--duration': duration }}>
           <div className="scroller-inner">
               {duplicatedItems.map((item, index) => (
-                  <Image key={index} src={item.src} alt={item.alt} width={200} height={100} className="object-contain h-24" data-ai-hint={hint} />
+                  <Image 
+                    key={index} 
+                    src={item.src} 
+                    alt={item.alt} 
+                    width={160} 
+                    height={80} 
+                    className="object-contain h-20" 
+                    data-ai-hint={hint} 
+                  />
               ))}
           </div>
       </div>
@@ -409,5 +417,7 @@ export default function Home() {
 
     
 
+
+    
 
     
