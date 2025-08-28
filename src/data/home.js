@@ -152,4 +152,8 @@ export const mediaPartnerLogos = [
     { src: '/medpart/LOGOHIMAGEO.png', alt: 'HIMAGEO', hint: 'organization logo' },
     { src: '/medpart/logobem.png', alt: 'BEM', hint: 'organization logo' },
     { src: '/medpart/HMJ BP Font.png', alt: 'HMJ BP', hint: 'organization logo' },
+    { src: '/medpart/hmjpolsri.png', alt: 'HMJ Polsri', hint: 'organization logo' },
+    { src: '/medpart/hmjtekim.png', alt: 'HMJ Tekim', hint: 'organization logo' },
+    { src: '/medpart/logo wps.png', alt: 'WPS', hint: 'organization logo' },
+    { src: '/medpart/LOGO HMJ.png', alt: 'HMJ', hint: 'organization logo' },
 ];
