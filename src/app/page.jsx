@@ -227,7 +227,8 @@ const TypingAnimation = ({ text }) => {
 
 // Komponen untuk logo yang bergulir
 const ScrollingLogos = ({ items, hint, duration = '40s' }) => {
-    const duplicatedItems = [...items, ...items];
+    const validItems = items.filter(item => item.src);
+    const duplicatedItems = [...validItems, ...validItems];
   
     return (
       <div className="scroller" data-animated="true" style={{ '--duration': duration }}>
@@ -419,6 +420,8 @@ export default function Home() {
 
     
 
+
+    
 
     
 

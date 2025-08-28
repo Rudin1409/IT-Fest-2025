@@ -14,7 +14,7 @@ export const mediaPartnerLogos = [
     { src: '/medpart/LOGO HME Polines.jpg', alt: 'HME Polines', hint: 'organization logo' },
     { src: '/medpart/Logo HME.png', alt: 'HME', hint: 'organization logo' },
     { src: '/medpart/Logo HMJBI.png', alt: 'HMJBI', hint: 'organization logo' },
-    { src_2: '/medpart/logobem.png', alt: 'BEM', hint: 'organization logo' },
+    { src: '/medpart/logobem.png', alt: 'BEM', hint: 'organization logo' },
     { src: '/medpart/Logo LombaTekno.png', alt: 'Lomba Tekno', hint: 'organization logo' },
     { src: '/medpart/Logo LombaUIUX.png', alt: 'Lomba UIUX', hint: 'organization logo' },
     { src: '/medpart/Logo TeknoEvent25.png', alt: 'TeknoEvent25', hint: 'organization logo' },
@@ -31,3 +31,5 @@ export const mediaPartnerLogos = [
     { src: '/medpart/logo wps.png', alt: 'WPS', hint: 'organization logo' },
     { src: '/medpart/LOGOHMJAK.png', alt: 'HMJ AK', hint: 'organization logo' },
 ];
+
+    
