@@ -156,4 +156,5 @@ export const mediaPartnerLogos = [
     { src: '/medpart/hmjtekim.png', alt: 'HMJ Tekim', hint: 'organization logo' },
     { src: '/medpart/logo wps.png', alt: 'WPS', hint: 'organization logo' },
     { src: '/medpart/LOGO HMJ.png', alt: 'HMJ', hint: 'organization logo' },
+    { src: '/medpart/LOGOHMJAK.png', alt: 'HMJ AK', hint: 'organization logo' },
 ];
