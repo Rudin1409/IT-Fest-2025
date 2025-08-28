@@ -8,7 +8,9 @@ import { Header } from '@/components/layout/header';
 import { Footer } from '@/components/layout/footer';
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { timelineEvents, sponsorLogos, mediaPartnerLogos, events } from '@/data/home';
+import { timelineEvents, events } from '@/data/home';
+import { sponsorLogos } from '@/data/sponsors';
+import { mediaPartnerLogos } from '@/data/mediaPartners';
 
 /**
  * Komponen EventCard
