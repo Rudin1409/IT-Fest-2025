@@ -2,7 +2,7 @@
 export const trainingTimeline = [
     {
       title: 'Pembukaan Pendaftaran',
-      date: 'Sabtu - Minggu, 20-21, 27-28 September 2025',
+      date: '16 Agustus 2025',
     },
     {
       title: 'Pelaksanaan Pelatihan',
@@ -10,11 +10,11 @@ export const trainingTimeline = [
     },
     {
       title: 'Pengumpulan Proyek',
-      date: 'Sabtu - Minggu, 20-21, 27-28 September 2025',
+      date: '29 September 2025',
     },
     {
       title: 'Pengumuman Lulusan',
-      date: 'Sabtu - Minggu, 20-21, 27-28 September 2025',
+      date: '1 Oktober 2025',
     },
 ];
 
