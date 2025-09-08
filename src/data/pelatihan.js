@@ -10,7 +10,7 @@ export const trainingTimeline = [
     },
     {
       title: 'Pengumpulan Proyek',
-      date: '29 September 2025',
+      date: '28 September 2025',
     },
     {
       title: 'Pengumuman Lulusan',
