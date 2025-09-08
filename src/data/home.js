@@ -70,7 +70,7 @@ export const timelineEvents = [
     },
     {
         title: 'Pelatihan Android & Web',
-        date: 'Rabu – Sabtu, 17 – 20 September 2025',
+        date: 'Sabtu - Minggu, 20-21, 27-28 September 2025',
     },
     {
         title: 'Batas pengumpulan Full Paper (Cipta Inovasi)',
